@@ -1,5 +1,6 @@
 ---
 import Site from "../layouts/Site.astro";
+import Portfolio from "../components/Portfolio.astro";
 import BlogIndex from "../components/BlogIndex.astro";
 import ContactForm from "../components/ContactForm.astro";
 const pages = import.meta.glob("../content/pages/*.json", {
@@ -30,7 +31,7 @@ if (!page) Astro.response.status = 404;
   meta={page?.meta}
   schema={page?.schema}
 >
-  {page && isBlog ? <BlogIndex /> : page ? (
+  {page && path === "/portfolio/" ? <Portfolio /> : page && isBlog ? <BlogIndex /> : page ? (
     page.sections.map((html, index) => (
       <>
         <Fragment set:html={html} />

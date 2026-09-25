@@ -1,0 +1,39 @@
+---
+import photos from '../content/portfolio.json';
+import '../styles/portfolio.css';
+---
+<main id="primary" class="portfolio-page">
+  <header class="portfolio-heading">
+    <p class="portfolio-eyebrow">The Verity Portfolio</p>
+    <h1>A closer look at the details.</h1>
+    <p>Explore interiors and exteriors. Select any photo to take a closer look.</p>
+  </header>
+  <div class="portfolio-toolbar">
+    <div role="group" aria-label="Filter photos" class="portfolio-filters">
+      <button type="button" data-portfolio-filter="Interior" aria-pressed="false">Interior</button>
+      <button type="button" data-portfolio-filter="Exterior" aria-pressed="false">Exterior</button>
+    </div>
+    <p id="portfolio-count" role="status">{photos.length} photos · Interior &amp; Exterior</p>
+  </div>
+  <div class="portfolio-grid">
+    {photos.map(photo => <a class="portfolio-photo" href={photo.src} data-space={photo.category} aria-label={`Enlarge: ${photo.alt}`}>
+      <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
+      <span class="portfolio-photo-caption">{photo.alt}<span aria-hidden="true">↗</span></span>
+    </a>)}
+  </div>
+  <noscript><p>Photos open at full size. Enable JavaScript for filters and the slideshow.</p></noscript>
+  <dialog class="portfolio-viewer" aria-label="Portfolio photo viewer">
+    <div class="portfolio-viewer-toolbar">
+      <p data-photo-position></p>
+      <button type="button" data-slideshow aria-pressed="false">Play slideshow</button>
+      <button type="button" data-close-viewer aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="portfolio-stage">
+      <button type="button" data-previous aria-label="Previous photo">←</button>
+      <img data-large-photo alt="" />
+      <button type="button" data-next aria-label="Next photo">→</button>
+    </div>
+    <p class="portfolio-viewer-caption" data-photo-caption aria-live="polite"></p>
+  </dialog>
+</main>
+<script>import '../scripts/portfolio';</script>

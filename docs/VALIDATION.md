@@ -69,3 +69,9 @@ Removed the publication-schedule paragraph from `/insights/` and saved the page 
 ## Field Guide blog layout — September 25, 2026
 
 Replaced the Insights landing body and Field Guide category body with a shared server-rendered article index. The September 18 post is featured, followed by September 11 and September 4. Added combined topic/location filters and keyword search, derived from the three published posts, with result counts and empty/reset states. Local browser verification covered keyboard submission, topic filtering, incompatible topic/location empty results, reset, keyword search, and 320/390/768px reflow without horizontal overflow. Desktop/tablet/mobile visual checks completed. Build, type check, lint, 10 tests, and all 33 routes (106 assets, 40 links) passed. No production launch or DNS changes.
+
+## Portfolio curation and viewer — September 25, 2026
+
+Reviewed a contact sheet of all 47 source entries. Excluded four labeled AI concepts, thirteen digitally staged images, and two redundant waterfront variants; retained 28 distinct file hashes and visually reviewed photographs (25 Interior, 3 Exterior). Saved a deterministic shuffled order in the curated portfolio data. Replaced the source gallery, including its empty paragraph cells, with responsive columns preserving original image ratios. Added native dialog enlargement, filtered previous/next wrapping, five-second opt-in slideshow, pause, Escape and focus restoration. Social preview now uses the retained waterfront photograph.
+
+Build, type check, lint and the 33-route/105-asset/42-link check passed. Browser checks verified both filters, toggle-off reset, 1→3 slideshow progression, pause, arrow-key wrap, Escape with focus restoration, 390px full-screen viewer sizing, and 768px gallery flow without horizontal overflow. Photos remain uncropped in the gallery and contained in the viewer. No new automatic motion. Original assets used elsewhere were not deleted.

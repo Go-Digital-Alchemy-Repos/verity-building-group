@@ -1,0 +1,40 @@
+{
+  "meta": [
+    {
+      "name": "robots",
+      "content": "max-image-preview:large, noindex, nofollow"
+    },
+    {
+      "name": "description",
+      "content": "Explore interior and exterior photography in the Verity Building Group portfolio. View kitchens, living spaces, bathrooms, and waterfront settings in a full-size slideshow."
+    },
+    {
+      "property": "og:locale",
+      "content": "en_US"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Portfolio \u2013 Verity Building Group"
+    },
+    {
+      "property": "og:description",
+      "content": "Explore interior and exterior photography in the Verity Building Group portfolio. View kitchens, living spaces, bathrooms, and waterfront settings in a full-size slideshow."
+    },
+    {
+      "property": "og:url",
+      "content": "https://veritybuildstg.wpenginepowered.com/portfolio/"
+    },
+    {
+      "property": "og:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/07/verity_hero.webp"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    }
+  ]
+}
