@@ -49,3 +49,9 @@ Build, type checking, lint and all 33 local route checks passed. Browser checks 
 Matched the shared service-detail layout, preserving all planning guidance, six construction stages, six FAQs, editorial image/disclosure, service-area link, metadata and original anchor targets. The editable override is `src/content/overrides/custom-home-builder-charlotte-nc.html`.
 
 Build, type checking, lint and all 33 local route checks passed. Browser checks confirmed one H1, six stages, no horizontal overflow at 320/390/768/1440px, process-anchor navigation and keyboard FAQ expansion. Desktop and mobile screenshots reviewed. No new motion or form behavior; screen-reader and browser zoom testing not performed.
+
+## About redesign and area navigation — September 25, 2026
+
+Matched the service-page visual system, retaining approach copy, team placeholders, regional descriptions and service links. Rebuilt all three area cards as whole-card native links with accessible heading labels and visible focus/hover states. Added a working contact CTA where the original was plain text. Preserved `#areas-we-serve`.
+
+Build, type checking, lint and all 33 local route checks passed. Browser keyboard activation reached the correct Charlotte, Lake Norman and North Mecklenburg & Iredell pages. Checked one H1 and no overflow at 320/390/768/1440px. Desktop/mobile screenshots inspected. No new motion or form behavior; screen-reader and browser zoom testing not performed. Editable source: `src/content/overrides/about.html`; scoped styling: `src/styles/about.css`.

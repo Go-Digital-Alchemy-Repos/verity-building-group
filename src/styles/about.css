@@ -1,0 +1,120 @@
+.about-page :is(#our-approach, #our-team, #areas-we-serve) {
+  scroll-margin-top: 150px;
+}
+.about-copy p + p {
+  margin-top: 20px;
+}
+.about-page .about-process {
+  margin-top: 40px;
+}
+.about-process h3 {
+  font-size: 30px;
+  margin-block: 20px 16px;
+}
+.about-page #vbg-team-heading {
+  margin-top: 20px;
+}
+.about-team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 880px;
+  margin-inline: auto;
+}
+.about-team figure {
+  margin: 0;
+}
+.about-team svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.about-areas {
+  background: var(--color-cream);
+  padding-block: var(--services-space);
+}
+.about-page .about-areas__intro {
+  max-width: 900px;
+  margin-bottom: 40px;
+  color: var(--services-muted);
+  font-size: 17px;
+}
+.about-area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.about-page .about-area-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: #faf8f4;
+  border: 1px solid var(--services-line);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.about-area-card h3 {
+  font-size: 32px;
+  margin-block: 24px 20px;
+}
+.about-area-card p {
+  font-size: 16px;
+  color: var(--services-muted);
+  padding-bottom: 32px;
+}
+.about-area-card__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid var(--services-line);
+  padding-top: 20px;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.about-page .about-area-card:hover {
+  background: #fff;
+  border-color: var(--color-ink);
+}
+.about-area-card:hover .about-area-card__action {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.about-page .about-area-card:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 5px;
+}
+.about-services {
+  padding-block: 64px;
+}
+.about-services h2 {
+  margin-bottom: 32px;
+}
+@media (max-width: 960px) {
+  .about-area-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-team {
+    gap: 20px;
+  }
+}
+@media (max-width: 640px) {
+  .about-page :is(#our-approach, #our-team, #areas-we-serve) {
+    scroll-margin-top: 112px;
+  }
+  .about-copy {
+    grid-column: 2;
+  }
+  .about-team {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+  .about-page .about-area-card {
+    padding: 24px;
+  }
+  .about-area-card h3 {
+    font-size: 30px;
+  }
+}
