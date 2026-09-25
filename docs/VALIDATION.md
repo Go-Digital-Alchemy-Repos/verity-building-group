@@ -37,3 +37,9 @@ Verified in-browser at 320, 390, 768 and 1440 CSS px: no horizontal overflow or 
 Rebuilt the page with shared Services editorial styling, an introductory photograph, three focus-area rows, a four-step approach, native FAQs and contact links. Removed the entire confidential initiative announcement, its coming-soon line and the related private-project FAQ. Kept the image's editorial-concept disclosure and partnership qualifications. Existing `#focus`, `#approach` and `#faq` links remain.
 
 Validated desktop layout, mobile/tablet reflow at 320, 390 and 768 CSS px, one H1, approach anchor navigation and keyboard FAQ expansion. Build, type checking, lint and local route validation passed. No new motion or form behavior introduced; screen-reader and browser zoom testing not performed. The editable override is `src/content/overrides/legacy-projects.html`, with page-specific styling in `src/styles/legacy.css`.
+
+## Land Development redesign — September 25, 2026
+
+Matched the Legacy Projects layout using shared hero, focus rows, numbered process, FAQ and contact styles. Preserved existing land-development copy, all six process steps, six FAQs, imagery/disclosure, metadata and anchor URLs. The editable override is `src/content/overrides/land-development-charlotte-nc.html`.
+
+Build, type checking, lint and all 33 local route checks passed. Browser checks covered one H1, reflow without horizontal overflow at 320/390/768/1440px, process anchor navigation and keyboard FAQ expansion. Desktop and mobile screenshots inspected. No new motion or form behavior. Screen-reader and browser zoom testing not performed.

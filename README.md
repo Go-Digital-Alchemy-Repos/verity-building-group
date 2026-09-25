@@ -37,6 +37,7 @@ Set runtime environment variables through your shell or Railway. Never commit ac
 Astro 7 with the official Node adapter was selected because the site is primarily editorial and needs server-rendered HTML, straightforward file editing, reusable chrome, small native interaction scripts, and a server-side inquiry endpoint. React hydration and a database are unnecessary.
 
 - `src/content/pages/*.json`: one document per public route. `sections` are sanitized, browser-normalized HTML fragments, retaining formatting and image associations. A split between sections inserts the shared inquiry form. Edit text, links and headings directly, without WordPress shortcodes or block comments.
+- `src/content/overrides/land-development-charlotte-nc.html`: editable Land Development page; shares the Legacy Projects layout and styles.
 - `src/content/overrides/legacy-projects.html`: editable Legacy Projects redesign; uses shared editorial styles plus `src/styles/legacy.css`. Synchronize with the same content override script below.
 - `src/content/overrides/services.html`: editable Services page layout and copy; its scoped design lives in `src/styles/services.css`. Run `.local/audit-tools/bin/python scripts/apply-content-overrides.py` after editing to synchronize the page JSON. Future migrations also preserve this override.
 - `src/content/routes.json`: public route inventory and source file association. Add a document and its route here when adding pages/posts.
