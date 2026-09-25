@@ -1,6 +1,6 @@
 {
   "path": "/north-mecklenburg-iredell-builder/",
-  "title": "North Mecklenburg & Iredell Builder – Verity Building Group",
+  "title": "North Mecklenburg & Iredell Custom Home Builder | Verity",
   "bodyClass": "page",
   "canonical": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/",
   "meta": [
@@ -9,24 +9,12 @@
       "content": "max-image-preview:large, noindex, nofollow"
     },
     {
-      "name": "description",
-      "content": "Custom homes, renovations, and land development across Cornelius, Davidson, Huntersville, Mooresville, and nearby areas."
-    },
-    {
       "property": "og:locale",
       "content": "en_US"
     },
     {
       "property": "og:type",
       "content": "website"
-    },
-    {
-      "property": "og:title",
-      "content": "North Mecklenburg & Iredell Builder – Verity Building Group"
-    },
-    {
-      "property": "og:description",
-      "content": "Custom homes, renovations, and land development across Cornelius, Davidson, Huntersville, Mooresville, and nearby areas."
     },
     {
       "property": "og:url",
@@ -39,10 +27,130 @@
     {
       "name": "twitter:card",
       "content": "summary_large_image"
+    },
+    {
+      "name": "description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "property": "og:title",
+      "content": "North Mecklenburg & Iredell Custom Home Builder | Verity"
+    },
+    {
+      "property": "og:description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Verity Building Group"
+    },
+    {
+      "property": "og:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    },
+    {
+      "name": "twitter:title",
+      "content": "North Mecklenburg & Iredell Custom Home Builder | Verity"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
     }
   ],
-  "schema": [],
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#webpage",
+          "url": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/",
+          "name": "North Mecklenburg & Iredell Custom Home Builder | Verity",
+          "description": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group.",
+          "inLanguage": "en-US",
+          "breadcrumb": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#breadcrumb"
+          },
+          "mainEntity": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#service",
+          "name": "Custom Home Builder in North Mecklenburg & Iredell",
+          "url": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/",
+          "description": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group.",
+          "serviceType": [
+            "Custom home construction",
+            "Residential renovation",
+            "Land development"
+          ],
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://veritybuildstg.wpenginepowered.com/#organization",
+            "name": "Verity Building Group",
+            "url": "https://veritybuildstg.wpenginepowered.com/"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Cornelius, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Davidson, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Huntersville, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Mooresville, North Carolina"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Iredell County, North Carolina"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://veritybuildstg.wpenginepowered.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Areas we serve",
+              "item": "https://veritybuildstg.wpenginepowered.com/about/#areas-we-serve"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "North Mecklenburg & Iredell",
+              "item": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "sections": [
-    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2220\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">North Mecklenburg &amp; Iredell Builder</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<section class=\"vbg-section vbg-section--hero\">\n<p class=\"eyebrow\">North Mecklenburg &amp; Iredell County</p>\n<h2 class=\"vbg-display-title\">North Mecklenburg &amp; Iredell Builder</h2>\n<p class=\"lead\">Custom homes, land development, and renovations across Cornelius, Davidson, Huntersville, Mooresville, and surrounding communities.</p>\n<p>Start Your Project</p>\n</section>\n<nav aria-label=\"On this page\" class=\"vbg-jump\">\n  <a href=\"#north-services\">Services</a><br/>\n  <a href=\"#north-communities\">Communities</a><br/>\n  <a href=\"#north-planning\">Planning</a><br/>\n  <a href=\"#north-faq\">FAQs</a><br/>\n</nav>\n<section class=\"vbg-section\" id=\"north-services\">\n<p class=\"eyebrow\">Regional Reach, Property-Specific Planning</p>\n<h2>Building across a fast-growing part of the Charlotte region</h2>\n<div class=\"vbg-split\">\n<div>\n<p>North Mecklenburg and Iredell County offer a wide range of building conditions: established in-town lots, lake-area neighborhoods, wooded acreage, infill properties, and sites transitioning from rural to suburban use. That variety makes early jurisdiction and site review especially valuable.</p>\n<p>Verity helps clients organize the moving parts—from feasibility and design coordination through pricing, approvals, construction, and closeout—while keeping attention on the finished experience.</p>\n<p></p></div>\n<div>\n<h3>Project types</h3>\n<ul>\n<li><a href=\"/custom-home-builder-charlotte-nc/\">Custom homes</a> on neighborhood, wooded, acreage, and lake-area properties</li>\n<li><a href=\"/land-development-charlotte-nc/\">Land development and site planning</a></li>\n<li>Large-scale residential renovations and additions</li>\n<li><a href=\"/legacy-projects/\">Legacy and community-centered projects</a></li>\n</ul></div>\n<p></p></div>\n</section>\n<section class=\"vbg-section vbg-section--soft\" id=\"north-communities\">\n<p class=\"eyebrow\">Areas We Serve</p>\n<h2>Local context changes from town to town</h2>\n<div class=\"vbg-card-grid\">\n<article>\n<h3>Cornelius</h3>\n<p>Lake-oriented neighborhoods, established residential areas, and infill opportunities can involve town planning review alongside Mecklenburg County building permits. Zoning, overlays, access, and shoreline conditions should be checked for the individual property.</p>\n</article>\n<article>\n<h3>Davidson</h3>\n<p>Davidson applies planning-area standards that can address building orientation, architecture, height, parking, and site design. Town approval for residential work may precede Mecklenburg County building permitting, making early design coordination especially important.</p>\n</article>\n<article>\n<h3>Huntersville</h3>\n<p>From established communities to larger tracts and mixed-use corridors, Huntersville projects benefit from early review of zoning, subdivision history, transportation access, utilities, environmental conditions, and applicable Mecklenburg County permits.</p>\n</article>\n<article>\n<h3>Mooresville and Iredell County</h3>\n<p>Mooresville and unincorporated Iredell County use different planning and permitting pathways. Confirming whether a parcel is within town limits, an extraterritorial jurisdiction, or county jurisdiction is a foundational first step.</p>\n</article></div>\n</section>\n<section class=\"vbg-section\" id=\"north-planning\">\n<p class=\"eyebrow\">Due Diligence Before Design</p>\n<h2>Five questions that shape the approval path</h2>\n<div class=\"vbg-process\">\n<article><span>01</span><p></p>\n<h3>Which jurisdiction?</h3>\n<p>The mailing address alone may not identify the authority that controls zoning, building permits, utilities, or environmental health review.</p>\n</article>\n<article><span>02</span><p></p>\n<h3>What can be built?</h3>\n<p>Zoning, setbacks, easements, overlays, subdivision restrictions, and recorded documents can influence location, use, scale, and access.</p>\n</article>\n<article><span>03</span><p></p>\n<h3>How will the site function?</h3>\n<p>Topography, soils, drainage, trees, driveway geometry, construction access, and utility routes should be understood with the building concept.</p>\n</article>\n<article><span>04</span><p></p>\n<h3>Which approvals are separate?</h3>\n<p>Town planning, county building permits, septic or well approval, erosion control, stormwater, driveway permits, and shoreline permissions may follow different processes.</p>\n</article>\n<article><span>05</span><p></p>\n<h3>What drives the schedule?</h3>\n<p>Design, engineering, approvals, long-lead selections, site work, and construction sequencing all belong in one realistic project plan.</p>\n</article></div>\n<p>Official planning resources: Town of Davidson permits, Mecklenburg County permitting, and Iredell County Central Permitting.</p>\n</section>\n<section class=\"vbg-section vbg-section--soft\">\n<p class=\"eyebrow\">One Team, Fewer Gaps</p>\n<h2>Preconstruction creates alignment</h2>\n<p>High-quality construction depends on decisions made well before mobilization. During preconstruction, the property, drawings, engineering, selections, allowances, logistics, and procurement plan are studied together. This is where hidden assumptions become visible and where the team can make informed tradeoffs while choices are still flexible.</p>\n<p>For renovations, this includes documenting existing conditions and planning how occupied areas, temporary protection, demolition, structural work, building systems, and finish transitions will be sequenced. For land development, it includes aligning the improvement plan with access, utilities, agency review, and operational needs.</p>\n</section>\n<section class=\"vbg-section\" id=\"north-faq\">\n<p class=\"eyebrow\">North Mecklenburg &amp; Iredell FAQs</p>\n<h2>Common questions about building in the region</h2>\n<div class=\"vbg-faq\">\n<details>\n<summary>Do Cornelius, Davidson, Huntersville, and Mooresville use the same permitting office?</summary>\n<p>No. Planning and zoning responsibilities vary by town and parcel, while county agencies may administer building permits or environmental health reviews. Mooresville also operates its own Building Permitting and Inspections department. Confirm the responsible authorities for the exact address before planning the schedule.</p>\n</details>\n<details>\n<summary>Where should I begin with undeveloped land?</summary>\n<p>Begin with a current survey or parcel information, jurisdiction confirmation, zoning, legal access, utilities, soils or septic needs, drainage, environmental constraints, and a preliminary building concept. These findings guide the design and due-diligence team.</p>\n</details>\n<details>\n<summary>Can Verity work with my architect or designer?</summary>\n<p>Yes. Builder involvement during design helps connect architectural intent with constructability, site work, building systems, selections, cost, and schedule.</p>\n</details>\n<details>\n<summary>Can you help with custom homes, renovations, and land development?</summary>\n<p>Yes. Our services include custom residential construction, major renovations, and land development. The team and preconstruction plan are tailored to the project.</p>\n</details>\n<details>\n<summary>How do I compare potential lots?</summary>\n<p>Compare more than acreage and location. Review jurisdiction, zoning, buildable area, topography, access, utilities, soils, drainage, trees, recorded restrictions, approval needs, and site-development cost before deciding.</p>\n</details></div>\n</section>\n<section class=\"vbg-final-cta\">\n<p class=\"eyebrow\">Begin With a Conversation</p>\n<h2>Planning a project in North Mecklenburg or Iredell County?</h2>\n<p>Share a few details and our team will follow up to discuss the right next step.</p>\n<p>Start Your Project</p>\n</section>\n<section class=\"vbg-section vbg-section--compact\">\n<h2>Explore nearby service areas</h2>\n<p>Charlotte  ·  Lake Norman  ·  About Verity</p>\n</section>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
+    "<main class=\"services-page legacy-page area-page\" id=\"primary\">\n  <header class=\"services-intro\">\n    <div class=\"services-wrap\">\n      <nav aria-label=\"Breadcrumb\" class=\"area-breadcrumb\">\n        <a href=\"/\">Home</a><span aria-hidden=\"true\">/</span\n        ><a href=\"/about/#areas-we-serve\">Areas we serve</a\n        ><span aria-hidden=\"true\">/</span\n        ><span aria-current=\"page\">North Mecklenburg &amp; Iredell</span>\n      </nav>\n      <p class=\"services-eyebrow\">North Mecklenburg &amp; Iredell County</p>\n      <div class=\"services-intro__grid\">\n        <h1>Custom Home Builder in North Mecklenburg &amp; Iredell</h1>\n        <div class=\"services-intro__copy\">\n          <p>\n            Custom homes, land development, and renovations across Cornelius,\n            Davidson, Huntersville, Mooresville, and surrounding communities.\n          </p>\n          <a\n            class=\"services-button js-verity-project-modal\"\n            href=\"#verity-project-modal\"\n            >Start Your Project <span aria-hidden=\"true\">↗</span></a\n          >\n        </div>\n      </div>\n      <nav aria-label=\"On this page\" class=\"services-jump area-jump\">\n        <a href=\"#north-services\"\n          ><span>01</span> Services <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#north-communities\"\n          ><span>02</span> Communities <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#north-planning\"\n          ><span>03</span> Local planning <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#north-faq\"\n          ><span>04</span> FAQs <span aria-hidden=\"true\">↓</span></a\n        >\n      </nav>\n    </div>\n  </header>\n  <section\n    aria-labelledby=\"north-services-title\"\n    class=\"services-wrap legacy-focus area-content\"\n    id=\"north-services\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">Regional Reach, Property-Specific Planning</p>\n      <h2 id=\"north-services-title\">\n        Building across a fast-growing part of the Charlotte region\n      </h2>\n    </div>\n    <div class=\"area-services-grid\">\n      <div>\n        <p>\n          North Mecklenburg and Iredell County offer a wide range of building\n          conditions: established in-town lots, lake-area neighborhoods, wooded\n          acreage, infill properties, and sites transitioning from rural to\n          suburban use. That variety makes early jurisdiction and site review\n          especially valuable.\n        </p>\n        <p>\n          Verity helps clients organize the moving parts—from feasibility and\n          design coordination through pricing, approvals, construction, and\n          closeout—while keeping attention on the finished experience.\n        </p>\n      </div>\n      <div>\n        <h3>Project types</h3>\n        <ul>\n          <li>\n            <a href=\"/custom-home-builder-charlotte-nc/\">Custom homes</a> on\n            neighborhood, wooded, acreage, and lake-area properties\n          </li>\n          <li>\n            <a href=\"/land-development-charlotte-nc/\"\n              >Land development and site planning</a\n            >\n          </li>\n          <li>Large-scale residential renovations and additions</li>\n          <li>\n            <a href=\"/legacy-projects/\"\n              >Legacy and community-centered projects</a\n            >\n          </li>\n        </ul>\n      </div>\n    </div>\n  </section>\n  <section\n    aria-labelledby=\"north-communities-title\"\n    class=\"services-wrap legacy-focus area-content\"\n    id=\"north-communities\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">Areas We Serve</p>\n      <h2 id=\"north-communities-title\">\n        Local context changes from town to town\n      </h2>\n    </div>\n    <div class=\"legacy-focus__list\">\n      <article>\n        <span aria-hidden=\"true\" class=\"services-number\">01</span>\n        <h3>Cornelius</h3>\n        <p>\n          Lake-oriented neighborhoods, established residential areas, and infill\n          opportunities can involve town planning review alongside Mecklenburg\n          County building permits. Zoning, overlays, access, and shoreline\n          conditions should be checked for the individual property.\n        </p>\n      </article>\n      <article>\n        <span aria-hidden=\"true\" class=\"services-number\">02</span>\n        <h3>Davidson</h3>\n        <p>\n          Davidson applies planning-area standards that can address building\n          orientation, architecture, height, parking, and site design. Town\n          approval for residential work may precede Mecklenburg County building\n          permitting, making early design coordination especially important.\n        </p>\n      </article>\n      <article>\n        <span aria-hidden=\"true\" class=\"services-number\">03</span>\n        <h3>Huntersville</h3>\n        <p>\n          From established communities to larger tracts and mixed-use corridors,\n          Huntersville projects benefit from early review of zoning, subdivision\n          history, transportation access, utilities, environmental conditions,\n          and applicable Mecklenburg County permits.\n        </p>\n      </article>\n      <article>\n        <span aria-hidden=\"true\" class=\"services-number\">04</span>\n        <h3>Mooresville and Iredell County</h3>\n        <p>\n          Mooresville and unincorporated Iredell County use different planning\n          and permitting pathways. Confirming whether a parcel is within town\n          limits, an extraterritorial jurisdiction, or county jurisdiction is a\n          foundational first step.\n        </p>\n      </article>\n    </div>\n  </section>\n  <section\n    aria-labelledby=\"north-planning-title\"\n    class=\"services-planning\"\n    id=\"north-planning\"\n  >\n    <div class=\"services-wrap\">\n      <div class=\"legacy-approach__heading\">\n        <p class=\"services-eyebrow\">Due Diligence Before Design</p>\n        <h2 id=\"north-planning-title\">\n          Five questions that shape the approval path\n        </h2>\n      </div>\n      <ol class=\"legacy-steps\">\n        <li>\n          <span aria-hidden=\"true\" class=\"services-number\">01</span>\n          <div>\n            <h3>Which jurisdiction?</h3>\n            <p>\n              The mailing address alone may not identify the authority that\n              controls zoning, building permits, utilities, or environmental\n              health review.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span aria-hidden=\"true\" class=\"services-number\">02</span>\n          <div>\n            <h3>What can be built?</h3>\n            <p>\n              Zoning, setbacks, easements, overlays, subdivision restrictions,\n              and recorded documents can influence location, use, scale, and\n              access.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span aria-hidden=\"true\" class=\"services-number\">03</span>\n          <div>\n            <h3>How will the site function?</h3>\n            <p>\n              Topography, soils, drainage, trees, driveway geometry,\n              construction access, and utility routes should be understood with\n              the building concept.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span aria-hidden=\"true\" class=\"services-number\">04</span>\n          <div>\n            <h3>Which approvals are separate?</h3>\n            <p>\n              Town planning, county building permits, septic or well approval,\n              erosion control, stormwater, driveway permits, and shoreline\n              permissions may follow different processes.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span aria-hidden=\"true\" class=\"services-number\">05</span>\n          <div>\n            <h3>What drives the schedule?</h3>\n            <p>\n              Design, engineering, approvals, long-lead selections, site work,\n              and construction sequencing all belong in one realistic project\n              plan.\n            </p>\n          </div>\n        </li>\n      </ol>\n      <div class=\"area-resources\">\n        <p>\n          Official planning resources: Town of Davidson permits,\n          <a\n            href=\"https://code.mecknc.gov/permitting\"\n            rel=\"noopener\"\n            target=\"_blank\"\n            >Mecklenburg County permitting</a\n          >, and\n          <a\n            href=\"https://iredellcountync.gov/235/Central-Permitting-Division\"\n            rel=\"noopener\"\n            target=\"_blank\"\n            >Iredell County Central Permitting</a\n          >.\n        </p>\n      </div>\n    </div>\n  </section>\n  <section\n    aria-labelledby=\"area-detail-3-title\"\n    class=\"services-wrap legacy-focus area-content\"\n    id=\"area-detail-3\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">One Team, Fewer Gaps</p>\n      <h2 id=\"area-detail-3-title\">Preconstruction creates alignment</h2>\n    </div>\n    <div class=\"area-prose\">\n      <p>\n        High-quality construction depends on decisions made well before\n        mobilization. During preconstruction, the property, drawings,\n        engineering, selections, allowances, logistics, and procurement plan are\n        studied together. This is where hidden assumptions become visible and\n        where the team can make informed tradeoffs while choices are still\n        flexible.\n      </p>\n    </div>\n    <div class=\"area-prose\">\n      <p>\n        For renovations, this includes documenting existing conditions and\n        planning how occupied areas, temporary protection, demolition,\n        structural work, building systems, and finish transitions will be\n        sequenced. For land development, it includes aligning the improvement\n        plan with access, utilities, agency review, and operational needs.\n      </p>\n    </div>\n  </section>\n  <section\n    aria-labelledby=\"north-faq-title\"\n    class=\"services-wrap services-questions\"\n    id=\"north-faq\"\n  >\n    <div>\n      <p class=\"services-eyebrow\">North Mecklenburg &amp; Iredell FAQs</p>\n      <h2 id=\"north-faq-title\">\n        Common questions about building in the region\n      </h2>\n    </div>\n    <div class=\"services-faq\">\n      <details>\n        <summary>\n          Do Cornelius, Davidson, Huntersville, and Mooresville use the same\n          permitting office?\n        </summary>\n        <p>\n          No. Planning and zoning responsibilities vary by town and parcel,\n          while county agencies may administer building permits or environmental\n          health reviews. Mooresville also operates its own Building Permitting\n          and Inspections department. Confirm the responsible authorities for\n          the exact address before planning the schedule.\n        </p>\n      </details>\n      <details>\n        <summary>Where should I begin with undeveloped land?</summary>\n        <p>\n          Begin with a current survey or parcel information, jurisdiction\n          confirmation, zoning, legal access, utilities, soils or septic needs,\n          drainage, environmental constraints, and a preliminary building\n          concept. These findings guide the design and due-diligence team.\n        </p>\n      </details>\n      <details>\n        <summary>Can Verity work with my architect or designer?</summary>\n        <p>\n          Yes. Builder involvement during design helps connect architectural\n          intent with constructability, site work, building systems, selections,\n          cost, and schedule.\n        </p>\n      </details>\n      <details>\n        <summary>\n          Can you help with custom homes, renovations, and land development?\n        </summary>\n        <p>\n          Yes. Our services include custom residential construction, major\n          renovations, and land development. The team and preconstruction plan\n          are tailored to the project.\n        </p>\n      </details>\n      <details>\n        <summary>How do I compare potential lots?</summary>\n        <p>\n          Compare more than acreage and location. Review jurisdiction, zoning,\n          buildable area, topography, access, utilities, soils, drainage, trees,\n          recorded restrictions, approval needs, and site-development cost\n          before deciding.\n        </p>\n      </details>\n    </div>\n  </section>\n  <section aria-labelledby=\"area-cta-title\" class=\"services-closing\">\n    <div class=\"services-wrap services-closing__grid\">\n      <div>\n        <p class=\"services-eyebrow\">Begin with Verity</p>\n        <h2 id=\"area-cta-title\">\n          Planning a project in North Mecklenburg or Iredell County?\n        </h2>\n        <p>\n          Share your property location, project goals, and current stage. Our\n          team will help identify the right next step.\n        </p>\n      </div>\n      <a\n        class=\"services-button js-verity-project-modal\"\n        href=\"#verity-project-modal\"\n        >Start Your Project <span aria-hidden=\"true\">↗</span></a\n      >\n    </div>\n  </section>\n  <section aria-labelledby=\"related-title\" class=\"services-wrap area-related\">\n    <h2 id=\"related-title\">Explore nearby service areas</h2>\n    <nav aria-label=\"Related service areas\" class=\"services-jump\">\n      <a href=\"/custom-home-builder-in-charlotte-nc/\"\n        >Charlotte, NC <span aria-hidden=\"true\">→</span></a\n      >\n      <a href=\"/lake-norman-custom-home-builder/\"\n        >Lake Norman <span aria-hidden=\"true\">→</span></a\n      >\n      <a href=\"/about/#areas-we-serve\"\n        >About Verity <span aria-hidden=\"true\">→</span></a\n      >\n    </nav>\n  </section>\n</main>\n"
   ]
 }

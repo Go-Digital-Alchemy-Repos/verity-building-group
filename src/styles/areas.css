@@ -1,0 +1,113 @@
+.area-page section[id] {
+  scroll-margin-top: 150px;
+}
+.area-page .services-intro {
+  padding-top: 32px;
+}
+.area-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 13px;
+  margin-bottom: 40px;
+  color: var(--services-muted);
+}
+.area-page a:not(.services-button) {
+  color: inherit;
+}
+.area-breadcrumb a {
+  text-underline-offset: 3px;
+}
+.area-page h1 {
+  font-size: clamp(44px, 4.7vw, 68px);
+}
+.area-jump {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.area-services-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+}
+.area-services-grid p + p {
+  margin-top: 24px;
+}
+.area-services-grid > div:last-of-type {
+  border-left: 1px solid var(--services-line);
+  padding-left: 40px;
+}
+.area-services-grid h3 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+.area-services-grid ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.area-services-grid li + li {
+  margin-top: 16px;
+}
+.area-services-grid a,
+.area-prose a,
+.area-resources a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.area-page .legacy-approach__heading h2 {
+  max-width: 880px;
+}
+.area-prose {
+  max-width: 920px;
+  margin-top: 28px;
+}
+.area-page .area-content + .area-content {
+  padding-top: 0;
+}
+.area-resources {
+  font-size: 14px;
+  margin-top: 24px;
+}
+.area-related {
+  padding-block: 64px;
+}
+.area-related h2 {
+  margin-bottom: 32px;
+}
+@media (max-width: 960px) {
+  .area-services-grid {
+    gap: 32px;
+  }
+  .area-services-grid > div:last-of-type {
+    padding-left: 24px;
+  }
+  .area-jump {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .area-jump a:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .area-jump a:nth-child(n + 3) {
+    border-top: 1px solid var(--services-line);
+  }
+}
+@media (max-width: 640px) {
+  .area-page section[id] {
+    scroll-margin-top: 112px;
+  }
+  .area-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .area-services-grid > div:last-of-type {
+    border-left: 0;
+    border-top: 1px solid var(--services-line);
+    padding: 28px 0 0;
+  }
+  .area-jump {
+    grid-template-columns: 1fr;
+  }
+  .area-breadcrumb {
+    font-size: 12px;
+    margin-bottom: 28px;
+  }
+}

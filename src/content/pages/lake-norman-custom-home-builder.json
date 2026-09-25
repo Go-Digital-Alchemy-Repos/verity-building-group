@@ -1,6 +1,6 @@
 {
   "path": "/lake-norman-custom-home-builder/",
-  "title": "Lake Norman Custom Home Builder – Verity Building Group",
+  "title": "Lake Norman Custom Home Builder | Verity Building Group",
   "bodyClass": "page",
   "canonical": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/",
   "meta": [
@@ -9,24 +9,12 @@
       "content": "max-image-preview:large, noindex, nofollow"
     },
     {
-      "name": "description",
-      "content": "Build or renovate at Lake Norman with homesite planning, shoreline coordination, disciplined preconstruction, and attentive project leadership."
-    },
-    {
       "property": "og:locale",
       "content": "en_US"
     },
     {
       "property": "og:type",
       "content": "website"
-    },
-    {
-      "property": "og:title",
-      "content": "Lake Norman Custom Home Builder – Verity Building Group"
-    },
-    {
-      "property": "og:description",
-      "content": "Build or renovate at Lake Norman with homesite planning, shoreline coordination, disciplined preconstruction, and attentive project leadership."
     },
     {
       "property": "og:url",
@@ -39,10 +27,114 @@
     {
       "name": "twitter:card",
       "content": "summary_large_image"
+    },
+    {
+      "name": "description",
+      "content": "Plan a Lake Norman custom home with Verity. Explore waterfront homesite planning, renovations, shoreline coordination, and our building process."
+    },
+    {
+      "property": "og:title",
+      "content": "Lake Norman Custom Home Builder | Verity Building Group"
+    },
+    {
+      "property": "og:description",
+      "content": "Plan a Lake Norman custom home with Verity. Explore waterfront homesite planning, renovations, shoreline coordination, and our building process."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Verity Building Group"
+    },
+    {
+      "property": "og:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    },
+    {
+      "name": "twitter:title",
+      "content": "Lake Norman Custom Home Builder | Verity Building Group"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Plan a Lake Norman custom home with Verity. Explore waterfront homesite planning, renovations, shoreline coordination, and our building process."
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
     }
   ],
-  "schema": [],
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/#webpage",
+          "url": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/",
+          "name": "Lake Norman Custom Home Builder | Verity Building Group",
+          "description": "Plan a Lake Norman custom home with Verity. Explore waterfront homesite planning, renovations, shoreline coordination, and our building process.",
+          "inLanguage": "en-US",
+          "breadcrumb": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/#breadcrumb"
+          },
+          "mainEntity": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/#service",
+          "name": "Lake Norman Custom Home Builder",
+          "url": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/",
+          "description": "Plan a Lake Norman custom home with Verity. Explore waterfront homesite planning, renovations, shoreline coordination, and our building process.",
+          "serviceType": [
+            "Custom home construction",
+            "Residential renovation",
+            "Land development"
+          ],
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://veritybuildstg.wpenginepowered.com/#organization",
+            "name": "Verity Building Group",
+            "url": "https://veritybuildstg.wpenginepowered.com/"
+          },
+          "areaServed": [
+            {
+              "@type": "Place",
+              "name": "Lake Norman, North Carolina"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://veritybuildstg.wpenginepowered.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Areas we serve",
+              "item": "https://veritybuildstg.wpenginepowered.com/about/#areas-we-serve"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Lake Norman",
+              "item": "https://veritybuildstg.wpenginepowered.com/lake-norman-custom-home-builder/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "sections": [
-    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2218\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">Lake Norman Custom Home Builder</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<section class=\"vbg-section vbg-section--hero\">\n<p class=\"eyebrow\">Lake Norman, North Carolina</p>\n<h2 class=\"vbg-display-title\">Lake Norman Custom Home Builder</h2>\n<p class=\"lead\">Custom homes, substantial renovations, and homesite planning shaped around lake living, property conditions, and the approvals that come with building near the water.</p>\n<p><a class=\"vbg-cta js-verity-project-modal\" href=\"#verity-project-modal\">Start Your Project</a></p>\n</section>\n<nav aria-label=\"On this page\" class=\"vbg-jump\">\n  <a href=\"#lake-services\">Services</a><br/>\n  <a href=\"#lake-homesites\">Lake Homesites</a><br/>\n  <a href=\"#lake-process\">Our Process</a><br/>\n  <a href=\"#lake-faq\">FAQs</a><br/>\n</nav>\n<section class=\"vbg-section\" id=\"lake-services\">\n<p class=\"eyebrow\">Built for Life at the Lake</p>\n<h2>A home that belongs on its site</h2>\n<div class=\"vbg-split\">\n<div>\n<p>Lake Norman homesites invite bold ideas, but the strongest projects begin with careful study. Views, shoreline orientation, slope, drainage, access, mature trees, septic or sewer availability, neighborhood requirements, and the path to permitting all influence the design.</p>\n<p>Verity brings construction thinking into the conversation early. We help clients and design partners connect the vision for the home with the realities of the property, then manage the details through construction and closeout.</p>\n<p></p></div>\n<div>\n<h3>Services for Lake Norman properties</h3>\n<ul>\n<li><a href=\"/custom-home-builder-charlotte-nc/\">Custom home construction</a></li>\n<li><a href=\"/land-development-charlotte-nc/\">Homesite and land-development planning</a></li>\n<li>Whole-home renovations and additions</li>\n<li>Outdoor living, garages, guest spaces, and specialty rooms</li>\n</ul></div>\n<p></p></div>\n</section>\n<section class=\"vbg-section vbg-section--soft\" id=\"lake-homesites\">\n<p class=\"eyebrow\">Before Design Becomes Construction</p>\n<h2>Lake Norman homesite considerations</h2>\n<div class=\"vbg-card-grid\">\n<article>\n<h3>Shoreline and dock coordination</h3>\n<p>Duke Energy manages shoreline activities on the Catawba-Wateree lakes and oversees permitting for piers, docks, seawalls, landscaping, and certain vegetation work. Shoreline ideas should be reviewed separately from local building approvals and before they are assumed in the project scope.</p>\n</article>\n<article>\n<h3>Jurisdiction and utilities</h3>\n<p>A Lake Norman address may fall within Mecklenburg, Iredell, Lincoln, or Catawba County and may also be inside a town’s planning jurisdiction. Confirming the reviewing authorities, water and sewer availability, or septic requirements is an essential early step.</p>\n</article>\n<article>\n<h3>Topography, water, and access</h3>\n<p>Sloped sites can create opportunities for views and lower-level living while adding complexity to grading, retaining, foundations, drainage, staging, and driveway design. These elements should be priced and coordinated as part of the home—not treated as an afterthought.</p>\n</article></div>\n<p>Official planning resources: <a href=\"https://illumination.duke-energy.com/articles/soaring-with-eagles-to-protect-their-habitat\" rel=\"noopener\" target=\"_blank\">Duke Energy shoreline guidance</a>, <a href=\"https://code.mecknc.gov/permitting\" rel=\"noopener\" target=\"_blank\">Mecklenburg County permitting</a>, and <a href=\"https://iredellcountync.gov/235/Central-Permitting-Division\" rel=\"noopener\" target=\"_blank\">Iredell County Central Permitting</a>.</p>\n</section>\n<section class=\"vbg-section\">\n<p class=\"eyebrow\">Details That Support Lake Living</p>\n<h2>Plan the experience from the water to the front door</h2>\n<p>A lake home works best when arrival, everyday circulation, entertaining, storage, and outdoor transitions are considered together. The design may need to accommodate wet-room storage, water-sports equipment, screened living, durable exterior materials, generous glazing, shaded terraces, and service access without compromising the architecture.</p>\n<p>Building-envelope decisions are equally important. Exposure, wind-driven rain, solar heat, humidity, and the many transitions around expansive windows and outdoor spaces reward careful detailing and disciplined field execution.</p>\n</section>\n<section class=\"vbg-section vbg-section--soft\" id=\"lake-process\">\n<p class=\"eyebrow\">A Disciplined Process</p>\n<h2>From property questions to a finished Lake Norman home</h2>\n<div class=\"vbg-process\">\n<article><span>01</span><p></p>\n<h3>Property discovery</h3>\n<p>We review goals, survey information, access, utilities, visible constraints, and the questions that need answers from local authorities or consultants.</p>\n</article>\n<article><span>02</span><p></p>\n<h3>Design collaboration</h3>\n<p>We coordinate with architects, engineers, and specialty partners so the home, site work, building systems, allowances, and approval path remain aligned.</p>\n</article>\n<article><span>03</span><p></p>\n<h3>Preconstruction</h3>\n<p>Scope, selections, pricing, procurement, schedule, and logistics are developed before field work begins.</p>\n</article>\n<article><span>04</span><p></p>\n<h3>Build and closeout</h3>\n<p>Consistent field leadership and communication carry the project through construction, detailed completion, and turnover.</p>\n</article></div>\n</section>\n<section class=\"vbg-section\" id=\"lake-faq\">\n<p class=\"eyebrow\">Lake Norman Builder FAQs</p>\n<h2>Questions to ask before building near the lake</h2>\n<div class=\"vbg-faq\">\n<details>\n<summary>Who permits a custom home on Lake Norman?</summary>\n<p>The answer depends on the property. County building departments, town planning departments, environmental health, utility providers, and Duke Energy shoreline management may each have a role. The jurisdiction and scope should be confirmed for the exact parcel.</p>\n</details>\n<details>\n<summary>Does a dock permit cover the house?</summary>\n<p>No. Shoreline or lake-use approvals are separate from zoning, building, trade, septic, and other land-development permits. A coordinated plan should track each approval path.</p>\n</details>\n<details>\n<summary>Can you evaluate a waterfront lot before we buy?</summary>\n<p>Yes. Early review can identify questions related to survey information, slope, access, utilities, septic, drainage, shoreline conditions, and design feasibility. Additional due diligence may require surveyors, engineers, environmental professionals, or reviewing authorities.</p>\n</details>\n<details>\n<summary>What makes a sloped lake lot more complex?</summary>\n<p>Grading, retaining walls, foundation design, erosion control, driveway slope, construction access, and water management can materially affect design, cost, and schedule. Addressing them during feasibility and design creates a better foundation for decisions.</p>\n</details>\n<details>\n<summary>Do you build away from the waterfront, too?</summary>\n<p>Yes. We work with clients considering waterfront, water-view, wooded, neighborhood, and acreage properties throughout the Lake Norman area.</p>\n</details></div>\n</section>\n<section class=\"vbg-final-cta\">\n<p class=\"eyebrow\">Your Lake Norman Project</p>\n<h2>Begin with the property, the vision, and the right questions</h2>\n<p>Share a few details and our team will follow up to discuss the right next step.</p>\n<p><a class=\"vbg-cta js-verity-project-modal\" href=\"#verity-project-modal\">Start Your Project</a></p>\n</section>\n<section class=\"vbg-section vbg-section--compact\">\n<h2>Explore nearby service areas</h2>\n<p><a href=\"/custom-home-builder-in-charlotte-nc/\">Charlotte</a>  ·  <a href=\"/north-mecklenburg-iredell-builder/\">North Mecklenburg &amp; Iredell</a>  ·  <a href=\"/about/\">About Verity</a></p>\n</section>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
+    "<main id=\"primary\" class=\"services-page legacy-page area-page\">\n  <header class=\"services-intro\">\n    <div class=\"services-wrap\">\n      <nav class=\"area-breadcrumb\" aria-label=\"Breadcrumb\">\n        <a href=\"/\">Home</a><span aria-hidden=\"true\">/</span\n        ><a href=\"/about/#areas-we-serve\">Areas we serve</a\n        ><span aria-hidden=\"true\">/</span\n        ><span aria-current=\"page\">Lake Norman</span>\n      </nav>\n      <p class=\"services-eyebrow\">Lake Norman, North Carolina</p>\n      <div class=\"services-intro__grid\">\n        <h1>Lake Norman Custom Home Builder</h1>\n        <div class=\"services-intro__copy\">\n          <p>\n            Custom homes, substantial renovations, and homesite planning shaped\n            around lake living, property conditions, and the approvals that come\n            with building near the water.\n          </p>\n          <a\n            class=\"services-button js-verity-project-modal\"\n            href=\"#verity-project-modal\"\n            >Start Your Project <span aria-hidden=\"true\">↗</span></a\n          >\n        </div>\n      </div>\n      <nav class=\"services-jump area-jump\" aria-label=\"On this page\">\n        <a href=\"#lake-services\"\n          ><span>01</span> Services <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#lake-homesites\"\n          ><span>02</span> Homesites <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#lake-process\"\n          ><span>03</span> Our process <span aria-hidden=\"true\">↓</span></a\n        >\n        <a href=\"#lake-faq\"\n          ><span>04</span> FAQs <span aria-hidden=\"true\">↓</span></a\n        >\n      </nav>\n    </div>\n  </header>\n  <section\n    id=\"lake-services\"\n    class=\"services-wrap legacy-focus area-content\"\n    aria-labelledby=\"lake-services-title\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">Built for Life at the Lake</p>\n      <h2 id=\"lake-services-title\">A home that belongs on its site</h2>\n    </div>\n    <div class=\"area-services-grid\">\n      <div>\n        <p>\n          Lake Norman homesites invite bold ideas, but the strongest projects\n          begin with careful study. Views, shoreline orientation, slope,\n          drainage, access, mature trees, septic or sewer availability,\n          neighborhood requirements, and the path to permitting all influence\n          the design.\n        </p>\n        <p>\n          Verity brings construction thinking into the conversation early. We\n          help clients and design partners connect the vision for the home with\n          the realities of the property, then manage the details through\n          construction and closeout.\n        </p>\n      </div>\n      <div>\n        <h3>Services for Lake Norman properties</h3>\n        <ul>\n          <li>\n            <a href=\"/custom-home-builder-charlotte-nc/\"\n              >Custom home construction</a\n            >\n          </li>\n          <li>\n            <a href=\"/land-development-charlotte-nc/\"\n              >Homesite and land-development planning</a\n            >\n          </li>\n          <li>Whole-home renovations and additions</li>\n          <li>Outdoor living, garages, guest spaces, and specialty rooms</li>\n        </ul>\n      </div>\n    </div>\n  </section>\n  <section\n    id=\"lake-homesites\"\n    class=\"services-wrap legacy-focus area-content\"\n    aria-labelledby=\"lake-homesites-title\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">Before Design Becomes Construction</p>\n      <h2 id=\"lake-homesites-title\">Lake Norman homesite considerations</h2>\n    </div>\n    <div class=\"legacy-focus__list\">\n      <article>\n        <span class=\"services-number\" aria-hidden=\"true\">01</span>\n        <h3>Shoreline and dock coordination</h3>\n        <p>\n          Duke Energy manages shoreline activities on the Catawba-Wateree lakes\n          and oversees permitting for piers, docks, seawalls, landscaping, and\n          certain vegetation work. Shoreline ideas should be reviewed separately\n          from local building approvals and before they are assumed in the\n          project scope.\n        </p>\n      </article>\n      <article>\n        <span class=\"services-number\" aria-hidden=\"true\">02</span>\n        <h3>Jurisdiction and utilities</h3>\n        <p>\n          A Lake Norman address may fall within Mecklenburg, Iredell, Lincoln,\n          or Catawba County and may also be inside a town’s planning\n          jurisdiction. Confirming the reviewing authorities, water and sewer\n          availability, or septic requirements is an essential early step.\n        </p>\n      </article>\n      <article>\n        <span class=\"services-number\" aria-hidden=\"true\">03</span>\n        <h3>Topography, water, and access</h3>\n        <p>\n          Sloped sites can create opportunities for views and lower-level living\n          while adding complexity to grading, retaining, foundations, drainage,\n          staging, and driveway design. These elements should be priced and\n          coordinated as part of the home—not treated as an afterthought.\n        </p>\n      </article>\n    </div>\n    <div class=\"area-prose\">\n      <p>\n        Official planning resources:\n        <a\n          href=\"https://www.duke-energy.com/community/lakes/services/cw-shoreline-management-plan\"\n          rel=\"noopener\"\n          target=\"_blank\"\n          >Duke Energy shoreline guidance</a\n        >,\n        <a\n          href=\"https://code.mecknc.gov/permitting\"\n          rel=\"noopener\"\n          target=\"_blank\"\n          >Mecklenburg County permitting</a\n        >, and\n        <a\n          href=\"https://iredellcountync.gov/235/Central-Permitting-Division\"\n          rel=\"noopener\"\n          target=\"_blank\"\n          >Iredell County Central Permitting</a\n        >.\n      </p>\n    </div>\n  </section>\n  <section\n    id=\"area-detail-2\"\n    class=\"services-wrap legacy-focus area-content\"\n    aria-labelledby=\"area-detail-2-title\"\n  >\n    <div class=\"legacy-focus__intro\">\n      <p class=\"services-eyebrow\">Details That Support Lake Living</p>\n      <h2 id=\"area-detail-2-title\">\n        Plan the experience from the water to the front door\n      </h2>\n    </div>\n    <div class=\"area-prose\">\n      <p>\n        A lake home works best when arrival, everyday circulation, entertaining,\n        storage, and outdoor transitions are considered together. The design may\n        need to accommodate wet-room storage, water-sports equipment, screened\n        living, durable exterior materials, generous glazing, shaded terraces,\n        and service access without compromising the architecture.\n      </p>\n    </div>\n    <div class=\"area-prose\">\n      <p>\n        Building-envelope decisions are equally important. Exposure, wind-driven\n        rain, solar heat, humidity, and the many transitions around expansive\n        windows and outdoor spaces reward careful detailing and disciplined\n        field execution.\n      </p>\n    </div>\n  </section>\n  <section\n    id=\"lake-process\"\n    class=\"services-planning\"\n    aria-labelledby=\"lake-process-title\"\n  >\n    <div class=\"services-wrap\">\n      <div class=\"legacy-approach__heading\">\n        <p class=\"services-eyebrow\">A Disciplined Process</p>\n        <h2 id=\"lake-process-title\">\n          From property questions to a finished Lake Norman home\n        </h2>\n      </div>\n      <ol class=\"legacy-steps\">\n        <li>\n          <span class=\"services-number\" aria-hidden=\"true\">01</span>\n          <div>\n            <h3>Property discovery</h3>\n            <p>\n              We review goals, survey information, access, utilities, visible\n              constraints, and the questions that need answers from local\n              authorities or consultants.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span class=\"services-number\" aria-hidden=\"true\">02</span>\n          <div>\n            <h3>Design collaboration</h3>\n            <p>\n              We coordinate with architects, engineers, and specialty partners\n              so the home, site work, building systems, allowances, and approval\n              path remain aligned.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span class=\"services-number\" aria-hidden=\"true\">03</span>\n          <div>\n            <h3>Preconstruction</h3>\n            <p>\n              Scope, selections, pricing, procurement, schedule, and logistics\n              are developed before field work begins.\n            </p>\n          </div>\n        </li>\n        <li>\n          <span class=\"services-number\" aria-hidden=\"true\">04</span>\n          <div>\n            <h3>Build and closeout</h3>\n            <p>\n              Consistent field leadership and communication carry the project\n              through construction, detailed completion, and turnover.\n            </p>\n          </div>\n        </li>\n      </ol>\n    </div>\n  </section>\n  <section\n    id=\"lake-faq\"\n    class=\"services-wrap services-questions\"\n    aria-labelledby=\"lake-faq-title\"\n  >\n    <div>\n      <p class=\"services-eyebrow\">Lake Norman Builder FAQs</p>\n      <h2 id=\"lake-faq-title\">\n        Questions to ask before building near the lake\n      </h2>\n    </div>\n    <div class=\"services-faq\">\n      <details>\n        <summary>Who permits a custom home on Lake Norman?</summary>\n        <p>\n          The answer depends on the property. County building departments, town\n          planning departments, environmental health, utility providers, and\n          Duke Energy shoreline management may each have a role. The\n          jurisdiction and scope should be confirmed for the exact parcel.\n        </p>\n      </details>\n      <details>\n        <summary>Does a dock permit cover the house?</summary>\n        <p>\n          No. Shoreline or lake-use approvals are separate from zoning,\n          building, trade, septic, and other land-development permits. A\n          coordinated plan should track each approval path.\n        </p>\n      </details>\n      <details>\n        <summary>Can you evaluate a waterfront lot before we buy?</summary>\n        <p>\n          Yes. Early review can identify questions related to survey\n          information, slope, access, utilities, septic, drainage, shoreline\n          conditions, and design feasibility. Additional due diligence may\n          require surveyors, engineers, environmental professionals, or\n          reviewing authorities.\n        </p>\n      </details>\n      <details>\n        <summary>What makes a sloped lake lot more complex?</summary>\n        <p>\n          Grading, retaining walls, foundation design, erosion control, driveway\n          slope, construction access, and water management can materially affect\n          design, cost, and schedule. Addressing them during feasibility and\n          design creates a better foundation for decisions.\n        </p>\n      </details>\n      <details>\n        <summary>Do you build away from the waterfront, too?</summary>\n        <p>\n          Yes. We work with clients considering waterfront, water-view, wooded,\n          neighborhood, and acreage properties throughout the Lake Norman area.\n        </p>\n      </details>\n    </div>\n  </section>\n  <section class=\"services-closing\" aria-labelledby=\"area-cta-title\">\n    <div class=\"services-wrap services-closing__grid\">\n      <div>\n        <p class=\"services-eyebrow\">Begin with Verity</p>\n        <h2 id=\"area-cta-title\">\n          Begin with the property, the vision, and the right questions\n        </h2>\n        <p>\n          Share your property location, project goals, and current stage. Our\n          team will help identify the right next step.\n        </p>\n      </div>\n      <a\n        class=\"services-button js-verity-project-modal\"\n        href=\"#verity-project-modal\"\n        >Start Your Project <span aria-hidden=\"true\">↗</span></a\n      >\n    </div>\n  </section>\n  <section class=\"services-wrap area-related\" aria-labelledby=\"related-title\">\n    <h2 id=\"related-title\">Explore nearby service areas</h2>\n    <nav class=\"services-jump\" aria-label=\"Related service areas\">\n      <a href=\"/custom-home-builder-in-charlotte-nc/\"\n        >Charlotte, NC <span aria-hidden=\"true\">→</span></a\n      >\n      <a href=\"/north-mecklenburg-iredell-builder/\"\n        >North Mecklenburg &amp; Iredell <span aria-hidden=\"true\">→</span></a\n      >\n      <a href=\"/about/#areas-we-serve\"\n        >About Verity <span aria-hidden=\"true\">→</span></a\n      >\n    </nav>\n  </section>\n</main>\n"
   ]
 }

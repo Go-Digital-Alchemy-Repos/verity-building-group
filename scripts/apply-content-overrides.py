@@ -62,6 +62,9 @@ for path in (ROOT / 'src/content/pages').glob('*.json'):
             for meta in record["meta"]:
                 if meta.get("name") == "description" or meta.get("property") == "og:description":
                     meta["content"] = "Explore land development, custom home construction, and community-focused Legacy Projects with Verity Building Group in Charlotte and Lake Norman."
+    seo_override = ROOT / "src/content/overrides" / (path.stem + ".seo.json")
+    if seo_override.exists():
+        record.update(json.loads(seo_override.read_text()))
     result = json.dumps(record, indent=2, ensure_ascii=False)
     assert 'commercial' not in result.lower(), f'Unreviewed reference in {path.name}'
     path.write_text(result)

@@ -1,0 +1,150 @@
+{
+  "title": "North Mecklenburg & Iredell Custom Home Builder | Verity",
+  "meta": [
+    {
+      "name": "robots",
+      "content": "max-image-preview:large, noindex, nofollow"
+    },
+    {
+      "property": "og:locale",
+      "content": "en_US"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:url",
+      "content": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/"
+    },
+    {
+      "property": "og:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "property": "og:title",
+      "content": "North Mecklenburg & Iredell Custom Home Builder | Verity"
+    },
+    {
+      "property": "og:description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Verity Building Group"
+    },
+    {
+      "property": "og:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    },
+    {
+      "name": "twitter:title",
+      "content": "North Mecklenburg & Iredell Custom Home Builder | Verity"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group."
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    }
+  ],
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#webpage",
+          "url": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/",
+          "name": "North Mecklenburg & Iredell Custom Home Builder | Verity",
+          "description": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group.",
+          "inLanguage": "en-US",
+          "breadcrumb": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#breadcrumb"
+          },
+          "mainEntity": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#service",
+          "name": "Custom Home Builder in North Mecklenburg & Iredell",
+          "url": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/",
+          "description": "Custom homes, renovations, and land development in Cornelius, Davidson, Huntersville, and Mooresville. Plan your project with Verity Building Group.",
+          "serviceType": [
+            "Custom home construction",
+            "Residential renovation",
+            "Land development"
+          ],
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://veritybuildstg.wpenginepowered.com/#organization",
+            "name": "Verity Building Group",
+            "url": "https://veritybuildstg.wpenginepowered.com/"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Cornelius, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Davidson, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Huntersville, North Carolina"
+            },
+            {
+              "@type": "City",
+              "name": "Mooresville, North Carolina"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Iredell County, North Carolina"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://veritybuildstg.wpenginepowered.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Areas we serve",
+              "item": "https://veritybuildstg.wpenginepowered.com/about/#areas-we-serve"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "North Mecklenburg & Iredell",
+              "item": "https://veritybuildstg.wpenginepowered.com/north-mecklenburg-iredell-builder/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

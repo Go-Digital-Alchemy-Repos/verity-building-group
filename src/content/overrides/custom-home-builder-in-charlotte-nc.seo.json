@@ -1,0 +1,134 @@
+{
+  "title": "Custom Home Builder in Charlotte, NC | Verity Building Group",
+  "meta": [
+    {
+      "name": "robots",
+      "content": "max-image-preview:large, noindex, nofollow"
+    },
+    {
+      "property": "og:locale",
+      "content": "en_US"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:url",
+      "content": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/"
+    },
+    {
+      "property": "og:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "description",
+      "content": "Build a custom home or plan a major renovation in Charlotte, NC with Verity. Explore homesite review, preconstruction, and coordinated construction."
+    },
+    {
+      "property": "og:title",
+      "content": "Custom Home Builder in Charlotte, NC | Verity Building Group"
+    },
+    {
+      "property": "og:description",
+      "content": "Build a custom home or plan a major renovation in Charlotte, NC with Verity. Explore homesite review, preconstruction, and coordinated construction."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Verity Building Group"
+    },
+    {
+      "property": "og:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    },
+    {
+      "name": "twitter:title",
+      "content": "Custom Home Builder in Charlotte, NC | Verity Building Group"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Build a custom home or plan a major renovation in Charlotte, NC with Verity. Explore homesite review, preconstruction, and coordinated construction."
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:image:alt",
+      "content": "Custom home editorial concept; not a completed Verity project."
+    }
+  ],
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/#webpage",
+          "url": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/",
+          "name": "Custom Home Builder in Charlotte, NC | Verity Building Group",
+          "description": "Build a custom home or plan a major renovation in Charlotte, NC with Verity. Explore homesite review, preconstruction, and coordinated construction.",
+          "inLanguage": "en-US",
+          "breadcrumb": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/#breadcrumb"
+          },
+          "mainEntity": {
+            "@id": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/#service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/#service",
+          "name": "Custom Home Builder in Charlotte, NC",
+          "url": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/",
+          "description": "Build a custom home or plan a major renovation in Charlotte, NC with Verity. Explore homesite review, preconstruction, and coordinated construction.",
+          "serviceType": [
+            "Custom home construction",
+            "Residential renovation",
+            "Land development"
+          ],
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://veritybuildstg.wpenginepowered.com/#organization",
+            "name": "Verity Building Group",
+            "url": "https://veritybuildstg.wpenginepowered.com/"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Charlotte, North Carolina"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://veritybuildstg.wpenginepowered.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Areas we serve",
+              "item": "https://veritybuildstg.wpenginepowered.com/about/#areas-we-serve"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Charlotte, NC",
+              "item": "https://veritybuildstg.wpenginepowered.com/custom-home-builder-in-charlotte-nc/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -37,6 +37,7 @@ Set runtime environment variables through your shell or Railway. Never commit ac
 Astro 7 with the official Node adapter was selected because the site is primarily editorial and needs server-rendered HTML, straightforward file editing, reusable chrome, small native interaction scripts, and a server-side inquiry endpoint. React hydration and a database are unnecessary.
 
 - `src/content/pages/*.json`: one document per public route. `sections` are sanitized, browser-normalized HTML fragments, retaining formatting and image associations. A split between sections inserts the shared inquiry form. Edit text, links and headings directly, without WordPress shortcodes or block comments.
+- Area-page overrides (`custom-home-builder-in-charlotte-nc`, `lake-norman-custom-home-builder`, `north-mecklenburg-iredell-builder`) have editable `.html` and `.seo.json` files in `src/content/overrides/`. The SEO files own titles, descriptions, social metadata and structured data. Reapply the override script after editing. Run `pnpm test:seo` against the running site; see `docs/AREA_SEO.md` for launch and validation details.
 - `src/content/overrides/about.html`: editable About page, including fully linked area cards; page styling is in `src/styles/about.css`.
 - `src/content/overrides/custom-home-builder-charlotte-nc.html`: editable Custom Homes page; shares the service detail layout and styles.
 - `src/content/overrides/land-development-charlotte-nc.html`: editable Land Development page; shares the Legacy Projects layout and styles.

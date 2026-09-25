@@ -7,6 +7,7 @@ import "../styles/site.css";
 import "../styles/services.css";
 import "../styles/legacy.css";
 import "../styles/about.css";
+import "../styles/areas.css";
 import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
@@ -51,7 +52,10 @@ function localizeStructuredData(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(localizeStructuredData);
   if (value !== null && typeof value === "object") {
     return Object.fromEntries(
-      Object.entries(value).map(([key, item]) => [key, localizeStructuredData(item)]),
+      Object.entries(value).map(([key, item]) => [
+        key,
+        localizeStructuredData(item),
+      ]),
     );
   }
   return value;
@@ -72,12 +76,15 @@ function localizeStructuredData(value: unknown): unknown {
     {meta
       .filter((m) => m.name !== "robots")
       .map((m) => (
-        <meta {...m} content={metadataValue(m.content || "")} />
+        <meta {...{ ...m, content: metadataValue(m.content || "") }} />
       ))}
     {schema.map((s) => (
       <script
         type="application/ld+json"
-        set:html={JSON.stringify(localizeStructuredData(s)).replaceAll("<", "\\u003c")}
+        set:html={JSON.stringify(localizeStructuredData(s)).replaceAll(
+          "<",
+          "\\u003c",
+        )}
       ></script>
     ))}
   </head>
