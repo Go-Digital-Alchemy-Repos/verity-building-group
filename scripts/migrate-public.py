@@ -34,7 +34,7 @@ def asset(url):
 
 def urls(text):
  text=re.sub(r'url\(([\s\S]*?)\)',lambda m:'url("'+asset(m.group(1))+'")',text)
- return classes(text.replace(BASE,''))
+ return classes(text)
 def clean(node):
  if not node:return ''
  for x in list(node.find_all(string=lambda t:isinstance(t,Comment))):x.extract()
@@ -52,7 +52,7 @@ def clean(node):
   for key in list(x.attrs):
    if key.startswith('on') or key in ['data-settings','data-formid','data-post-id','data-lazy-src','data-lazy-srcset']:del x[key]
   if x.get('class'):
-   x['class']=[classes(c) for c in x['class'] if not re.match(r'^(wp-|post-\d|page-id-|menu-item-\d)',c)]
+   x['class']=[classes(c) for c in x['class'] if not re.match(r'^(wp-|post-\d|page-id-|menu-item-\d)',classes(c))]
   if x.get('style'):x['style']=urls(x['style'])
   for k in ['src','poster']:
    if x.get(k):x[k]=asset(x[k])

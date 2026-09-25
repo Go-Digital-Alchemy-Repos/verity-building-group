@@ -75,7 +75,7 @@ select:focus-visible {
 .inquiry-fields {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 20px 16px;
+  gap: 16px 2%;
 }
 .inquiry-fields > div,
 .inquiry-fields > fieldset {
@@ -88,7 +88,7 @@ select:focus-visible {
 .inquiry-name {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 2%;
 }
 .inquiry-form label,
 .inquiry-form legend {
@@ -279,4 +279,23 @@ select:focus-visible {
 }
 .main-navigation a[aria-current="page"] {
   color: #b89b5e;
+}
+
+/* Match the compact source form grid, including its final empty row gap. */
+.js-enabled .inquiry-form:not(.is-expanded) .inquiry-fields {
+  padding-bottom: 16px;
+}
+.entry-content
+  .inquiry-form
+  input:not([type="radio"]):not([type="hidden"]):not([type="file"]),
+.entry-content .inquiry-form select,
+.entry-content .inquiry-form textarea {
+  padding: 8px;
+  font-size: 15px;
+}
+@media (max-width: 640px) {
+  .inquiry-name {
+    gap: 8px;
+    padding-bottom: 8px;
+  }
 }

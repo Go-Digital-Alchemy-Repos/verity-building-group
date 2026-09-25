@@ -1,0 +1,21 @@
+# Migration validation — 2026-09-25
+
+## Evidence
+
+- Astro production build succeeds; Node standalone server exercised locally on port 4322.
+- Astro check: 20 files, zero errors/warnings/hints. ESLint passes. Seven contact endpoint tests pass (mock delivery only).
+- Public inventory: 19 pages, 3 posts, 6 category archives, 6 tag archives = 34 rendered routes. Obsolete commercial service URL intentionally redirects to root. See route and redirect manifests.
+- Browser comparisons across all 34 routes at 1440, 768 and 390 pixel widths: meaningful content present, no horizontal overflow or broken migrated images. Most route main-content heights match exactly; heading/image/layout reference screenshots were inspected at representative breakpoints.
+- Mobile menu open/Escape, project dialog open/Escape, progressive fields, primary gallery filters and empty-category state verified in browser. Browser warning/error log was empty for checked local interactions.
+- Expanded route checker covers server HTML, metadata, internal links, src/srcset, stylesheet assets, structured-data images, redirects, slash normalization, sitemap, robots, health and genuine 404 status. Railway independently passed: 34 routes, 104 asset references, 28 internal linked paths, zero failures.
+- GitHub published tree matched reviewed local tree SHA `bcdd8fcda388a14bca566ce0ec2fa5646f90d973` before final spacing/documentation refinements. No database/backup/env/credential files staged.
+
+## Limits and production gates
+
+- The deployed HTTPS proxy required an exact trusted-host entry for Astro origin validation; fixed without disabling origin checks.
+- No real inquiry was delivered: endpoint intentionally returns unavailable until private delivery configuration is supplied. Provider acceptance and actual mailbox receipt require an authorized end-to-end test after configuration.
+- Contact compact field spacing was corrected to source measurements. Small remaining differences on homepage/legacy home are not certified pixel-perfect; independently licensed font rendering and interface glyphs can differ from the original kits.
+- Reduced-motion behavior is implemented and reviewed in CSS/JS; OS-level preference switching was not exercised in this browser tool.
+- Native carousel physics differs by browser from Swiper; slide sizing, gaps, free scrolling and single-slide controls are reproduced.
+- No source form submitted, private record migrated, production setting changed, or production domain attached.
+- Owner must approve production domain/DNS/indexing cutover separately, confirm business email, and configure/test inquiry delivery.

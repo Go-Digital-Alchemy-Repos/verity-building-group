@@ -22,15 +22,15 @@ HOST=0.0.0.0 PORT=3000 pnpm start
 
 Set runtime environment variables through your shell or Railway. Never commit actual values. `.env.example` contains names only.
 
-| Variable                | Purpose                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------- |
-| `SITE_URL`              | Canonical origin, such as the Railway HTTPS staging URL. Required for the form origin check on Railway. |
-| `INDEXABLE`             | Only `true` enables indexing. Omit on staging to preserve source noindex/nofollow and robots disallow.  |
-| `HOST`                  | `0.0.0.0` for production; already set in Dockerfile.                                                    |
-| `PORT`                  | Supplied by Railway; local production defaults to adapter default if omitted.                           |
+| Variable                | Purpose                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------- |
+| `SITE_URL`              | Canonical origin, such as the Railway HTTPS staging URL. Required for the form origin check on Railway.  |
+| `INDEXABLE`             | Only `true` enables indexing. Omit on staging to preserve source noindex/nofollow and robots disallow.   |
+| `HOST`                  | `0.0.0.0` for production; already set in Dockerfile.                                                     |
+| `PORT`                  | Supplied by Railway; local production defaults to adapter default if omitted.                            |
 | `CONTACT_FORM_SECRET`   | Random secret at least 32 characters; used to sign expiring form tokens. Configure privately in Railway. |
-| `CONTACT_WEBHOOK_URL`   | Your HTTPS inquiry-delivery endpoint accepting multipart fields and attachments.                        |
-| `CONTACT_WEBHOOK_TOKEN` | Optional bearer token for that endpoint.                                                                |
+| `CONTACT_WEBHOOK_URL`   | Your HTTPS inquiry-delivery endpoint accepting multipart fields and attachments.                         |
+| `CONTACT_WEBHOOK_TOKEN` | Optional bearer token for that endpoint.                                                                 |
 
 ## Architecture and editing
 
@@ -85,7 +85,7 @@ Route validation checks all 34 migrated routes for successful meaningful HTML, t
 
 ## Railway staging
 
-Use the Digital Alchemy organization and its existing Pro plan. Create a project/service from `Go-Digital-Alchemy-Repos/verity-building-group`, name the environment `staging`, and deploy `main`. `railway.json` selects the Dockerfile and `/health.json` health check. Docker copies only standalone source, public assets and the asset manifest; the raw WordPress tree, backups and local artifacts never enter the image.
+Use the Digital Alchemy organization and its existing Pro plan. Create a project/service from `Go-Digital-Alchemy-Repos/verity-building-group`, name the environment `staging`, and deploy `main`. The service uses the Dockerfile builder, `/health.json` health check, one replica, and three on-failure retries. These were configured in Railway directly because its dashboard reports that new services cannot opt into legacy Config as Code; `railway.json` remains a documented legacy equivalent. Docker copies only standalone source, public assets and the public content/asset manifests; the raw WordPress tree, backups and local artifacts never enter the image.
 
 Generate a Railway domain, set `SITE_URL` to that HTTPS origin, leave `INDEXABLE` unset, and configure the inquiry variables privately. The server uses Railway's supplied `PORT` and binds `0.0.0.0`. Do not attach or change production domains/DNS during staging.
 
@@ -100,3 +100,16 @@ Titles, descriptions, Open Graph/Twitter fields and relevant JSON-LD are derived
 Read `docs/AUDIT.md`, `docs/public-inventory.json`, `docs/assets.json`, and `docs/licenses/`. Fonts are independently packaged SIL Open Font License versions of Lato, Open Sans and Cormorant Garamond; Adobe font binaries and Font Awesome Pro binaries are not copied. The source theme's GPL license is retained for derived design code. Website imagery is owner-authorized source material; no additional stock-image rights have been inferred.
 
 Legacy WordPress files from the earlier backup import remain local and ignored. They are neither deployed nor committed. Do not run their imported configuration.
+
+## Deployed staging
+
+- Website: https://verity-building-group-staging-staging.up.railway.app/
+- Workspace: Digital Alchemy (existing Pro plan).
+- Project: Verity Building Group; environment: staging; service: verity-building-group-staging.
+- Repository: https://github.com/Go-Digital-Alchemy-Repos/verity-building-group
+- Configured: `SITE_URL` and `PORT=3000`; Docker supplies `HOST=0.0.0.0`.
+- Inquiry delivery remains unavailable until the owner supplies the business destination and privately configures `CONTACT_FORM_SECRET`, `CONTACT_WEBHOOK_URL`, and optionally `CONTACT_WEBHOOK_TOKEN`.
+
+Astro's trusted-host list in `astro.config.mjs` includes the exact staging hostname and localhost; add an approved production hostname there and rebuild during cutover. Origin validation remains enabled.
+
+No production cutover has been performed. See `docs/VALIDATION.md` for evidence and limitations.

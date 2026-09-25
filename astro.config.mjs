@@ -4,6 +4,16 @@ export default defineConfig({
   output: "server",
   adapter: node({ mode: "standalone" }),
   trailingSlash: "ignore",
+  security: {
+    allowedDomains: [
+      {
+        hostname: "verity-building-group-staging-staging.up.railway.app",
+        protocol: "https",
+      },
+      { hostname: "localhost", protocol: "http" },
+      { hostname: "127.0.0.1", protocol: "http" },
+    ],
+  },
   server: { host: "0.0.0.0" },
   devToolbar: { enabled: false },
 });

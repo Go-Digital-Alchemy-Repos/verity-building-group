@@ -1,23 +1,24 @@
 # Standalone migration plan
 
-Objective: reproduce the published staging website faithfully in a standalone Astro/Node application, then push to the provided GitHub repository and deploy Railway staging. WP Engine and production DNS remain read-only.
+Objective: faithfully reproduce the published website as a standalone Astro/Node application, publish to the supplied GitHub repository, and deploy Railway staging. Production DNS and WP Engine remain unchanged.
 
 ## Status
-- AUDIT-01: Public REST, sitemap, link, metadata and asset inventory captured; responsive browser reference capture in progress.
-- AUDIT-02: Read-only theme audit completed by specialist; no child theme or custom post types found.
-- BUILD-01: Planned: Astro components, file-based public content, local assets, native interactions.
-- FORM-01: Planned: standalone validation and real environment-configured delivery, honest unavailable state until configured.
-- QA-01: Planned: build, types, lint, route/link/SEO checks and responsive comparisons.
-- DEPLOY-01: Planned: GitHub push, Railway staging deployment and independent checks; no production cutover.
 
-## Constraints and ownership
-Project Orchestrator owns implementation and integration. Specialist theme audit is read-only and complete. No private database content, users, submissions, drafts, credentials, or backups enter the standalone implementation or Git. Existing imported files are retained locally and excluded from deployment.
+- AUDIT-01/02 complete: public route/content/SEO/asset inventory and read-only theme audit.
+- BUILD-01 complete: 34 routes, 65 public assets, shared chrome/forms, native interactions, file-based content.
+- FORM-01 implementation complete: validation, spam controls and HTTPS delivery boundary; actual delivery awaits owner destination/provider configuration.
+- REVIEW-01/FIX-02 complete: independent review corrected structured-data asset URLs, confirmation view, carousel behavior and reveal delays.
+- QA-01: local build/check/lint/tests and route checks pass; all 34 routes compared in browsers at 1440, 768 and 390 pixels. Final deployment checks recorded in docs/VALIDATION.md.
+- DEPLOY-01: implementation published to GitHub; Digital Alchemy Pro project uses isolated staging environment and generated Railway domain.
 
-## Decisions
-Astro with Node standalone adapter supports meaningful server-rendered HTML, reusable components, file-based content, server-side form handling and Railway PORT binding. Existing WordPress source is a reference only. Public source markup will be normalized into editable page sections and shared navigation/footer components; all WordPress scripts and plugin runtime are replaced.
+## Architecture and ownership
 
-## Known risks
-- Adobe font service and Font Awesome Pro kit cannot be copied under an assumed self-host license. Use independently licensed upstream fonts and original simple interface icons.
-- Public source contains stale linked commercial route and duplicate homepage; final route resolution must distinguish redirects from actual pages.
-- Mail delivery and Railway access need configured external accounts; no fabricated success states or unapproved purchases.
-- Raw imported credentials/database were saved in the prior import; keep untouched, ignored, and excluded from Docker context.
+Orchestrator owns integration. Specialist work is completed and reviewed. Astro Node server renders primary content without client JavaScript; no database or CMS runtime. Content is maintained in repository JSON documents. Local imported WordPress files are ignored and excluded from Docker. Public asset mapping is explicit; only published referenced assets are deployed.
+
+## Remaining owner input
+
+Real inquiry destination/provider and private delivery variables. Source email address is a WP Engine staging address and remains unchanged pending correction. Production domain/DNS/indexing changes require explicit approval.
+
+## Accepted differences
+
+Owner-approved repairs of 12 missing gallery photos; licensed font distributions and simple interface glyphs; accessible focus/reduced-motion behavior; bounded combined attachment request. Minor legacy-page typography/spacing differences remain documented, not represented as pixel-perfect acceptance.
