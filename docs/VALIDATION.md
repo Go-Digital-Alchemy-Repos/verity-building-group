@@ -18,4 +18,4 @@
 - Reduced-motion behavior is implemented and reviewed in CSS/JS; OS-level preference switching was not exercised in this browser tool.
 - Native carousel physics differs by browser from Swiper; slide sizing, gaps, free scrolling and single-slide controls are reproduced.
 - No source form submitted, private record migrated, production setting changed, or production domain attached.
-- Owner must approve production domain/DNS/indexing cutover separately, confirm business email, and configure/test inquiry delivery.
+- Owner must approve production domain/DNS/indexing cutover separately, configure/test inquiry delivery. Business email was subsequently confirmed as info@veritybuildinggroup.com.

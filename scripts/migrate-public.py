@@ -68,7 +68,7 @@ def clean(node):
   if x.name=='img':x['decoding']='async'
   if x.name=='i' and any(c.startswith('fa-') for c in x.get('class',[])):
    cs=x.get('class',[]);x.name='span';x['class']=['interface-icon'];x['aria-hidden']='true';x.string='→' if any('arrow' in c for c in cs) else '✉' if any('envelope' in c for c in cs) else '✓'
- return urls(str(node))
+ return urls(str(node)).replace('info@veritybuildstg.wpenginepowered.com', 'info@veritybuildinggroup.com')
 
 home=BeautifulSoup((SOURCE/'home.html').read_text(),'html5lib')
 # Shared source-derived design CSS; build-time only, no WordPress theme runtime.

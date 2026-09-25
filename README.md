@@ -108,7 +108,7 @@ Legacy WordPress files from the earlier backup import remain local and ignored. 
 - Project: Verity Building Group; environment: staging; service: verity-building-group-staging.
 - Repository: https://github.com/Go-Digital-Alchemy-Repos/verity-building-group
 - Configured: `SITE_URL` and `PORT=3000`; Docker supplies `HOST=0.0.0.0`.
-- Inquiry delivery remains unavailable until the owner supplies the business destination and privately configures `CONTACT_FORM_SECRET`, `CONTACT_WEBHOOK_URL`, and optionally `CONTACT_WEBHOOK_TOKEN`.
+- Inquiry delivery remains unavailable for the confirmed destination `info@veritybuildinggroup.com` until the owner privately configures `CONTACT_FORM_SECRET`, `CONTACT_WEBHOOK_URL`, and optionally `CONTACT_WEBHOOK_TOKEN`.
 
 Astro's trusted-host list in `astro.config.mjs` includes the exact staging hostname and localhost; add an approved production hostname there and rebuild during cutover. Origin validation remains enabled.
 

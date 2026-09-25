@@ -6,7 +6,7 @@ Objective: faithfully reproduce the published website as a standalone Astro/Node
 
 - AUDIT-01/02 complete: public route/content/SEO/asset inventory and read-only theme audit.
 - BUILD-01 complete: 34 routes, 65 public assets, shared chrome/forms, native interactions, file-based content.
-- FORM-01 implementation complete: validation, spam controls and HTTPS delivery boundary; actual delivery awaits owner destination/provider configuration.
+- FORM-01 implementation complete: validation, spam controls and HTTPS delivery boundary; destination confirmed as info@veritybuildinggroup.com; actual delivery awaits provider configuration.
 - REVIEW-01/FIX-02 complete: independent review corrected structured-data asset URLs, confirmation view, carousel behavior and reveal delays.
 - QA-01: local build/check/lint/tests and route checks pass; all 34 routes compared in browsers at 1440, 768 and 390 pixels. Final deployment checks recorded in docs/VALIDATION.md.
 - DEPLOY-01: implementation published to GitHub; Digital Alchemy Pro project uses isolated staging environment and generated Railway domain.
@@ -17,7 +17,7 @@ Orchestrator owns integration. Specialist work is completed and reviewed. Astro 
 
 ## Remaining owner input
 
-Real inquiry destination/provider and private delivery variables. Source email address is a WP Engine staging address and remains unchanged pending correction. Production domain/DNS/indexing changes require explicit approval.
+Business email confirmed as info@veritybuildinggroup.com; website links updated. Delivery provider and private variables remain required. Owner explicitly stated the site is not ready to launch. Production domain/DNS/indexing changes require explicit approval.
 
 ## Accepted differences
 
