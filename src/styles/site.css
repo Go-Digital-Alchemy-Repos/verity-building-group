@@ -300,9 +300,10 @@ select:focus-visible {
   }
 }
 
-/* Preserve spacing formerly applied to source pseudo-element copy. */
+/* Give the leadership copy room between the heading and values divider. */
 .home .team-section__content .delay-250 p {
   margin: 0;
+  padding-block: 24px 32px;
 }
 .contact-action {
   min-height: 60px;
