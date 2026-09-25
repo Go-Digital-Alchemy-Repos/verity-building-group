@@ -386,3 +386,50 @@ select:focus-visible {
     font-size: 30px;
   }
 }
+
+/* Insights: an editorial invitation to the published Field Guide archive. */
+.entry-content .field-guide-callout {
+  margin: 48px 0 0;
+  padding: clamp(28px, 5vw, 64px);
+  background: #203140;
+  color: #fff;
+  border-top: 4px solid #bd9854;
+}
+.entry-content .field-guide-callout__eyebrow {
+  margin: 0 0 18px;
+  color: #dec38f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.entry-content .field-guide-callout h2 {
+  max-width: 760px;
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.12;
+}
+.entry-content .field-guide-callout > p:not(.field-guide-callout__eyebrow) {
+  max-width: 680px;
+  margin: 0 0 28px;
+  color: #f2ece4;
+}
+.entry-content .field-guide-callout__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 52px;
+  padding: 12px 0;
+  border-bottom: 1px solid #bd9854;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.entry-content .field-guide-callout__link span { font-size: 28px; }
+.entry-content .field-guide-callout__link:hover { color: #dec38f; }
+.entry-content .field-guide-callout__link:focus-visible {
+  outline: 3px solid #dec38f;
+  outline-offset: 6px;
+}
