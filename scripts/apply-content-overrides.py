@@ -55,6 +55,13 @@ for path in (ROOT / 'src/content/pages').glob('*.json'):
             node.decompose()
         record['sections'][index] = str(soup)
     record = edit(record)
+    override = ROOT / "src/content/overrides" / (path.stem + ".html")
+    if override.exists():
+        record["sections"] = [override.read_text()]
+        if record["path"] == "/services/":
+            for meta in record["meta"]:
+                if meta.get("name") == "description" or meta.get("property") == "og:description":
+                    meta["content"] = "Explore land development, custom home construction, and community-focused Legacy Projects with Verity Building Group in Charlotte and Lake Norman."
     result = json.dumps(record, indent=2, ensure_ascii=False)
     assert 'commercial' not in result.lower(), f'Unreviewed reference in {path.name}'
     path.write_text(result)

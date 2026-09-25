@@ -25,3 +25,9 @@
 Owner requested removal of commercial offerings from all public copy. Updated page text, metadata and structured data; removed the portfolio filter and legacy home service card. The 33 remaining content routes preserve the original structure. The former commercial category permanently redirects to `/insights/` (with and without trailing slash); the existing discontinued service redirect remains. Historical source audit records remain unchanged. `scripts/apply-content-overrides.py` reapplies these approved edits after future imports.
 
 Validation for the residential-focus edit: production build, type check and lint passed. Local route validation passed for all 33 routes, 106 asset references and 35 links; every rendered page was scanned with no commercial references. Browser verification confirmed the remaining portfolio filters work.
+
+## Services redesign — September 25, 2026
+
+Replaced the duplicated title and dense opening with a split introduction, service jump navigation, three alternating photographic service sections, a coordinated-planning section, native FAQ disclosures and project inquiry calls to action. Existing service destinations, photographs and inquiry behavior remain. Editable HTML lives in `src/content/overrides/services.html`; scoped CSS uses the shared brand tokens. Import overrides preserve the design and revised metadata.
+
+Verified in-browser at 320, 390, 768 and 1440 CSS px: no horizontal overflow or broken service images, one H1, working jump links, keyboard FAQ expansion, inquiry modal opening and Escape closing with focus restoration. Desktop and mobile screenshots inspected. Build, type checking, lint and local route checks passed. No new animation was introduced. Screen-reader and browser zoom testing were not performed.
