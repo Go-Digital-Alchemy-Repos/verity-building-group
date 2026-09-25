@@ -114,3 +114,7 @@ header=clean(home.select_one('#masthead'));footer=clean(home.select_one('#coloph
 (ROOT/'docs/assets.json').write_text(json.dumps(assets,indent=2))
 (ROOT/'docs/missing-source-assets.json').write_text(json.dumps(missing,indent=2))
 print('Migrated',len(routes),'routes;',len(assets),'publicly referenced assets')
+
+# Reapply owner-approved content changes after importing historical source content.
+import sys
+subprocess.run([sys.executable, str(ROOT/"scripts/apply-content-overrides.py")], check=True)

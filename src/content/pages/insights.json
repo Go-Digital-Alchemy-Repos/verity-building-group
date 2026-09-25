@@ -10,7 +10,7 @@
     },
     {
       "name": "description",
-      "content": "Practical guidance for building, developing land, and renovating commercial spaces in Charlotte and Lake Norman."
+      "content": "Practical guidance for building, developing land, and renovating homes in Charlotte and Lake Norman."
     },
     {
       "property": "og:locale",
@@ -26,7 +26,7 @@
     },
     {
       "property": "og:description",
-      "content": "Practical guidance for building, developing land, and renovating commercial spaces in Charlotte and Lake Norman."
+      "content": "Practical guidance for building, developing land, and renovating homes in Charlotte and Lake Norman."
     },
     {
       "property": "og:url",
@@ -43,6 +43,6 @@
   ],
   "schema": [],
   "sections": [
-    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2005\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">The Verity Field Guide</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<figure class=\"vbg-editorial-image\"><img alt=\"Charlotte custom home with spring dogwood landscaping\" decoding=\"async\" src=\"/assets/468682d02a-verity-spring-custom-home-charlotte.webp\"/><figcaption>AI-generated editorial concept; not a completed Verity project.</figcaption></figure>\n<p class=\"eyebrow\">The Verity Field Guide</p>\n<h1>Practical perspective for better building decisions</h1>\n<p class=\"lead\">Weekly guidance for clients planning a custom home, evaluating land, or improving a commercial property in Charlotte, Lake Norman, and surrounding communities.</p>\n<p>New articles are scheduled for Fridays at 3:00 p.m. Eastern through April 2, 2027. Seasonal posts may acknowledge a U.S. holiday that falls within three days of publication when it offers a natural, useful connection to the topic.</p>\n<p><a href=\"/category/field-guide/\">Browse the latest Field Guide articles</a></p>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
+    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2005\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">The Verity Field Guide</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<figure class=\"vbg-editorial-image\"><img alt=\"Charlotte custom home with spring dogwood landscaping\" decoding=\"async\" src=\"/assets/468682d02a-verity-spring-custom-home-charlotte.webp\"/><figcaption>AI-generated editorial concept; not a completed Verity project.</figcaption></figure>\n<p class=\"eyebrow\">The Verity Field Guide</p>\n<h1>Practical perspective for better building decisions</h1>\n<p class=\"lead\">Weekly guidance for clients planning a custom home, evaluating land, or improving a home in Charlotte, Lake Norman, and surrounding communities.</p>\n<p>New articles are scheduled for Fridays at 3:00 p.m. Eastern through April 2, 2027. Seasonal posts may acknowledge a U.S. holiday that falls within three days of publication when it offers a natural, useful connection to the topic.</p>\n<p><a href=\"/category/field-guide/\">Browse the latest Field Guide articles</a></p>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
   ]
 }

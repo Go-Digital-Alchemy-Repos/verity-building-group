@@ -19,3 +19,9 @@
 - Native carousel physics differs by browser from Swiper; slide sizing, gaps, free scrolling and single-slide controls are reproduced.
 - No source form submitted, private record migrated, production setting changed, or production domain attached.
 - Owner must approve production domain/DNS/indexing cutover separately, configure/test inquiry delivery. Business email was subsequently confirmed as info@veritybuildinggroup.com.
+
+## Residential focus — September 25, 2026
+
+Owner requested removal of commercial offerings from all public copy. Updated page text, metadata and structured data; removed the portfolio filter and legacy home service card. The 33 remaining content routes preserve the original structure. The former commercial category permanently redirects to `/insights/` (with and without trailing slash); the existing discontinued service redirect remains. Historical source audit records remain unchanged. `scripts/apply-content-overrides.py` reapplies these approved edits after future imports.
+
+Validation for the residential-focus edit: production build, type check and lint passed. Local route validation passed for all 33 routes, 106 asset references and 35 links; every rendered page was scanned with no commercial references. Browser verification confirmed the remaining portfolio filters work.

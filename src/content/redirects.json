@@ -6,5 +6,7 @@
   "/wp-sitemap-taxonomies-category-1.xml": "/sitemap.xml",
   "/wp-sitemap-taxonomies-post_tag-1.xml": "/sitemap.xml",
   "/feed/": "/feed.xml",
-  "/comments/feed/": "/insights/"
+  "/comments/feed/": "/insights/",
+  "/category/commercial-construction-and-renovation/": "/insights/",
+  "/category/commercial-construction-and-renovation": "/insights/"
 }
