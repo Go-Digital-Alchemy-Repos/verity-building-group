@@ -1,0 +1,178 @@
+/* Shared editorial primitives come from services.css. */
+.legacy-page :is(#focus, #approach, #faq) {
+  scroll-margin-top: 150px;
+}
+.legacy-hero {
+  background: var(--color-cream);
+  padding-top: 64px;
+}
+.legacy-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-bottom: 64px;
+}
+.legacy-hero__copy h1 {
+  font-size: clamp(46px, 4.4vw, 64px);
+  margin-block: 24px;
+}
+.legacy-hero__copy > p:not(.services-eyebrow) {
+  font-size: 17px;
+  color: var(--services-muted);
+}
+.legacy-hero__copy .services-link {
+  max-width: 300px;
+}
+.legacy-hero__image {
+  margin: 0;
+}
+.legacy-hero__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+.legacy-hero__image figcaption {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--services-muted);
+  margin-top: 12px;
+}
+.legacy-focus {
+  padding-block: var(--services-space);
+}
+.legacy-focus__intro {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.legacy-focus__intro .services-eyebrow {
+  padding-top: 10px;
+}
+.legacy-focus__list article {
+  display: grid;
+  grid-template-columns: 60px 1fr 1.2fr;
+  gap: 32px;
+  align-items: baseline;
+  padding-block: 32px;
+  border-top: 1px solid var(--services-line);
+}
+.legacy-focus__list article:last-child {
+  border-bottom: 1px solid var(--services-line);
+}
+.legacy-focus__list h3 {
+  font-size: clamp(28px, 2.5vw, 36px);
+  max-width: 300px;
+}
+.legacy-focus__list p {
+  font-size: 17px;
+  color: var(--services-muted);
+}
+.legacy-page .legacy-note {
+  max-width: 860px;
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--services-muted);
+}
+.legacy-approach__heading h2 {
+  margin-top: 20px;
+}
+.legacy-page .legacy-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  margin-top: 48px;
+  padding: 0;
+  list-style: none;
+}
+.legacy-steps li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  border-top: 1px solid #5d6871;
+  padding-block: 32px;
+}
+.legacy-steps .services-number {
+  margin-top: 5px;
+}
+.legacy-steps h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.legacy-steps p {
+  font-size: 17px;
+  color: #dce0e2;
+  max-width: 440px;
+}
+@media (max-width: 960px) {
+  .legacy-hero__grid {
+    gap: 32px;
+  }
+  .legacy-hero__copy h1 {
+    font-size: 44px;
+  }
+  .legacy-hero__image img {
+    aspect-ratio: 4 / 5;
+  }
+  .legacy-focus__intro {
+    gap: 32px;
+  }
+  .legacy-focus__list article {
+    grid-template-columns: 32px 1fr 1.2fr;
+    gap: 24px;
+  }
+  .legacy-page .legacy-steps {
+    column-gap: 32px;
+  }
+  .legacy-steps li {
+    grid-template-columns: 28px 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .legacy-page :is(#focus, #approach, #faq) {
+    scroll-margin-top: 112px;
+  }
+  .legacy-hero {
+    padding-top: 40px;
+  }
+  .legacy-hero__grid {
+    grid-template-columns: 1fr;
+    padding-bottom: 32px;
+  }
+  .legacy-hero__copy h1 {
+    font-size: clamp(40px, 10vw, 54px);
+  }
+  .legacy-hero__image img {
+    aspect-ratio: 4 / 3;
+  }
+  .legacy-focus__intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .legacy-focus__list article {
+    grid-template-columns: 24px 1fr;
+    gap: 12px 20px;
+    padding-block: 24px;
+  }
+  .legacy-focus__list article p {
+    grid-column: 2;
+    font-size: 16px;
+  }
+  .legacy-page .legacy-steps {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+  .legacy-steps p {
+    font-size: 16px;
+  }
+  .legacy-steps li:last-child {
+    padding-bottom: 0;
+  }
+}

@@ -31,3 +31,9 @@ Validation for the residential-focus edit: production build, type check and lint
 Replaced the duplicated title and dense opening with a split introduction, service jump navigation, three alternating photographic service sections, a coordinated-planning section, native FAQ disclosures and project inquiry calls to action. Existing service destinations, photographs and inquiry behavior remain. Editable HTML lives in `src/content/overrides/services.html`; scoped CSS uses the shared brand tokens. Import overrides preserve the design and revised metadata.
 
 Verified in-browser at 320, 390, 768 and 1440 CSS px: no horizontal overflow or broken service images, one H1, working jump links, keyboard FAQ expansion, inquiry modal opening and Escape closing with focus restoration. Desktop and mobile screenshots inspected. Build, type checking, lint and local route checks passed. No new animation was introduced. Screen-reader and browser zoom testing were not performed.
+
+## Legacy Projects redesign — September 25, 2026
+
+Rebuilt the page with shared Services editorial styling, an introductory photograph, three focus-area rows, a four-step approach, native FAQs and contact links. Removed the entire confidential initiative announcement, its coming-soon line and the related private-project FAQ. Kept the image's editorial-concept disclosure and partnership qualifications. Existing `#focus`, `#approach` and `#faq` links remain.
+
+Validated desktop layout, mobile/tablet reflow at 320, 390 and 768 CSS px, one H1, approach anchor navigation and keyboard FAQ expansion. Build, type checking, lint and local route validation passed. No new motion or form behavior introduced; screen-reader and browser zoom testing not performed. The editable override is `src/content/overrides/legacy-projects.html`, with page-specific styling in `src/styles/legacy.css`.
