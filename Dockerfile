@@ -1,0 +1,19 @@
+FROM node:24-alpine AS build
+WORKDIR /app
+RUN corepack enable && corepack prepare pnpm@11.19.0 --activate
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
+COPY astro.config.mjs tsconfig.json ./
+COPY src ./src
+COPY public ./public
+COPY docs/assets.json docs/public-inventory.json ./docs/
+RUN pnpm build
+FROM node:24-alpine
+WORKDIR /app
+ENV NODE_ENV=production HOST=0.0.0.0
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package.json ./package.json
+USER node
+EXPOSE 3000
+CMD ["node","dist/server/entry.mjs"]

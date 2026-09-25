@@ -1,0 +1,48 @@
+{
+  "path": "/case-studies/",
+  "title": "Case Studies – Verity Building Group",
+  "bodyClass": "page",
+  "canonical": "https://veritybuildstg.wpenginepowered.com/case-studies/",
+  "meta": [
+    {
+      "name": "robots",
+      "content": "max-image-preview:large, noindex, nofollow"
+    },
+    {
+      "name": "description",
+      "content": "Explore forthcoming Verity Building Group case studies for custom homes, land development and commercial construction in Charlotte and Lake Norman."
+    },
+    {
+      "property": "og:locale",
+      "content": "en_US"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Case Studies – Verity Building Group"
+    },
+    {
+      "property": "og:description",
+      "content": "Explore forthcoming Verity Building Group case studies for custom homes, land development and commercial construction in Charlotte and Lake Norman."
+    },
+    {
+      "property": "og:url",
+      "content": "https://veritybuildstg.wpenginepowered.com/case-studies/"
+    },
+    {
+      "property": "og:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    }
+  ],
+  "schema": [],
+  "sections": [
+    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2175\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">Case Studies</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<p class=\"eyebrow\">Case Studies</p>\n<h2 class=\"vbg-display-title\">Project stories, built on the details</h2>\n<p class=\"lead\">Explore the Brancer custom home and a three-floor residential hallway renovation through their scope, material choices, and project photography.</p>\n<div class=\"vbg-card-grid vbg-case-grid\">\n<article id=\"brancer-home\"><img alt=\"Open-plan living room and kitchen in the Brancer custom home\" decoding=\"async\" src=\"/assets/407f035ca1-Brancer10.webp\"/><p></p>\n<p class=\"eyebrow\">Custom home construction</p>\n<h2>Brancer Custom Home</h2>\n<p>Three bedrooms, 3.5 bathrooms, and just over 3,000 square feet, with white oak finishes, flexible future space, and indoor-outdoor living. Delivered on time and on budget.</p>\n<p><a href=\"/case-studies/brancer-custom-home/\">Explore the case study</a></p>\n</article>\n<article><img alt=\"Land development case study placeholder\" decoding=\"async\" src=\"/assets/12214cf068-verity-land-development-lake-norman.webp\"/><p></p>\n<p class=\"eyebrow\">Future Case Study 02</p>\n<h2>Land Development</h2>\n<p>Reserved for an approved property story describing verified site conditions, the planning response, consultant roles, and the construction result.</p>\n<p><span class=\"vbg-coming-soon\">Awaiting approved project details</span></p></article>\n<article id=\"charlotte-house\"><img alt=\"Renovated elevator lobby\" decoding=\"async\" src=\"/assets/8c271883ac-Charlotte-House-after3.webp\"/><p></p>\n<p class=\"eyebrow\">Residential Renovation</p>\n<h2>Hallway Improvement</h2>\n<p>A three-floor renovation covering nearly 12,000 square feet: new carpet and thicker pad, repaired and repainted walls, refreshed trim and doors, and a 10-year carpet warranty.</p>\n<p><a href=\"/case-studies/hallway-improvement/\">Explore the case study</a></p>\n</article>\n</div>\n<section class=\"vbg-final-cta\">\n<p class=\"eyebrow\">Begin with Verity</p>\n<h2>Have a project you would like to discuss?</h2>\n<p>Tell us where you are in the process and what you hope to build. We will help identify the most useful next step.</p>\n<p class=\"vbg-cta\"><a href=\"/contact/\">Contact Verity Building Group</a></p>\n</section>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
+  ]
+}

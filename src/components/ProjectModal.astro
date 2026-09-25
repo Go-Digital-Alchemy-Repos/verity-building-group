@@ -1,0 +1,30 @@
+---
+import ContactForm from "./ContactForm.astro";
+---
+
+<div id="verity-project-modal" class="verity-project-modal" hidden>
+  <div class="verity-project-modal__backdrop" data-verity-modal-close></div>
+  <div
+    class="verity-project-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="project-title"
+    tabindex="-1"
+  >
+    <button
+      class="verity-project-modal__close"
+      type="button"
+      aria-label="Close project inquiry"
+      data-verity-modal-close
+    >
+      ×
+    </button>
+    <p class="verity-project-modal__eyebrow">Start Your Project</p>
+    <h2 id="project-title">Tell Us What You’re Planning</h2>
+    <p class="verity-project-modal__intro">
+      Share a few details and our team will follow up to discuss the right next
+      step.
+    </p>
+    <ContactForm id="modal-inquiry" />
+  </div>
+</div>

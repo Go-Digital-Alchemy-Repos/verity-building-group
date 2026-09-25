@@ -1,0 +1,49 @@
+---
+import Site from "../layouts/Site.astro";
+import ContactForm from "../components/ContactForm.astro";
+const pages = import.meta.glob("../content/pages/*.json", {
+  eager: true,
+  import: "default",
+}) as Record<
+  string,
+  {
+    path: string;
+    title: string;
+    bodyClass: string;
+    canonical: string;
+    meta: Record<string, string>[];
+    schema: unknown[];
+    sections: string[];
+  }
+>;
+const path = Astro.url.pathname;
+const page = Object.values(pages).find((p) => p.path === path);
+if (!page) Astro.response.status = 404;
+---
+
+<Site
+  title={page?.title || "Page not found | Verity Building Group"}
+  bodyClass={page?.bodyClass}
+  canonical={page?.canonical}
+  meta={page?.meta}
+  schema={page?.schema}
+>
+  {page ? (
+    page.sections.map((html, index) => (
+      <>
+        <Fragment set:html={html} />
+        {index < page.sections.length - 1 && (
+          <ContactForm id={`page-inquiry-${index}`} />
+        )}
+      </>
+    ))
+  ) : (
+    <main id="primary" class="basic-content-row">
+      <div class="container">
+        <h1>Page not found</h1>
+        <p>The page you’re looking for could not be found.</p>
+        <a href="/">Return home</a>
+      </div>
+    </main>
+  )}
+</Site>

@@ -1,0 +1,9 @@
+---
+import chrome from "../content/chrome.json";
+const header = chrome.header.replaceAll(
+  `href="${Astro.url.pathname}"`,
+  `aria-current="page" href="${Astro.url.pathname}"`,
+);
+---
+
+<Fragment set:html={header} />

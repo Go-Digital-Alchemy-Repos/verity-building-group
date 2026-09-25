@@ -1,0 +1,138 @@
+[
+  {
+    "path": "/",
+    "file": "home.json"
+  },
+  {
+    "path": "/case-studies/hallway-improvement/",
+    "file": "case-studies__hallway-improvement.json"
+  },
+  {
+    "path": "/case-studies/brancer-custom-home/",
+    "file": "case-studies__brancer-custom-home.json"
+  },
+  {
+    "path": "/north-mecklenburg-iredell-builder/",
+    "file": "north-mecklenburg-iredell-builder.json"
+  },
+  {
+    "path": "/lake-norman-custom-home-builder/",
+    "file": "lake-norman-custom-home-builder.json"
+  },
+  {
+    "path": "/custom-home-builder-in-charlotte-nc/",
+    "file": "custom-home-builder-in-charlotte-nc.json"
+  },
+  {
+    "path": "/services/",
+    "file": "services.json"
+  },
+  {
+    "path": "/about/",
+    "file": "about.json"
+  },
+  {
+    "path": "/contact/",
+    "file": "contact.json"
+  },
+  {
+    "path": "/case-studies/",
+    "file": "case-studies.json"
+  },
+  {
+    "path": "/charlotte-lake-norman-builder/",
+    "file": "charlotte-lake-norman-builder.json"
+  },
+  {
+    "path": "/insights/",
+    "file": "insights.json"
+  },
+  {
+    "path": "/portfolio/",
+    "file": "portfolio.json"
+  },
+  {
+    "path": "/legacy-projects/",
+    "file": "legacy-projects.json"
+  },
+  {
+    "path": "/land-development-charlotte-nc/",
+    "file": "land-development-charlotte-nc.json"
+  },
+  {
+    "path": "/custom-home-builder-charlotte-nc/",
+    "file": "custom-home-builder-charlotte-nc.json"
+  },
+  {
+    "path": "/home-2/",
+    "file": "home-2.json"
+  },
+  {
+    "path": "/terms-conditions/",
+    "file": "terms-conditions.json"
+  },
+  {
+    "path": "/privacy-policy/",
+    "file": "privacy-policy.json"
+  },
+  {
+    "path": "/custom-home-budget-planning-where-to-start-in-cornelius/",
+    "file": "custom-home-budget-planning-where-to-start-in-cornelius.json"
+  },
+  {
+    "path": "/what-thoughtful-homebuilding-means-for-charlotte-families/",
+    "file": "what-thoughtful-homebuilding-means-for-charlotte-families.json"
+  },
+  {
+    "path": "/before-you-buy-a-lake-norman-homesite-a-builder-s-due-diligence-checklist/",
+    "file": "before-you-buy-a-lake-norman-homesite-a-builder-s-due-diligence-checklist.json"
+  },
+  {
+    "path": "/category/commercial-construction-and-renovation/",
+    "file": "category__commercial-construction-and-renovation.json"
+  },
+  {
+    "path": "/category/custom-home-construction/",
+    "file": "category__custom-home-construction.json"
+  },
+  {
+    "path": "/category/land-development/",
+    "file": "category__land-development.json"
+  },
+  {
+    "path": "/category/legacy-projects/",
+    "file": "category__legacy-projects.json"
+  },
+  {
+    "path": "/category/field-guide/",
+    "file": "category__field-guide.json"
+  },
+  {
+    "path": "/category/uncategorized/",
+    "file": "category__uncategorized.json"
+  },
+  {
+    "path": "/tag/charlotte/",
+    "file": "tag__charlotte.json"
+  },
+  {
+    "path": "/tag/cornelius/",
+    "file": "tag__cornelius.json"
+  },
+  {
+    "path": "/tag/davidson/",
+    "file": "tag__davidson.json"
+  },
+  {
+    "path": "/tag/huntersville/",
+    "file": "tag__huntersville.json"
+  },
+  {
+    "path": "/tag/lake-norman/",
+    "file": "tag__lake-norman.json"
+  },
+  {
+    "path": "/tag/mooresville/",
+    "file": "tag__mooresville.json"
+  }
+]

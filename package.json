@@ -1,0 +1,39 @@
+{
+  "name": "verity-building-group",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "start": "node dist/server/entry.mjs",
+    "check": "astro check",
+    "lint": "eslint src scripts tests --no-error-on-unmatched-pattern",
+    "test": "tsx --test tests/*.test.ts",
+    "test:routes": "node scripts/check-routes.mjs",
+    "migrate": "python3 scripts/migrate-public.py"
+  },
+  "dependencies": {
+    "@astrojs/node": "11.1.6",
+    "@fontsource/cormorant-garamond": "5.2.8",
+    "@fontsource/lato": "5.2.7",
+    "@fontsource/open-sans": "5.2.7",
+    "astro": "7.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@eslint/js": "latest",
+    "@types/node": "^26.6.2",
+    "eslint": "latest",
+    "globals": "latest",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.0.1",
+    "tsx": "latest",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "latest"
+  }
+}

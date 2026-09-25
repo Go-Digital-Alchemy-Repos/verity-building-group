@@ -1,0 +1,49 @@
+{
+  "path": "/contact/",
+  "title": "Contact – Verity Building Group",
+  "bodyClass": "page",
+  "canonical": "https://veritybuildstg.wpenginepowered.com/contact/",
+  "meta": [
+    {
+      "name": "robots",
+      "content": "max-image-preview:large, noindex, nofollow"
+    },
+    {
+      "name": "description",
+      "content": "Contact Verity Building Group about custom homes, land development, commercial renovation and community projects in Charlotte and Lake Norman."
+    },
+    {
+      "property": "og:locale",
+      "content": "en_US"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Contact – Verity Building Group"
+    },
+    {
+      "property": "og:description",
+      "content": "Contact Verity Building Group about custom homes, land development, commercial renovation and community projects in Charlotte and Lake Norman."
+    },
+    {
+      "property": "og:url",
+      "content": "https://veritybuildstg.wpenginepowered.com/contact/"
+    },
+    {
+      "property": "og:image",
+      "content": "https://veritybuildstg.wpenginepowered.com/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    }
+  ],
+  "schema": [],
+  "sections": [
+    "<main class=\"site-main\" id=\"primary\">\n\t\t\n\t\t<div class=\"basic-content-row\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n<article class=\"page type-page status-publish hentry\" id=\"post-2179\">\n\t<header class=\"entry-header\">\n\t\t<h1 class=\"entry-title\">Contact</h1>\t</header>\n\n\t\n\t<div class=\"entry-content\">\n\t\t<p class=\"eyebrow\">Contact Verity Building Group</p>\n<h1 class=\"vbg-display-title\">Tell us what you are planning</h1>\n<p class=\"lead\">Whether you are evaluating land, preparing a custom home, renovating a commercial property, or exploring a community-focused project, share what you know and our team will help identify the right next step.</p>\n<section class=\"vbg-contact-form\">\n<h2>Start the conversation</h2>\n<p>Share a few details and our team will follow up to discuss the right next step.</p>\n<p>\n                </p>",
+    "\n\t\t                \n\t\t                \n<br/>\n</section>\n<section>\n<h2>What happens next</h2>\n<div class=\"vbg-process\">\n<article><span>01</span><p></p>\n<h3>We review the basics</h3>\n<p>Location, scope, timing, and current information help us understand whether the opportunity may be a fit.</p>\n</article>\n<article><span>02</span><p></p>\n<h3>We schedule a conversation</h3>\n<p>If aligned, we discuss goals, decision-makers, known constraints, and the next useful piece of due diligence.</p>\n</article>\n<article><span>03</span><p></p>\n<h3>We define a next step</h3>\n<p>That may be a site review, document review, consultant introduction, preconstruction discussion, or a recommendation to gather more information.</p>\n</article>\n</div>\n</section>\n\t</div>\n\n\t</article>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\n\t</main>"
+  ]
+}

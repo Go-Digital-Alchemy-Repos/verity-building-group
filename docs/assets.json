@@ -1,0 +1,327 @@
+{
+  "/assets/65aae34466-select-arow.svg": {
+    "source": "/wp-content/themes/vbg/assets/img/select-arow.svg",
+    "bytes": 177,
+    "sha256": "4341da91793f1cd005f8be6a624eb79558f9865f7919471a9e7228a42e8808b2"
+  },
+  "/assets/a399ddb102-verity_hero-e1786715846853.webp": {
+    "source": "/wp-content/uploads/2026/08/verity_hero-e1786715846853.webp",
+    "bytes": 354346,
+    "sha256": "6e912facec50a2191479e50f3c3722f4354e6eb62394a587494c5a4e19f1edd1"
+  },
+  "/assets/61d87d5380-verity_land-development.webp": {
+    "source": "/wp-content/uploads/2026/07/verity_land-development.webp",
+    "bytes": 121382,
+    "sha256": "9d8950aaec85d6d30fef20abc4a120f4d38543a070fef1567e3ed7d43685d064"
+  },
+  "/assets/205cb24db5-verity_new-home.webp": {
+    "source": "/wp-content/uploads/2026/07/verity_new-home.webp",
+    "bytes": 114762,
+    "sha256": "e1fba93ddd8907bc88b1e03989d79e0947b1b3a639073992411e9f11180b4c74"
+  },
+  "/assets/f032cd6272-verity-legacy-neighborhood-home-v2.webp": {
+    "source": "/wp-content/uploads/2026/09/verity-legacy-neighborhood-home-v2.webp",
+    "bytes": 248750,
+    "sha256": "0b82a39bd54e8f5067b9f0ca9a1089cd3bfc01325542078d0ae111bf014ef50d"
+  },
+  "/assets/744415db06-image-5fgkopr.webp": {
+    "source": "/wp-content/uploads/2026/07/image-5fgkopr.webp",
+    "bytes": 73920,
+    "sha256": "acdfee0c7cc293a78f34b8c3d385741bb5fe4bc43690970ca81fbc083d23d5f6"
+  },
+  "/assets/30b94a26a8-block-icon-2.webp": {
+    "source": "/wp-content/uploads/2026/07/block-icon-2.webp",
+    "bytes": 9178,
+    "sha256": "c420ffc18e4071b2d0ece324cfd2083ba0d830ab947ecdcacedc7699ac188228"
+  },
+  "/assets/d50be670c9-icon-2.webp": {
+    "source": "/wp-content/uploads/2026/07/icon-2.webp",
+    "bytes": 15582,
+    "sha256": "8486c23d8b04865f6f31cb8aba38a11f390b9a95e91e1f4453881b73bf985246"
+  },
+  "/assets/42736f4af4-icon-3.webp": {
+    "source": "/wp-content/uploads/2026/07/icon-3.webp",
+    "bytes": 13112,
+    "sha256": "58ce6090d8ac99b81bdbdbbe42fa82dfc99514f5fcdb9df13fa1a4ba7bf0ca76"
+  },
+  "/assets/3b5da70afa-conatct_image.webp": {
+    "source": "/wp-content/uploads/2026/07/conatct_image.webp",
+    "bytes": 94992,
+    "sha256": "296aa36696c1a1795e6ed9b77d3088b040fbca6f0319b59734a6ef13c7641e17"
+  },
+  "/assets/9a0e44b72a-Charlotte-House-before.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-before.webp",
+    "bytes": 108402,
+    "sha256": "6fed0c6f2ed027483e573049e9ea09deb40fd4962bc84c63387c76e195066e60"
+  },
+  "/assets/8c271883ac-Charlotte-House-after3.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-after3.webp",
+    "bytes": 192786,
+    "sha256": "afcfd83e2027af98f33a3322d984e31fd2ac65cf1832b0f81f1a3d5b7c476a6d"
+  },
+  "/assets/ecbaa6fb71-Charlotte-House-hallway-before3.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-hallway-before3.webp",
+    "bytes": 82970,
+    "sha256": "57b36bfc532accd9c53755bb1d9506b1692a69bc39e0b027bb251f0a97a5986d"
+  },
+  "/assets/49396e21dd-Charlotte-House-after.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-after.webp",
+    "bytes": 171604,
+    "sha256": "76e746ed5ae3209c6695eef5719a8bba423655c24ac8a2c106b1f4105554bcb5"
+  },
+  "/assets/cc41e26b57-Charlotte-House-before2.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-before2.webp",
+    "bytes": 126476,
+    "sha256": "406202992e264aa7672bc18a49293eb53b2ad536f164de034b72dc3fc90a612c"
+  },
+  "/assets/2101f92958-Charlotte-House-after2.webp": {
+    "source": "/wp-content/uploads/2026/09/Charlotte-House-after2.webp",
+    "bytes": 193572,
+    "sha256": "1e4496068f7b9e560a6e985667176656ee764bef9e30da506b5ac37485aad6b2"
+  },
+  "/assets/5940853ce2-Brancer.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer.webp",
+    "bytes": 81588,
+    "sha256": "5e5e2f0b9eaaa8241ae9208bd0c5c48a9ef20283692cbb5aab77a0f0b66fce50"
+  },
+  "/assets/8a5ca5dd34-Brancer4.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer4.webp",
+    "bytes": 86322,
+    "sha256": "df297669094050cc8eb68549181014caa718715b09ba987840e41f048bd81ab6"
+  },
+  "/assets/39808ab96a-Brancer6.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer6.webp",
+    "bytes": 41824,
+    "sha256": "5a6a66ecd797312b36741cfe2f10cf8ae0c621752433a05d6fa990305b6f6499"
+  },
+  "/assets/7e828a711d-Brancer8.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer8.webp",
+    "bytes": 146956,
+    "sha256": "34a89094031e2fe1014baf951fab61a657336c37124fd2dbb89da52f0a06ee69"
+  },
+  "/assets/407f035ca1-Brancer10.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer10.webp",
+    "bytes": 94908,
+    "sha256": "6a2777dff61d9b0d8eb1828374b1e84949ebc9c04b1d10b7e28737f99a5c0d50"
+  },
+  "/assets/6238c8bd2b-Brancer12.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer12.webp",
+    "bytes": 91770,
+    "sha256": "cbede68efe077298a00d42c51a0b71c2c349c9fa45997c74827bdf9687fbe994"
+  },
+  "/assets/fa819dd610-Brancer14.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer14.webp",
+    "bytes": 96220,
+    "sha256": "2fa3ded9f7162dc355fe5fffaadb9df9b2f3415243872079b542712ea3adb4f0"
+  },
+  "/assets/a3007a4bc5-Brancer16.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer16.webp",
+    "bytes": 71018,
+    "sha256": "2d9300f595399001932b48120de3269258f9f9f8541c1fb7a3a2124b8e5cd423"
+  },
+  "/assets/672be68c20-Brancer18.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer18.webp",
+    "bytes": 73456,
+    "sha256": "00c3bb2087c787877316bf09af8012287809984e9bbfb0164c5a0e189e78ee43"
+  },
+  "/assets/5fa8264203-Brancer20.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer20.webp",
+    "bytes": 109456,
+    "sha256": "d772fb90b71da245981c9cc4204c5c53c8641527f3fd8c9bc442833afa305190"
+  },
+  "/assets/51eb35685d-Brancer22.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer22.webp",
+    "bytes": 101588,
+    "sha256": "c6829d5d9b8e4b157bad172d19a4970e8c9ea37074392acf88e828708936f7e9"
+  },
+  "/assets/7fefaed5ff-Brancer24.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer24.webp",
+    "bytes": 71488,
+    "sha256": "93306836e72800a03918ec27106924cfbd776a96b62e6cec4124a12b9ce643b4"
+  },
+  "/assets/d1a3df05c5-Brancer26.webp": {
+    "source": "/wp-content/uploads/2026/09/Brancer26.webp",
+    "bytes": 43006,
+    "sha256": "14052e668f5bd8bbd7b9f775ee83c151e12331ce343e840703abb6bec2e73cb4"
+  },
+  "/assets/12214cf068-verity-land-development-lake-norman.webp": {
+    "source": "/wp-content/uploads/2026/09/verity-land-development-lake-norman.webp",
+    "bytes": 252234,
+    "sha256": "786d0b4c454836aeacf25fa7d888a6921c7f4665c62806202cd01a50278d317f"
+  },
+  "/assets/468682d02a-verity-spring-custom-home-charlotte.webp": {
+    "source": "/wp-content/uploads/2026/09/verity-spring-custom-home-charlotte.webp",
+    "bytes": 423226,
+    "sha256": "fa8e953b2cbb347e4c3ec876ec8e576ac8895eef5b5a80c599c199c5b7929f2a"
+  },
+  "/assets/13f22c4515-verity-lake-norman-editorial-hero.webp": {
+    "source": "/wp-content/uploads/2026/09/verity-lake-norman-editorial-hero.webp",
+    "bytes": 296246,
+    "sha256": "079ca465605fc32bf2318a0b3cc646150bbe116e7a7acc9dc9d76f6ae233e971"
+  },
+  "/assets/f45d2f942a-verity_hero_2.webp": {
+    "source": "/wp-content/uploads/2026/07/verity_hero_2.webp",
+    "bytes": 783362,
+    "sha256": "f5b3f2bb18bd5bea423e3f1524b2a3960bf430421ba0e8b8225e267f7add467c"
+  },
+  "/assets/ec3abd947b-verity_hero.webp": {
+    "source": "/wp-content/uploads/2026/07/verity_hero.webp",
+    "bytes": 290306,
+    "sha256": "11af580d0d5f83549cbc0e56b8c5345cde7410ac3f793c7707ec83ec6d709e70"
+  },
+  "/assets/74f70535ec-1000043980-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000043980-v3-1.webp",
+    "bytes": 198220,
+    "sha256": "1029e974b5116260fd8e54c58925a407d25578b48da668cdef32c746964e5b76"
+  },
+  "/assets/0a05686869-1000043981-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000043981-v3-1.webp",
+    "bytes": 184964,
+    "sha256": "f568ef46758d53de2d3bae62022af481128b6faa3cab42fa55f411898aff1d15"
+  },
+  "/assets/c51008f746-1000043994-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000043994-v3-1.webp",
+    "bytes": 100204,
+    "sha256": "19efcd095cdcceee7af76100f9f4e907edfc60ec9790c9a87af135728419d90b"
+  },
+  "/assets/1a08cc91f9-1000044001-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044001-v3-1.webp",
+    "bytes": 99192,
+    "sha256": "a16126a36bca37b797a30146a8ce5cae816b003e91d9b996546e3d4883de1c39"
+  },
+  "/assets/dd3810e090-1000044002-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044002-v3-1.webp",
+    "bytes": 108958,
+    "sha256": "20ee3586e6704869051ed4e38e34b9c3f769060cb357b7c6dbdcd901ecb3510e"
+  },
+  "/assets/d9edd1124d-1000044017-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044017-v3-1.webp",
+    "bytes": 85684,
+    "sha256": "3d9505760caa0d8fbc31dc1eadfd29f130ddfd63b9b290f6b666b6b744fa35b3"
+  },
+  "/assets/27c2d68565-1000044018-v3-1.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044018-v3-1.webp",
+    "bytes": 78864,
+    "sha256": "45c78b9d6b6aaf1b57ea48dcb025a361276382de76b221c2c6e7e440a155d5ae"
+  },
+  "/assets/340860af18-1000044031-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044031-v3.webp",
+    "bytes": 96954,
+    "sha256": "9a77c6967ee08d492ed6e5af5801037f33ac4b23a6979285bc6d7bcb37ce6c70"
+  },
+  "/assets/490497d3e1-1000044045-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/1000044045-v3.webp",
+    "bytes": 235366,
+    "sha256": "00ef549d57890ecfb874f82466b6fc9d4614af3766d964d20e8ad201fb6b082c"
+  },
+  "/assets/3eeea0b61b-IMG_4038-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4038-v3.webp",
+    "bytes": 142764,
+    "sha256": "d6b31a5026d20378547588f546b88fdb5d9dfbff09ee01cefd6a8e2aab3547ec"
+  },
+  "/assets/17ab3ca2b3-IMG_4039-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4039-v3.webp",
+    "bytes": 123268,
+    "sha256": "197e89af75d1ae18ce1e4d6949f7b3dbefe62b2d6dedb26176225a9cb4cf3e64"
+  },
+  "/assets/e9a11287d4-IMG_4041-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4041-v3.webp",
+    "bytes": 101690,
+    "sha256": "ffc28ff91bfc049e1c57ab8f61fbbe5398e18d348186720d101740bdb081667d"
+  },
+  "/assets/c71f85cffd-IMG_4042-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4042-v3.webp",
+    "bytes": 41556,
+    "sha256": "f9a8cd1ca0ef07913aebb45b14cc03a1c09225d6e9eca5bf6e162728ced2f3ef"
+  },
+  "/assets/c375f4b5e1-IMG_4043-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4043-v3.webp",
+    "bytes": 96468,
+    "sha256": "d10a3efaa612d7ef9945bd4d0aa50deddf2f6cfbc7c14abd20db58ca8456967f"
+  },
+  "/assets/7637d086e6-IMG_4044-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4044-v3.webp",
+    "bytes": 133770,
+    "sha256": "d5279694b52bd1d428febad56fbbb26c9ce4f9fcce69ed609bc824cf34fe691b"
+  },
+  "/assets/d0bcc43d7d-IMG_4045-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4045-v3.webp",
+    "bytes": 119886,
+    "sha256": "a2dc752469921f926b8c98a8216cd54d765e063f4701173cd610b199906f71a9"
+  },
+  "/assets/2e5daaec2d-IMG_4046-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4046-v3.webp",
+    "bytes": 134040,
+    "sha256": "68d330c47176d4a79feff412ed9f83ca459449ef5e01340c44f087454d5f1c88"
+  },
+  "/assets/e683d56f79-IMG_4047-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4047-v3.webp",
+    "bytes": 146508,
+    "sha256": "a51dd5b6047d22f70209db6e21f6a63b5bed30bd2dcc9dfdd1996a3f4d295f49"
+  },
+  "/assets/797db70680-IMG_4048-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4048-v3.webp",
+    "bytes": 261270,
+    "sha256": "ebf59329efb04c3388fa028c9daae3c5c183e3a735a6be7f54f22356ed0e2a67"
+  },
+  "/assets/db64b4d5e8-IMG_4049-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4049-v3.webp",
+    "bytes": 167430,
+    "sha256": "7f8f3cd72e3659eede967462ccd773b8cacc601f42058a55952d3d32c1190133"
+  },
+  "/assets/b28eb6f000-IMG_4050-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4050-v3.webp",
+    "bytes": 231920,
+    "sha256": "0fd92c2511b96726af4ad765bb9fd94df65eefdf8baeb62bda7b79a4eac6ee04"
+  },
+  "/assets/b3155ac8c8-IMG_4053-v3.webp": {
+    "source": "/wp-content/uploads/2026/09/IMG_4053-v3.webp",
+    "bytes": 143618,
+    "sha256": "44890e70a62528ae7b0ddb53116fab3d01498a89318c8fd953ede94cc86612bf"
+  },
+  "/assets/e694a6e710-verity_commercial.webp": {
+    "source": "/wp-content/uploads/2026/07/verity_commercial.webp",
+    "bytes": 150822,
+    "sha256": "fd22f825db693ae5b6820cbddfbad25e8ea03a9921c86a30b769c4a3d4b995f0"
+  },
+  "/assets/018219e5b4-gallery-1.webp": {
+    "source": "/wp-content/uploads/2026/07/gallery-1.webp",
+    "bytes": 26872,
+    "sha256": "a88a0bc8dc7e6c7cdf18c0752c81e1246bb0da6287e6d90fb911d0d2e2a73298"
+  },
+  "/assets/206eb54091-gallery-2.webp": {
+    "source": "/wp-content/uploads/2026/07/gallery-2.webp",
+    "bytes": 31460,
+    "sha256": "52da3bc3bed99046b40e35f31014e5340b6e4f79e6f5ecae5f7328cf54d2f45a"
+  },
+  "/assets/d422901874-gallery-3.webp": {
+    "source": "/wp-content/uploads/2026/07/gallery-3.webp",
+    "bytes": 17928,
+    "sha256": "13b78f8291760fe2b30a7e45f05a709d2c3f77d9039bac1d619adcf8aff2d7fb"
+  },
+  "/assets/0e9eb6aeba-gallery-4.webp": {
+    "source": "/wp-content/uploads/2026/07/gallery-4.webp",
+    "bytes": 34830,
+    "sha256": "f79d4eea68db2777f623928b62cd9bbfb6cd5fa6687f0ed1412d3045be90e339"
+  },
+  "/assets/a4b53212c6-gallery-5.webp": {
+    "source": "/wp-content/uploads/2026/07/gallery-5.webp",
+    "bytes": 53470,
+    "sha256": "fa4864f92c94e2af929e797290b9583c2988e3af89aaec6a07161ed81cba2323"
+  },
+  "/assets/37e2828046-image-4dldflpf.webp": {
+    "source": "/wp-content/uploads/2026/07/image-4dldflpf.webp",
+    "bytes": 120300,
+    "sha256": "2c5b8c368ff7c1177e67f4ee8be710ae284f27abe7e00f3ce2b61aa079740d42"
+  },
+  "/assets/ad91a04237-Verity-Logotype.png": {
+    "source": "/wp-content/uploads/2026/08/Verity-Logotype.png",
+    "bytes": 228083,
+    "sha256": "420e6f8fd4dfa32e01203de4c3f9382f702a072609bf5c05c545c3689cabfd88"
+  },
+  "/assets/bc8b4cf0fa-Verity-Monogram_Large-scaled.webp": {
+    "source": "/wp-content/uploads/2026/08/Verity-Monogram_Large-scaled.webp",
+    "bytes": 68112,
+    "sha256": "0da577f438b80f5d06ea2362f2989c20f2132f3cd231e475bb0d5d336392621d"
+  }
+}

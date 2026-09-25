@@ -1,0 +1,223 @@
+---
+import { createFormToken } from "../lib/contact";
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const token = createFormToken(process.env.CONTACT_FORM_SECRET);
+const field = (name: string) => `${id}-${name}`;
+---
+
+<div class="inquiry-wrapper">
+  <form
+    class="inquiry-form"
+    method="post"
+    action="/api/contact/"
+    enctype="multipart/form-data"
+    data-inquiry-form
+  >
+    <input type="hidden" name="token" value={token} />
+    <div class="honey" aria-hidden="true">
+      <label>
+        Website
+        <input name="website" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+    <div class="inquiry-fields">
+      <div class="inquiry-name starter">
+        <label class="screen-reader-text" for={field("firstName")}>
+          First Name
+        </label>
+        <input
+          id={field("firstName")}
+          name="firstName"
+          placeholder="First Name"
+          autocomplete="given-name"
+          maxlength="100"
+        />
+        <label class="screen-reader-text" for={field("lastName")}>
+          Last Name
+        </label>
+        <input
+          id={field("lastName")}
+          name="lastName"
+          placeholder="Last Name"
+          autocomplete="family-name"
+          maxlength="100"
+        />
+      </div>
+      <div class="starter half">
+        <label class="screen-reader-text" for={field("email")}>
+          Email
+        </label>
+        <input
+          id={field("email")}
+          name="email"
+          type="email"
+          placeholder="Email Address"
+          autocomplete="email"
+          maxlength="254"
+        />
+      </div>
+      <div class="starter half">
+        <label class="screen-reader-text" for={field("phone")}>
+          Phone
+        </label>
+        <input
+          id={field("phone")}
+          name="phone"
+          type="tel"
+          placeholder="Phone Number"
+          autocomplete="tel"
+          maxlength="40"
+        />
+      </div>
+      <div class="more">
+        <label for={field("location")}>
+          Project Location or Property Address
+        </label>
+        <input id={field("location")} name="location" maxlength="500" />
+      </div>
+      <div class="more half">
+        <label class="screen-reader-text" for={field("projectType")}>
+          Project Type
+        </label>
+        <select id={field("projectType")} name="projectType">
+          <option value="">Project Type</option>
+          <option>Land Development</option>
+          <option>New Home Construction</option>
+          <option>Renovation</option>
+        </select>
+      </div>
+      <div class="more">
+        <label for={field("intendedUse")}>Intended Use</label>
+        <input
+          id={field("intendedUse")}
+          name="intendedUse"
+          maxlength="2000"
+          aria-describedby={field("useHelp")}
+        />
+        <small id={field("useHelp")}>
+          Tell us how the completed home, land, or renovated space will be used.
+        </small>
+      </div>
+      <div class="more">
+        <label for={field("stage")}>Current Project Stage</label>
+        <select id={field("stage")} name="stage">
+          <option value="">Select the current stage</option>
+          {[
+            "Early Idea",
+            "Land Search",
+            "Design",
+            "Permitting",
+            "Ready to Build",
+          ].map((s) => (
+            <option>{s}</option>
+          ))}
+        </select>
+      </div>
+      <div class="more">
+        <label for={field("timing")}>
+          Desired Timing and Important Milestones
+        </label>
+        <textarea
+          id={field("timing")}
+          name="timing"
+          rows="6"
+          maxlength="2000"
+        ></textarea>
+      </div>
+      <div class="more">
+        <label class="screen-reader-text" for={field("message")}>
+          Tell us about your project
+        </label>
+        <textarea
+          id={field("message")}
+          name="message"
+          placeholder="Tell us about your project"
+          rows="4"
+          maxlength="10000"
+        ></textarea>
+      </div>
+      <div class="more">
+        <label for={field("files")}>
+          Available Surveys, Plans, Photos, Reports, or Requirements
+        </label>
+        <div class="file-drop">
+          <span>Drop files here or </span>
+          <label class="file-button" for={field("files")}>
+            Select files
+          </label>
+          <input
+            class="file-input"
+            id={field("files")}
+            name="files"
+            type="file"
+            multiple
+            accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx"
+            aria-describedby={field("fileHelp")}
+          />
+        </div>
+        <small id={field("fileHelp")}>
+          Accepted file types: pdf, jpg, jpeg, png, webp, doc, docx, Max. file
+          size: 50 MB, Max. files: 8. Combined maximum: 50 MB.
+        </small>
+        <p data-file-list></p>
+        <small>Upload any helpful documents or images you already have.</small>
+      </div>
+      <fieldset class="more">
+        <legend>Preferred Contact Method</legend>
+        {["Email", "Phone", "Text Message"].map((s, i) => (
+          <label class="radio-label" for={field(`preferred-${i}`)}>
+            <input
+              type="radio"
+              id={field(`preferred-${i}`)}
+              name="preferredContact"
+              value={s}
+            />
+            {s}
+          </label>
+        ))}
+      </fieldset>
+      <div class="more">
+        <label for={field("bestTime")}>Best Time to Reach You</label>
+        <input id={field("bestTime")} name="bestTime" maxlength="300" />
+      </div>
+      <div class="more">
+        <button type="submit" class="vbg-btn">
+          SEND MESSAGE
+        </button>
+      </div>
+    </div>
+    <div
+      class="form-status"
+      role="status"
+      aria-live="polite"
+      tabindex="-1"
+    ></div>
+  </form>
+  <template data-inquiry-confirmation>
+    <div class="verity-form-confirmation" role="status" tabindex="-1">
+      <p class="eyebrow">Thank you</p>
+      <h2>Looking forward to building something together!</h2>
+      <h3>What Happens Next</h3>
+      <div class="vbg-process">
+        <article>
+          <span>01</span>
+          <h4>We review the basics</h4>
+          <p>We review the location, scope, timing, and information you shared.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h4>We schedule a conversation</h4>
+          <p>If the opportunity appears aligned, we will reach out to discuss goals, constraints, and priorities.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h4>We define a next step</h4>
+          <p>That may be a site review, document review, consultant introduction, or preconstruction conversation.</p>
+        </article>
+      </div>
+    </div>
+  </template>
+</div>

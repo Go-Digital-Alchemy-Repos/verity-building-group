@@ -1,0 +1,41 @@
+---
+import Site from "../layouts/Site.astro";
+const pages = import.meta.glob("../content/pages/*.json", {
+  eager: true,
+  import: "default",
+}) as Record<string, { path: string; title: string; sections: string[] }>;
+const query = (Astro.url.searchParams.get("q") || "").slice(0, 200);
+const results = query
+  ? Object.values(pages).filter(
+      (p) =>
+        !p.path.startsWith("/category/") &&
+        !p.path.startsWith("/tag/") &&
+        (p.title + " " + p.sections.join(" ").replace(/<[^>]*>/g, " "))
+          .toLowerCase()
+          .includes(query.toLowerCase()),
+    )
+  : [];
+---
+
+<Site title={`Search: ${query} | Verity Building Group`}>
+  <main id="primary" class="basic-content-row">
+    <div class="container">
+      <h1>Search Results for: {query}</h1>
+      <form action="/search/" method="get">
+        <label for="search-query">Search</label>
+        <input id="search-query" type="search" name="q" value={query} />
+        <button type="submit">Search</button>
+      </form>
+      {results.map((p) => (
+        <article>
+          <h2>
+            <a href={p.path}>
+              {p.title.replace(" – Verity Building Group", "")}
+            </a>
+          </h2>
+        </article>
+      ))}
+      {query && !results.length && <p>Nothing Found</p>}
+    </div>
+  </main>
+</Site>

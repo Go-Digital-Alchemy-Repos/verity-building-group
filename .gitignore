@@ -1,0 +1,25 @@
+# Legacy WordPress reference: local only
+/wp-*
+/index.php
+/xmlrpc.php
+/.htaccess
+/readme.html
+/license.txt
+/apple-touch-icon*.png
+/favicon.ico
+# Private/local data and generated artifacts
+.local/
+.env
+.env.*
+!.env.example
+*.sql
+*.sql.*
+*.log
+*.zip
+*.tar
+*.gz
+node_modules/
+dist/
+.astro/
+.DS_Store
+coverage/
