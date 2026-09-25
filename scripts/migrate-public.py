@@ -34,7 +34,7 @@ def asset(url):
 
 def urls(text):
  text=re.sub(r'url\(([\s\S]*?)\)',lambda m:'url("'+asset(m.group(1))+'")',text)
- return classes(text)
+ return classes(re.sub(r"/\*# sourceURL=.*?\*/", "", text))
 def clean(node):
  if not node:return ''
  for x in list(node.find_all(string=lambda t:isinstance(t,Comment))):x.extract()
