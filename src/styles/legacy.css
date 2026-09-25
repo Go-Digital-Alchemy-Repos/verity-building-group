@@ -207,3 +207,36 @@
     font-size: 16px;
   }
 }
+/* Custom Homes shares the service detail layout and responsive behavior. */
+.custom-homes-page :is(#planning, #process) {
+  scroll-margin-top: 150px;
+}
+.custom-homes-page .legacy-approach__heading h2 {
+  max-width: 880px;
+}
+.custom-homes-page .custom-process-intro {
+  max-width: 900px;
+  margin-top: 28px;
+  font-size: 17px;
+  color: #dce0e2;
+}
+.custom-homes-page .custom-areas h2 {
+  margin-top: 20px;
+}
+.custom-homes-page .custom-areas .legacy-focus__intro {
+  margin-bottom: 0;
+  align-items: center;
+}
+.custom-homes-page .custom-areas a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.custom-homes-page .custom-questions {
+  padding-top: 0;
+}
+@media (max-width: 640px) {
+  .custom-homes-page :is(#planning, #process) {
+    scroll-margin-top: 112px;
+  }
+}

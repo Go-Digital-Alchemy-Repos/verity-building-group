@@ -43,3 +43,9 @@ Validated desktop layout, mobile/tablet reflow at 320, 390 and 768 CSS px, one H
 Matched the Legacy Projects layout using shared hero, focus rows, numbered process, FAQ and contact styles. Preserved existing land-development copy, all six process steps, six FAQs, imagery/disclosure, metadata and anchor URLs. The editable override is `src/content/overrides/land-development-charlotte-nc.html`.
 
 Build, type checking, lint and all 33 local route checks passed. Browser checks covered one H1, reflow without horizontal overflow at 320/390/768/1440px, process anchor navigation and keyboard FAQ expansion. Desktop and mobile screenshots inspected. No new motion or form behavior. Screen-reader and browser zoom testing not performed.
+
+## Custom Homes redesign — September 25, 2026
+
+Matched the shared service-detail layout, preserving all planning guidance, six construction stages, six FAQs, editorial image/disclosure, service-area link, metadata and original anchor targets. The editable override is `src/content/overrides/custom-home-builder-charlotte-nc.html`.
+
+Build, type checking, lint and all 33 local route checks passed. Browser checks confirmed one H1, six stages, no horizontal overflow at 320/390/768/1440px, process-anchor navigation and keyboard FAQ expansion. Desktop and mobile screenshots reviewed. No new motion or form behavior; screen-reader and browser zoom testing not performed.
