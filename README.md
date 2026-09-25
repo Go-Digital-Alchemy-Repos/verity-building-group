@@ -119,3 +119,7 @@ Legacy WordPress files from the earlier backup import remain local and ignored. 
 Astro's trusted-host list in `astro.config.mjs` includes the exact staging hostname and localhost; add an approved production hostname there and rebuild during cutover. Origin validation remains enabled.
 
 No production cutover has been performed. See `docs/VALIDATION.md` for evidence and limitations.
+
+### Field Guide listing
+
+`/insights/` and `/category/field-guide/` render `src/components/BlogIndex.astro`, styled by `src/styles/blog.css`. Their historical HTML records are not used for the listing body. `src/content/blog.json` stores the public article summaries, publication dates, topics, locations and local image references. Keep this index in sync when adding or editing a post; rebuild it from migrated single-post records with `.local/audit-tools/bin/python scripts/build-blog-index.py` (Python with BeautifulSoup required). The migration script rebuilds it automatically. Only include published articles. Sorting is newest first; topic and location choices derive from the index. Search and combined filters use GET parameters and server-rendered results, so they also work without JavaScript.

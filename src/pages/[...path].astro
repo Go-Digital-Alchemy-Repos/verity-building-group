@@ -1,5 +1,6 @@
 ---
 import Site from "../layouts/Site.astro";
+import BlogIndex from "../components/BlogIndex.astro";
 import ContactForm from "../components/ContactForm.astro";
 const pages = import.meta.glob("../content/pages/*.json", {
   eager: true,
@@ -17,6 +18,7 @@ const pages = import.meta.glob("../content/pages/*.json", {
   }
 >;
 const path = Astro.url.pathname;
+const isBlog = ["/insights/", "/category/field-guide/"].includes(path);
 const page = Object.values(pages).find((p) => p.path === path);
 if (!page) Astro.response.status = 404;
 ---
@@ -28,7 +30,7 @@ if (!page) Astro.response.status = 404;
   meta={page?.meta}
   schema={page?.schema}
 >
-  {page ? (
+  {page && isBlog ? <BlogIndex /> : page ? (
     page.sections.map((html, index) => (
       <>
         <Fragment set:html={html} />

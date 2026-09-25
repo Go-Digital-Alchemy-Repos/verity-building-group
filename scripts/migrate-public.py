@@ -118,3 +118,4 @@ print('Migrated',len(routes),'routes;',len(assets),'publicly referenced assets')
 # Reapply owner-approved content changes after importing historical source content.
 import sys
 subprocess.run([sys.executable, str(ROOT/"scripts/apply-content-overrides.py")], check=True)
+subprocess.run([sys.executable, str(ROOT/"scripts/build-blog-index.py")], check=True)

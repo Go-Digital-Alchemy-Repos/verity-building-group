@@ -65,3 +65,7 @@ Build, type checks, lint, seven tests, 33-route checks and focused rendered-SEO 
 ## Insights invitation — September 25, 2026
 
 Removed the publication-schedule paragraph from `/insights/` and saved the page as an editable HTML override. Added a scoped navy/gold Field Guide invitation with a native archive link and visible keyboard focus. Corrected the duplicate page H1 to H2. Production build passed; desktop and 390px mobile browser checks confirmed the callout fits without horizontal overflow and Enter opens the published Field Guide archive.
+
+## Field Guide blog layout — September 25, 2026
+
+Replaced the Insights landing body and Field Guide category body with a shared server-rendered article index. The September 18 post is featured, followed by September 11 and September 4. Added combined topic/location filters and keyword search, derived from the three published posts, with result counts and empty/reset states. Local browser verification covered keyboard submission, topic filtering, incompatible topic/location empty results, reset, keyword search, and 320/390/768px reflow without horizontal overflow. Desktop/tablet/mobile visual checks completed. Build, type check, lint, 10 tests, and all 33 routes (106 assets, 40 links) passed. No production launch or DNS changes.
