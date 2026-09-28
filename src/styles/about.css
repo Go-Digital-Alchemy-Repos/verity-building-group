@@ -79,8 +79,13 @@
   border-color: var(--color-ink);
 }
 .about-area-card:hover .about-area-card__action {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
+}
+.about-area-card__action > span[aria-hidden] {
+  transition: transform 0.25s ease;
+}
+.about-area-card:is(:hover, :focus-visible) .about-area-card__action > span[aria-hidden] {
+  transform: translateX(7px);
 }
 .about-page .about-area-card:focus-visible {
   outline: 3px solid var(--color-ink);

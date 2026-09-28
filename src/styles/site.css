@@ -427,8 +427,9 @@ select:focus-visible {
   text-decoration: none;
   line-height: 1.5;
 }
-.entry-content .field-guide-callout__link span { font-size: 28px; }
+.entry-content .field-guide-callout__link span { font-size: 28px; transition:transform .25s ease; }
 .entry-content .field-guide-callout__link:hover { color: #dec38f; }
+.entry-content .field-guide-callout__link:is(:hover,:focus-visible) span { transform:translateX(7px); }
 .entry-content .field-guide-callout__link:focus-visible {
   outline: 3px solid #dec38f;
   outline-offset: 6px;
@@ -440,12 +441,14 @@ select:focus-visible {
 .case-study-card > img { display:block; width:calc(100% + 56px); max-width:none; margin:0 -28px 28px; aspect-ratio:4/3; object-fit:cover; }
 .case-study-card h2 { margin:0 0 18px; }
 .case-study-card > p:last-child { margin-top:auto; margin-bottom:0; padding-top:24px; }
-.case-study-card-link { display:inline-block; padding:10px 0; border-bottom:1px solid #ad8b4c; font-weight:700; }
+.case-study-card-link { display:inline-flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #ad8b4c; font-weight:700; }
+.case-study-card-link > span[aria-hidden] { transition:transform .25s ease; }
 .entry-content .case-study-card:hover { border-color:#94753c; }
 .land-case-study { padding-top:clamp(56px,8vw,96px); padding-bottom:clamp(56px,8vw,96px); }
 .land-case-study > h2 { max-width:780px; margin-bottom:0; }
 .land-case-study .case-study-cards { grid-template-columns:minmax(0,760px); }
-.case-study-card:hover .case-study-card-link { text-decoration:underline; text-underline-offset:5px; }
+.case-study-card:hover .case-study-card-link { text-decoration:none; }
+.case-study-card:is(:hover,:focus-visible) .case-study-card-link > span[aria-hidden] { transform:translateX(7px); }
 .case-study-card:focus-visible,.case-study-cta-button:focus-visible { outline:3px solid #bd9854; outline-offset:5px; }
 .entry-content .case-study-pending { font-size:14px; color:#59636a; }
 .case-study-cta { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:center; margin-top:64px; padding:clamp(28px,5vw,64px); background:#203140; color:#fff; }

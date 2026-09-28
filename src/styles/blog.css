@@ -29,6 +29,9 @@
 .blog-featured h2 { font-size:clamp(32px,3.4vw,44px); line-height:1.1; margin:0 0 20px; }
 .blog-page .blog-date { font-size:13px; color:#59636a; margin:0 0 16px; }
 .blog-page .blog-read { display:inline-flex; gap:24px; padding:12px 0 8px; border-bottom:1px solid #ad8b4c; font-weight:700; }
+.blog-page .blog-read:hover { text-decoration:none; }
+.blog-page .blog-read > span[aria-hidden] { transition:transform .25s ease; }
+.blog-page .blog-read:is(:hover,:focus-visible) > span[aria-hidden] { transform:translateX(7px); }
 .blog-older > h2 { font-size:36px; margin:48px 0 24px; }
 .blog-row { display:grid; grid-template-columns:210px minmax(0,1fr); gap:28px; padding:28px 0; border-top:1px solid #d9d0c3; margin:0; }
 .blog-row img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }

@@ -164,8 +164,13 @@
   text-decoration: none;
 }
 .services-page .services-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  text-decoration: none;
+}
+.services-page .services-link > span[aria-hidden] {
+  transition: transform 0.25s ease;
+}
+.services-page .services-link:is(:hover, :focus-visible) > span[aria-hidden] {
+  transform: translateX(7px);
 }
 .services-planning {
   background: var(--color-ink);
