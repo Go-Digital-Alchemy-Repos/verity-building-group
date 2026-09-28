@@ -126,6 +126,19 @@ for path in (ROOT / 'src/content/pages').glob('*.json'):
         for node in soup.select('[data-primary-filter="commercial"], [data-subfilters="commercial"]'):
             node.decompose()
         record['sections'][index] = str(soup)
+    # The migrated WordPress sidebar includes an empty comments widget on posts
+    # and archives. Remove the entire widget wherever it appears.
+    for index, section in enumerate(record['sections']):
+        if 'Recent Comments' not in section:
+            continue
+        soup = BeautifulSoup(section, 'html.parser')
+        for heading in soup.find_all(['h2', 'h3']):
+            if heading.get_text(' ', strip=True) != 'Recent Comments':
+                continue
+            widget = heading.find_parent('section', class_='widget')
+            if widget:
+                widget.decompose()
+        record['sections'][index] = str(soup)
     record = edit(record)
     override = ROOT / "src/content/overrides" / (path.stem + ".html")
     if override.exists():
