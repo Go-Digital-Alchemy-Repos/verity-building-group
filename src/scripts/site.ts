@@ -190,6 +190,124 @@ doc.querySelectorAll<HTMLElement>(".work-gallery").forEach((gallery) => {
       });
     });
 });
+
+const lightbox = doc.querySelector<HTMLDialogElement>(
+  "[data-case-study-lightbox]",
+);
+const caseStudyFigures = Array.from(
+  doc.querySelectorAll<HTMLElement>(".vbg-case-study figure"),
+).filter((figure) => figure.querySelector(":scope > img"));
+
+if (lightbox && caseStudyFigures.length) {
+  const galleryDialog = lightbox;
+  const viewerImage = galleryDialog.querySelector<HTMLImageElement>(
+    "[data-lightbox-image]",
+  )!;
+  const caption = galleryDialog.querySelector<HTMLElement>(
+    "[data-lightbox-caption]",
+  )!;
+  const previous = galleryDialog.querySelector<HTMLButtonElement>(
+    "[data-lightbox-previous]",
+  )!;
+  const next = galleryDialog.querySelector<HTMLButtonElement>(
+    "[data-lightbox-next]",
+  )!;
+  const close = galleryDialog.querySelector<HTMLButtonElement>(
+    "[data-lightbox-close]",
+  )!;
+  const triggers: HTMLButtonElement[] = [];
+  let current = 0;
+  let lastLightboxFocus: HTMLButtonElement | null = null;
+  let pointerStartX: number | null = null;
+
+  function preload(index: number) {
+    const source = caseStudyFigures[index]?.querySelector<HTMLImageElement>(
+      ":scope > button > img",
+    )?.currentSrc;
+    if (source) new Image().src = source;
+  }
+
+  function show(index: number) {
+    current = (index + caseStudyFigures.length) % caseStudyFigures.length;
+    const source = caseStudyFigures[current].querySelector<HTMLImageElement>(
+      ":scope > button > img",
+    )!;
+    viewerImage.src = source.currentSrc || source.src;
+    viewerImage.alt = source.alt;
+    caption.textContent = `Photo ${current + 1} of ${caseStudyFigures.length} — ${source.alt}`;
+    preload((current + 1) % caseStudyFigures.length);
+    preload((current - 1 + caseStudyFigures.length) % caseStudyFigures.length);
+  }
+
+  function open(index: number) {
+    lastLightboxFocus = triggers[index];
+    show(index);
+    galleryDialog.showModal();
+    doc.body.classList.add("case-study-lightbox-open");
+    close.focus();
+  }
+
+  function closeLightbox() {
+    const restoreFocus = lastLightboxFocus;
+    galleryDialog.close();
+    doc.body.classList.remove("case-study-lightbox-open");
+    restoreFocus?.focus();
+  }
+
+  caseStudyFigures.forEach((figure, index) => {
+    const image = figure.querySelector<HTMLImageElement>(":scope > img")!;
+    const trigger = doc.createElement("button");
+    trigger.type = "button";
+    trigger.className = "case-study-photo-trigger";
+    trigger.setAttribute(
+      "aria-label",
+      `Open photo ${index + 1} of ${caseStudyFigures.length}: ${image.alt}`,
+    );
+    image.before(trigger);
+    trigger.append(image);
+    figure.classList.add("case-study-photo");
+    trigger.addEventListener("click", () => open(index));
+    triggers.push(trigger);
+  });
+
+  previous.addEventListener("click", () => show(current - 1));
+  next.addEventListener("click", () => show(current + 1));
+  close.addEventListener("click", closeLightbox);
+  galleryDialog.addEventListener("click", (event) => {
+    if (event.target === galleryDialog) closeLightbox();
+  });
+  galleryDialog.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      show(current - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      show(current + 1);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      show(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      show(caseStudyFigures.length - 1);
+    } else if (event.key === "Escape") {
+      event.preventDefault();
+      closeLightbox();
+    }
+  });
+  viewerImage.addEventListener("pointerdown", (event) => {
+    pointerStartX = event.clientX;
+  });
+  viewerImage.addEventListener("pointerup", (event) => {
+    if (pointerStartX === null) return;
+    const distance = event.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(distance) < 50) return;
+    show(current + (distance < 0 ? 1 : -1));
+  });
+  viewerImage.addEventListener("pointercancel", () => {
+    pointerStartX = null;
+  });
+}
 doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
   const starter = Array.from(
     form.querySelectorAll<HTMLInputElement>(".starter input"),

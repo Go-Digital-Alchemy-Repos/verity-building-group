@@ -452,3 +452,190 @@ select:focus-visible {
 .entry-content .case-study-cta-button { display:inline-flex; align-items:center; justify-content:space-between; gap:24px; background:#f2ece4; color:#203140; padding:16px 24px; min-height:56px; font-size:16px; font-weight:700; text-decoration:none; }
 .entry-content .case-study-cta-button:hover { background:#dec38f; }
 @media(max-width:800px) { .case-study-cards { grid-template-columns:1fr; }.case-study-cta { grid-template-columns:1fr; gap:28px; }.case-study-cta-button { justify-self:start; } }
+
+/* Case study image viewer */
+.case-study-photo {
+  position: relative;
+}
+.case-study-photo-trigger {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.case-study-photo-trigger::after {
+  content: "View larger  +";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 3;
+  padding: 7px 10px;
+  background: rgba(31, 46, 61, 0.9);
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: none;
+}
+.case-study-photo-trigger:hover::after,
+.case-study-photo-trigger:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+.case-study-photo-trigger:focus-visible {
+  outline: 3px solid #bd9854;
+  outline-offset: 3px;
+}
+.case-study-photo-trigger img {
+  display: block;
+  width: 100%;
+}
+body.case-study-lightbox-open {
+  overflow: hidden;
+}
+.case-study-lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(13, 20, 27, 0.97);
+  color: #fff;
+}
+.case-study-lightbox::backdrop {
+  background: rgba(13, 20, 27, 0.72);
+}
+.case-study-lightbox__shell {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 64px;
+  grid-template-rows: 1fr;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 72px 24px 24px;
+}
+.case-study-lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: calc(100vh - 96px);
+  margin: 0;
+}
+.case-study-lightbox__figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 150px);
+  object-fit: contain;
+  user-select: none;
+  touch-action: pan-y;
+}
+.case-study-lightbox__figure figcaption {
+  width: 100%;
+  max-width: 960px;
+  margin: 14px auto 0;
+  color: #f4efe6;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: center;
+}
+.case-study-lightbox button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(31, 46, 61, 0.72);
+  color: #fff;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+.case-study-lightbox button:hover {
+  border-color: #dec38f;
+  background: #b08a45;
+}
+.case-study-lightbox button:focus-visible {
+  outline: 3px solid #dec38f;
+  outline-offset: 4px;
+}
+.case-study-lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 2;
+}
+.case-study-lightbox__nav {
+  position: relative;
+  z-index: 2;
+}
+.case-study-lightbox__nav--previous {
+  justify-self: start;
+}
+.case-study-lightbox__nav--next {
+  justify-self: end;
+}
+@media (max-width: 700px) {
+  .case-study-photo-trigger::after {
+    opacity: 1;
+    transform: none;
+  }
+  .case-study-lightbox__shell {
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    padding: 64px 8px 12px;
+  }
+  .case-study-lightbox__figure {
+    height: calc(100vh - 76px);
+  }
+  .case-study-lightbox__figure img {
+    max-height: calc(100vh - 142px);
+  }
+  .case-study-lightbox__figure figcaption {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  .case-study-lightbox button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+  .case-study-lightbox__close {
+    top: 10px;
+    right: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-study-photo-trigger::after,
+  .case-study-lightbox button {
+    transition: none;
+  }
+}

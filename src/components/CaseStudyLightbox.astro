@@ -1,0 +1,39 @@
+<dialog
+  class="case-study-lightbox"
+  data-case-study-lightbox
+  aria-labelledby="case-study-lightbox-title"
+>
+  <div class="case-study-lightbox__shell">
+    <h2 id="case-study-lightbox-title" class="screen-reader-text">
+      Case study photo viewer
+    </h2>
+    <button
+      class="case-study-lightbox__close"
+      type="button"
+      data-lightbox-close
+      aria-label="Close photo viewer"
+    >
+      <span aria-hidden="true">&#215;</span>
+    </button>
+    <button
+      class="case-study-lightbox__nav case-study-lightbox__nav--previous"
+      type="button"
+      data-lightbox-previous
+      aria-label="Previous photo"
+    >
+      <span aria-hidden="true">&#8592;</span>
+    </button>
+    <figure class="case-study-lightbox__figure">
+      <img data-lightbox-image alt="" />
+      <figcaption data-lightbox-caption aria-live="polite"></figcaption>
+    </figure>
+    <button
+      class="case-study-lightbox__nav case-study-lightbox__nav--next"
+      type="button"
+      data-lightbox-next
+      aria-label="Next photo"
+    >
+      <span aria-hidden="true">&#8594;</span>
+    </button>
+  </div>
+</dialog>
