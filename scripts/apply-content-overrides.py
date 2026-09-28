@@ -26,6 +26,77 @@ REPLACEMENTS = {
     'renovations, land planning, and select commercial projects': 'renovations, and land planning',
     'custom homes, land development and commercial construction': 'custom homes and land development',
     'renovating a commercial property': 'renovating a home',
+    'What do we know—and what still requires verification?': 'What is already known—and what still requires verification?',
+    'It seems we can’t find what you’re looking for. Perhaps searching can help.': 'The requested content could not be found. Perhaps searching can help.',
+    'Can you evaluate a waterfront lot before we buy?': 'Can you evaluate a waterfront lot before purchase?',
+    'Who we share your data with': 'Who Verity Building Group Shares Your Data With',
+    'How long we retain your data': 'How Long Verity Building Group Retains Your Data',
+    'Who we are': 'About Verity Building Group',
+    'Areas We Serve – Verity Building Group': 'Service Areas – Verity Building Group',
+    'Areas We Serve': 'Verity Building Group Service Areas',
+    'Areas we serve': 'Verity Building Group Service Areas',
+    'How we can help': 'How VBG Can Help',
+    'How we work': 'How VBG Works',
+    'Where we build.': 'Where VBG Builds.',
+    'Where we can make a difference': 'Where VBG Can Make a Difference',
+    'Before we begin': 'Before Working With VBG',
+    'We’ll': 'VBG will',
+    'we’ll': 'VBG will',
+    'We are': 'VBG is',
+    'we are': 'VBG is',
+    'We work': 'VBG works',
+    'we work': 'VBG works',
+    'We begin': 'VBG begins',
+    'we begin': 'VBG begins',
+    'We identify': 'VBG identifies',
+    'we identify': 'VBG identifies',
+    'We focus': 'VBG focuses',
+    'we focus': 'VBG focuses',
+    'We review': 'VBG reviews',
+    'we review': 'VBG reviews',
+    'We schedule': 'VBG schedules',
+    'we schedule': 'VBG schedules',
+    'We define': 'VBG defines',
+    'we define': 'VBG defines',
+    'We discuss': 'VBG discusses',
+    'we discuss': 'VBG discusses',
+    'We ask': 'VBG asks',
+    'we ask': 'VBG asks',
+    'We clarify': 'VBG clarifies',
+    'we clarify': 'VBG clarifies',
+    'We can': 'VBG can',
+    'we can': 'VBG can',
+    'We value': 'VBG values',
+    'we value': 'VBG values',
+    'We learn': 'VBG learns',
+    'we learn': 'VBG learns',
+    'We finish': 'VBG finishes',
+    'we finish': 'VBG finishes',
+    'We help': 'VBG helps',
+    'we help': 'VBG helps',
+    'We coordinate': 'VBG coordinates',
+    'we coordinate': 'VBG coordinates',
+    'We purchase and develop': 'VBG purchases and develops',
+    'we purchase and develop': 'VBG purchases and develops',
+    'VBG purchases and develop': 'VBG purchases and develops',
+    'We purchase': 'VBG purchases',
+    'we purchase': 'VBG purchases',
+    'We build': 'VBG builds',
+    'we build': 'VBG builds',
+    'We create': 'VBG creates',
+    'we create': 'VBG creates',
+    'We bring': 'VBG brings',
+    'we bring': 'VBG brings',
+    'We treat': 'VBG treats',
+    'we treat': 'VBG treats',
+    'We will': 'VBG will',
+    'we will': 'VBG will',
+    'we collect': 'Verity Building Group collects',
+    'we also store': 'Verity Building Group also stores',
+    'we can recognize': 'Verity Building Group can recognize',
+    'the personal data we hold about you': 'the personal data Verity Building Group holds about you',
+    'request that we erase any personal data we hold about you': 'request that Verity Building Group erase any personal data the company holds about you',
+    'data we are obliged to keep': 'data Verity Building Group is obliged to keep',
 }
 
 def edit(value):
@@ -57,14 +128,14 @@ for path in (ROOT / 'src/content/pages').glob('*.json'):
     record = edit(record)
     override = ROOT / "src/content/overrides" / (path.stem + ".html")
     if override.exists():
-        record["sections"] = [override.read_text()]
+        record["sections"] = [edit(override.read_text())]
         if record["path"] == "/services/":
             for meta in record["meta"]:
                 if meta.get("name") == "description" or meta.get("property") == "og:description":
-                    meta["content"] = "Explore land development, custom home construction, and community-focused Legacy Projects with Verity Building Group in Charlotte and Lake Norman."
+                    meta["content"] = "Explore land development, custom home construction, and community-focused Legacy Projects with Verity Building Group across Charlotte and the Lake Norman area."
     seo_override = ROOT / "src/content/overrides" / (path.stem + ".seo.json")
     if seo_override.exists():
-        record.update(json.loads(seo_override.read_text()))
+        record.update(edit(json.loads(seo_override.read_text())))
     result = json.dumps(record, indent=2, ensure_ascii=False)
     assert 'commercial' not in result.lower(), f'Unreviewed reference in {path.name}'
     path.write_text(result)

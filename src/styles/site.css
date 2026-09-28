@@ -442,6 +442,9 @@ select:focus-visible {
 .case-study-card > p:last-child { margin-top:auto; margin-bottom:0; padding-top:24px; }
 .case-study-card-link { display:inline-block; padding:10px 0; border-bottom:1px solid #ad8b4c; font-weight:700; }
 .entry-content .case-study-card:hover { border-color:#94753c; }
+.land-case-study { padding-top:clamp(56px,8vw,96px); padding-bottom:clamp(56px,8vw,96px); }
+.land-case-study > h2 { max-width:780px; margin-bottom:0; }
+.land-case-study .case-study-cards { grid-template-columns:minmax(0,760px); }
 .case-study-card:hover .case-study-card-link { text-decoration:underline; text-underline-offset:5px; }
 .case-study-card:focus-visible,.case-study-cta-button:focus-visible { outline:3px solid #bd9854; outline-offset:5px; }
 .entry-content .case-study-pending { font-size:14px; color:#59636a; }

@@ -129,7 +129,7 @@ export function validateFields(form: FormData): {
     errors.phone = "Enter a valid phone number.";
   if (!fields.email && !fields.phone)
     errors.email =
-      "Provide an email address or phone number so we can respond.";
+      "Provide an email address or phone number so VBG can respond.";
   const choices: Partial<Record<ContactField, string[]>> = {
     projectType: ["Land Development", "New Home Construction", "Renovation"],
     stage: [
@@ -361,12 +361,12 @@ export async function handleContact(
     if (!response.ok)
       return fail(
         502,
-        "We could not deliver your inquiry. Please try again or contact us directly.",
+        "VBG could not deliver your inquiry. Please try again or contact us directly.",
       );
   } catch {
     return fail(
       502,
-      "We could not deliver your inquiry. Please try again or contact us directly.",
+      "VBG could not deliver your inquiry. Please try again or contact us directly.",
     );
   }
   return {
