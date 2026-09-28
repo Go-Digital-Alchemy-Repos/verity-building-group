@@ -1,5 +1,6 @@
 """Preserve owner-approved residential focus after a public-source migration."""
 import json
+import re
 from pathlib import Path
 from bs4 import BeautifulSoup
 
@@ -78,7 +79,6 @@ REPLACEMENTS = {
     'we coordinate': 'VBG coordinates',
     'We purchase and develop': 'VBG purchases and develops',
     'we purchase and develop': 'VBG purchases and develops',
-    'VBG purchases and develop': 'VBG purchases and develops',
     'We purchase': 'VBG purchases',
     'we purchase': 'VBG purchases',
     'We build': 'VBG builds',
@@ -107,6 +107,7 @@ def edit(value):
     if isinstance(value, str):
         for old, new in REPLACEMENTS.items():
             value = value.replace(old, new)
+        value = re.sub(r'VBG purchases and develops*\b', 'VBG purchases and develops', value)
     return value
 
 for path in (ROOT / 'src/content/pages').glob('*.json'):
