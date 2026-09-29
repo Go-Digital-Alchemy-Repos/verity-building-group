@@ -63,15 +63,32 @@
   font-weight: 700;
   text-decoration: none;
   border: 1px solid var(--color-ink);
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 .services-intro__copy .services-button {
   margin-top: 28px;
 }
-.services-page .services-button:hover {
-  background: #344654;
+.services-page .services-button:is(:hover, :focus-visible) {
+  background: #b08a45;
+  border-color: #b08a45;
+  box-shadow: 0 10px 24px rgba(76, 60, 27, 0.16);
+  transform: translateY(-2px);
 }
 .services-page .services-button:active {
   background: #15212c;
+  border-color: #15212c;
+  box-shadow: none;
+  transform: translateY(0);
+}
+.services-page .services-button > span[aria-hidden] {
+  transition: transform 220ms ease;
+}
+.services-page .services-button:is(:hover, :focus-visible) > span[aria-hidden] {
+  transform: translate(3px, -3px);
 }
 .services-jump {
   display: grid;
@@ -302,6 +319,25 @@
   max-width: 620px;
   font-size: 16px;
 }
+
+/* Restrained, one-time section reveals for the services family. */
+.js-motion .services-page.services-motion .services-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.js-motion .services-page.services-motion .services-reveal--image {
+  transform: translateY(12px) scale(0.985);
+  transition-duration: 820ms;
+}
+.js-motion .services-page.services-motion .services-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
 @media (max-width: 960px) {
   .services-wrap {
     width: calc(100% - 64px);
@@ -404,5 +440,32 @@
   }
   .services-faq summary {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .services-page h1 {
+    font-size: 36px;
+  }
+
+  .services-page h2 {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-button,
+  .services-page .services-button > span[aria-hidden],
+  .services-page .services-reveal {
+    transition: none;
+  }
+
+  .services-page .services-button:is(:hover, :focus-visible),
+  .services-page
+    .services-button:is(:hover, :focus-visible)
+    > span[aria-hidden],
+  .services-page .services-reveal {
+    opacity: 1;
+    transform: none;
   }
 }

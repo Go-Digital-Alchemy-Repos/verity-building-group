@@ -42,3 +42,4 @@
 .blog-empty h2 { font-size:36px; line-height:1.1; }
 @media(max-width:1000px) { .blog-layout { gap:32px; grid-template-columns:minmax(0,1fr) 250px; }.blog-sidebar{padding:22px}.blog-row{grid-template-columns:1fr}.blog-row img{max-height:280px} }
 @media(max-width:700px) { .blog-page{padding:36px 0 64px}.blog-wrap{width:calc(100% - 40px)}.blog-heading{padding-bottom:32px}.blog-layout{display:flex; flex-direction:column; padding-top:28px; gap:32px}.blog-sidebar,.blog-results{width:100%}.blog-sidebar-note{display:none}.blog-sidebar h2{margin-bottom:20px}.blog-featured-copy{padding:24px}.blog-results-heading{align-items:start}.blog-results-heading p{max-width:65%}.blog-row{gap:20px}.blog-heading > p:last-child{font-size:17px} }
+@media(max-width:360px) { .blog-heading h1{font-size:36px} }

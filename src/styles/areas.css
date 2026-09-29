@@ -21,6 +21,12 @@
 .area-page h1 {
   font-size: clamp(44px, 4.7vw, 68px);
 }
+
+@media (max-width: 360px) {
+  .area-page h1 {
+    font-size: 36px;
+  }
+}
 .area-jump {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

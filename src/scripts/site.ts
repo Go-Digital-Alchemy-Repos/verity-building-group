@@ -2,6 +2,114 @@ export {};
 const doc = document;
 doc.documentElement.classList.add("js-enabled");
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+type WordLocation = { node: Text; start: number; end: number };
+
+function preventTextWidows() {
+  const selector =
+    ".site main :is(h1, h2, h3, h4, h5, h6, p, figcaption, blockquote, summary, li)";
+
+  doc.querySelectorAll<HTMLElement>(selector).forEach((element) => {
+    if (
+      element.matches("li") &&
+      element.querySelector("p,h1,h2,h3,h4,h5,h6,ul,ol")
+    )
+      return;
+
+    const textNodes: Text[] = [];
+    const words: WordLocation[] = [];
+    const walker = doc.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || parent.closest("script,style,pre,code,[hidden]"))
+          return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+
+    let current: Node | null;
+    while ((current = walker.nextNode())) {
+      const textNode = current as Text;
+      textNodes.push(textNode);
+      for (const match of textNode.data.matchAll(
+        /[\p{L}\p{N}][\p{L}\p{N}’'&.-]*/gu,
+      )) {
+        words.push({
+          node: textNode,
+          start: match.index,
+          end: match.index + match[0].length,
+        });
+      }
+    }
+
+    if (words.length < 4) return;
+    const previous = words.at(-2)!;
+    const last = words.at(-1)!;
+    const between = doc.createRange();
+    between.setStart(previous.node, previous.end);
+    between.setEnd(last.node, last.start);
+    if (between.cloneContents().querySelector?.("br")) return;
+
+    const previousWord = previous.node.data.slice(previous.start, previous.end);
+    if (previousWord.includes("-")) {
+      previous.node.data =
+        previous.node.data.slice(0, previous.start) +
+        previousWord.replaceAll("-", "\u2011") +
+        previous.node.data.slice(previous.end);
+    }
+
+    if (previous.node === last.node) {
+      const separator = previous.node.data.slice(previous.end, last.start);
+      if (!/\s/.test(separator)) return;
+      previous.node.data =
+        previous.node.data.slice(0, previous.end) +
+        "\u00a0" +
+        previous.node.data.slice(last.start);
+      return;
+    }
+
+    const firstIndex = textNodes.indexOf(previous.node);
+    const lastIndex = textNodes.indexOf(last.node);
+    let separatorLocked = false;
+    for (let index = lastIndex; index >= firstIndex; index--) {
+      const node = textNodes[index];
+      const start = node === previous.node ? previous.end : 0;
+      const end = node === last.node ? last.start : node.data.length;
+      const separator = node.data.slice(start, end);
+      if (!/\s/.test(separator)) continue;
+      node.data =
+        node.data.slice(0, start) +
+        (separatorLocked ? "" : "\u00a0") +
+        node.data.slice(end);
+      separatorLocked = true;
+    }
+  });
+}
+
+preventTextWidows();
+
+function prepareAiImageDisclosures() {
+  doc
+    .querySelectorAll<HTMLElement>("figure > figcaption")
+    .forEach((caption) => {
+      if (!/\bAI[- ]generated\b/i.test(caption.textContent ?? "")) return;
+
+      const figure = caption.parentElement as HTMLElement;
+      const linkedFigure = figure.closest<HTMLAnchorElement>("a[href]");
+      const trigger = linkedFigure ?? figure;
+
+      figure.classList.add("ai-image-disclosure");
+      caption.classList.add("ai-disclosure");
+      trigger.classList.add("ai-disclosure-trigger");
+
+      if (!linkedFigure && !figure.hasAttribute("tabindex")) {
+        figure.tabIndex = 0;
+      }
+    });
+}
+
+prepareAiImageDisclosures();
+
 if (!reduced) {
   doc.documentElement.classList.add("js-motion");
   const observer = new IntersectionObserver(
@@ -9,14 +117,16 @@ if (!reduced) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = entry.target as HTMLElement;
-          const sequenceDelay = element.dataset.id
-            ? (Number(element.dataset.id) - 1) * 400
-            : 0;
+          const sequenceDelay = element.dataset.motionDelay
+            ? Number(element.dataset.motionDelay)
+            : element.dataset.id
+              ? (Number(element.dataset.id) - 1) * 400
+              : 0;
           const extraDelay = element.classList.contains("delay-250")
-              ? 250
-              : element.classList.contains("delay-500")
-                ? 500
-                : 0;
+            ? 250
+            : element.classList.contains("delay-500")
+              ? 500
+              : 0;
           element.style.transitionDelay = `${sequenceDelay + extraDelay}ms`;
           element.classList.add("is-visible");
           observer.unobserve(element);
@@ -29,6 +139,43 @@ if (!reduced) {
       element.classList.add("reveal-item");
     observer.observe(element);
   });
+
+  const servicePage = doc.querySelector<HTMLElement>(".services-page");
+  if (servicePage) {
+    servicePage.classList.add("services-motion");
+
+    const registerReveal = (
+      selector: string,
+      options: { delayStep?: number; image?: boolean } = {},
+    ) => {
+      servicePage
+        .querySelectorAll<HTMLElement>(selector)
+        .forEach((element, index) => {
+          element.classList.add("services-reveal");
+          if (options.image) element.classList.add("services-reveal--image");
+          if (options.delayStep)
+            element.dataset.motionDelay = String(
+              Math.min(index * options.delayStep, 240),
+            );
+          observer.observe(element);
+        });
+    };
+
+    registerReveal(
+      ".services-intro .services-eyebrow, .services-intro__grid > h1, .services-intro__copy > *, .legacy-hero__copy > *",
+      { delayStep: 70 },
+    );
+    registerReveal(".legacy-hero__image", { image: true });
+    registerReveal(".services-jump", { delayStep: 60 });
+    registerReveal(
+      ".services-offering, .legacy-focus__intro, .legacy-focus__list, .services-section-heading, .legacy-approach__heading, .services-process, .legacy-steps, .services-questions > :first-child, .services-faq, .services-closing__grid",
+    );
+    registerReveal(
+      ".service-case-study__heading, .service-case-study .case-study-card",
+      { delayStep: 90 },
+    );
+    registerReveal(".services-offering__photo", { image: true });
+  }
 }
 const navigationElement = doc.querySelector("#site-navigation");
 const toggle = navigationElement?.querySelector("button");
@@ -172,7 +319,8 @@ doc.querySelectorAll<HTMLElement>(".work-gallery").forEach((gallery) => {
       const advance = () => {
         if (!track) return;
         const slide = track.querySelector<HTMLElement>(".swiper-slide");
-        const distance = (slide?.getBoundingClientRect().width || 0) +
+        const distance =
+          (slide?.getBoundingClientRect().width || 0) +
           (Number.parseFloat(getComputedStyle(track).columnGap) || 0);
         track.scrollBy({
           left:
@@ -365,7 +513,8 @@ doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
         const template = form.parentElement?.querySelector<HTMLTemplateElement>(
           "[data-inquiry-confirmation]",
         );
-        const confirmation = template?.content.firstElementChild?.cloneNode(true);
+        const confirmation =
+          template?.content.firstElementChild?.cloneNode(true);
         if (confirmation instanceof HTMLElement) {
           form.replaceWith(confirmation);
           confirmation.focus();

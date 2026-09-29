@@ -204,7 +204,20 @@
   }
   .land-page .legacy-focus__list ul {
     grid-column: 2;
+    min-width: 0;
+    max-width: 100%;
     font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .land-page .legacy-focus__list article > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .land-page .legacy-focus__list ul {
+    font-size: 15px;
   }
 }
 /* Custom Homes shares the service detail layout and responsive behavior. */
