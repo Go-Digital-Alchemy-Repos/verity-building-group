@@ -2,6 +2,7 @@
 .services-page {
   --services-line: #d2c9b8;
   --services-muted: #52606a;
+  --services-gold-strong: #856a33;
   --services-space: clamp(64px, 7vw, 112px);
   background: #faf8f4;
   color: var(--color-ink);
@@ -162,8 +163,10 @@
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  transition: color 0.25s ease;
 }
-.services-page .services-link:hover {
+.services-page .services-link:is(:hover, :focus-visible) {
+  color: var(--services-gold-strong);
   text-decoration: none;
 }
 .services-page .services-link > span[aria-hidden] {
@@ -171,6 +174,17 @@
 }
 .services-page .services-link:is(:hover, :focus-visible) > span[aria-hidden] {
   transform: translateX(7px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-link,
+  .services-page .services-link > span[aria-hidden] {
+    transition: none;
+  }
+
+  .services-page .services-link:is(:hover, :focus-visible) > span[aria-hidden] {
+    transform: none;
+  }
 }
 .services-planning {
   background: var(--color-ink);
