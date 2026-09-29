@@ -90,8 +90,17 @@ h6 {
   outline-offset: 4px;
 }
 
+.site main a.underlined-text-link {
+  text-decoration-color: currentColor;
+  transition: text-decoration-color 250ms ease;
+}
+.site main a.underlined-text-link:is(:hover, :focus-visible) {
+  text-decoration-color: #b08a45;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .site figure.ai-image-disclosure > figcaption.ai-disclosure {
+  .site figure.ai-image-disclosure > figcaption.ai-disclosure,
+  .site main a.underlined-text-link {
     transition: none;
   }
 }

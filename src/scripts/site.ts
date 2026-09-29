@@ -110,6 +110,18 @@ function prepareAiImageDisclosures() {
 
 prepareAiImageDisclosures();
 
+function prepareUnderlinedTextLinks() {
+  doc
+    .querySelectorAll<HTMLAnchorElement>(".site main a[href]")
+    .forEach((link) => {
+      if (getComputedStyle(link).textDecorationLine.includes("underline")) {
+        link.classList.add("underlined-text-link");
+      }
+    });
+}
+
+prepareUnderlinedTextLinks();
+
 if (!reduced) {
   doc.documentElement.classList.add("js-motion");
   const observer = new IntersectionObserver(
