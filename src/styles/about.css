@@ -14,6 +14,9 @@
 .about-page #vbg-team-heading {
   margin-top: 20px;
 }
+.about-team-description {
+  text-align: center;
+}
 .about-team {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -84,7 +87,9 @@
 .about-area-card__action > span[aria-hidden] {
   transition: transform 0.25s ease;
 }
-.about-area-card:is(:hover, :focus-visible) .about-area-card__action > span[aria-hidden] {
+.about-area-card:is(:hover, :focus-visible)
+  .about-area-card__action
+  > span[aria-hidden] {
   transform: translateX(7px);
 }
 .about-page .about-area-card:focus-visible {
