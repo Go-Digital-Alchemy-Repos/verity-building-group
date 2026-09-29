@@ -66,6 +66,9 @@
   max-width: 920px;
   margin-top: 28px;
 }
+.area-resources-inline {
+  max-width: none;
+}
 .area-page .area-content + .area-content {
   padding-top: 0;
 }
@@ -78,8 +81,17 @@
 }
 .area-related h2 {
   margin-bottom: 32px;
+  text-align: center;
+}
+.area-related__links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 880px;
+  margin-inline: auto;
 }
 @media (max-width: 960px) {
+  .area-related__links {
+    grid-template-columns: 1fr;
+  }
   .area-services-grid {
     gap: 32px;
   }

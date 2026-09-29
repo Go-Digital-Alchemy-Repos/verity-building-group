@@ -28,6 +28,7 @@
 body.portfolio-viewer-open { overflow:hidden; }
 @media(max-width:900px) { .portfolio-grid{columns:2}.portfolio-page{padding:40px 24px 64px} }
 @media(max-width:550px) { .portfolio-grid{columns:1}.portfolio-toolbar{align-items:start; flex-direction:column; gap:16px}.portfolio-page{padding-inline:20px}.portfolio-viewer{padding:12px}.portfolio-viewer-toolbar{gap:8px;flex-wrap:wrap}.portfolio-viewer-toolbar p{width:100%;margin-bottom:4px}.portfolio-viewer-toolbar button{flex:1}.portfolio-stage{gap:4px}.portfolio-stage button{padding:8px;min-width:40px}.portfolio-stage img{width:calc(100% - 88px)} }
+@media(max-width:550px) { .portfolio-filters{width:100%;gap:8px}.portfolio-filters button{flex:1 1 0;min-width:0;padding-inline:10px} }
 @media(max-width:550px) {
   .portfolio-stage { position:relative; padding-bottom:64px; }
   .portfolio-stage img { width:100%; }

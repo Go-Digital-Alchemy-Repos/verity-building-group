@@ -24,6 +24,7 @@
 .blog-results-heading p { margin:0; font-weight:700; }
 .blog-results-heading span { font-size:13px; white-space:nowrap; color:#59636a; }
 .blog-featured { margin:0; background:#fff; }
+.blog-featured figure,.blog-row figure { margin:0; }
 .blog-featured img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
 .blog-featured-copy { padding:32px; border:1px solid #e4ded4; border-top:0; }
 .blog-featured h2 { font-size:clamp(32px,3.4vw,44px); line-height:1.1; margin:0 0 20px; }

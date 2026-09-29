@@ -3,7 +3,6 @@ const root = document.querySelector<HTMLElement>('.portfolio-page');
 if (root) {
   const photos = Array.from(root.querySelectorAll<HTMLAnchorElement>('.portfolio-photo'));
   const filters = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-portfolio-filter]'));
-  const count = root.querySelector<HTMLElement>('#portfolio-count')!;
   const viewer = root.querySelector<HTMLDialogElement>('.portfolio-viewer')!;
   const large = viewer.querySelector<HTMLImageElement>('[data-large-photo]')!;
   const caption = viewer.querySelector<HTMLElement>('[data-photo-caption]')!;
@@ -34,7 +33,6 @@ if (root) {
     filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter.dataset.portfolioFilter === selected)));
     photos.forEach(photo => { photo.hidden = Boolean(selected && photo.dataset.space !== selected); });
     active = photos.filter(photo => !photo.hidden);
-    count.textContent = `${active.length} photos · ${selected || 'Interior & Exterior'}`;
   }));
   photos.forEach(photo => photo.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
