@@ -36,7 +36,7 @@ if (!page) Astro.response.status = 404;
       <>
         <Fragment set:html={html} />
         {index < page.sections.length - 1 && (
-          <ContactForm id={`page-inquiry-${index}`} />
+          <ContactForm id={`page-inquiry-${index}`} expanded={path === "/contact/"} />
         )}
       </>
     ))

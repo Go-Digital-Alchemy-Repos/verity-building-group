@@ -2,19 +2,21 @@
 import { createFormToken } from "../lib/contact";
 interface Props {
   id: string;
+  expanded?: boolean;
 }
-const { id } = Astro.props;
+const { id, expanded = false } = Astro.props;
 const token = createFormToken(process.env.CONTACT_FORM_SECRET);
 const field = (name: string) => `${id}-${name}`;
 ---
 
 <div class="inquiry-wrapper">
   <form
-    class="inquiry-form"
+    class:list={["inquiry-form", { "is-expanded": expanded }]}
     method="post"
     action="/api/contact/"
     enctype="multipart/form-data"
     data-inquiry-form
+    data-always-expanded={expanded ? "true" : undefined}
   >
     <input type="hidden" name="token" value={token} />
     <div class="honey" aria-hidden="true">
@@ -87,6 +89,28 @@ const field = (name: string) => `${id}-${name}`;
           <option>Land Development</option>
           <option>New Home Construction</option>
           <option>Renovation</option>
+          <option>Legacy / Community Project</option>
+        </select>
+      </div>
+      <div class="more half">
+        <label for={field("propertyStatus")}>Property Status</label>
+        <select id={field("propertyStatus")} name="propertyStatus">
+          <option value="">Select property status</option>
+          <option>I own the property</option>
+          <option>Under contract</option>
+          <option>Searching or evaluating</option>
+          <option>Not applicable</option>
+        </select>
+      </div>
+      <div class="more half">
+        <label for={field("budget")}>Anticipated Construction Investment</label>
+        <select id={field("budget")} name="budget">
+          <option value="">Select a range</option>
+          <option>Not sure yet</option>
+          <option>Under $500,000</option>
+          <option>$500,000–$1 million</option>
+          <option>$1–$2 million</option>
+          <option>$2 million+</option>
         </select>
       </div>
       <div class="more">
@@ -126,6 +150,16 @@ const field = (name: string) => `${id}-${name}`;
           rows="6"
           maxlength="2000"
         ></textarea>
+      </div>
+      <div class="more">
+        <label for={field("decisionMakers")}>
+          Who Will Be Involved in Project Decisions?
+        </label>
+        <input
+          id={field("decisionMakers")}
+          name="decisionMakers"
+          maxlength="1000"
+        />
       </div>
       <div class="more">
         <label class="screen-reader-text" for={field("message")}>

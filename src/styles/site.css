@@ -597,6 +597,44 @@ select:focus-visible {
   max-width: 880px;
   margin: 18px auto 0;
 }
+
+.land-case-study .service-case-study__heading h2 {
+  margin-top: 32px;
+}
+
+.contact-actions .contact-action {
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-actions .contact-action .interface-icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.contact-actions .contact-action:is(:hover, :focus-visible) {
+  background: #b08a45;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgb(15 33 49 / 20%);
+}
+
+.contact-actions .contact-action:is(:hover, :focus-visible) .interface-icon {
+  transform: translateX(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-actions .contact-action,
+  .contact-actions .contact-action .interface-icon {
+    transition: none;
+  }
+
+  .contact-actions .contact-action:is(:hover, :focus-visible),
+  .contact-actions .contact-action:is(:hover, :focus-visible) .interface-icon {
+    transform: none;
+  }
+}
 .entry-content .service-case-study__heading > p {
   max-width: 720px;
   margin: 24px auto 0;

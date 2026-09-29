@@ -38,10 +38,7 @@ const date = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'long'
       <div class="blog-results-heading"><p>{filtered ? `${results.length} ${results.length === 1 ? 'article' : 'articles'} found` : 'Latest from the Field Guide'}</p></div>
       {featured ? <>
         <article class="blog-featured">
-          <figure class="ai-image-disclosure ai-disclosure-trigger" tabindex="0">
-            <a href={featured.path} aria-label={`Read ${featured.title}`} tabindex="-1"><img src={featured.image} alt={featured.alt} width="1536" height="1024" fetchpriority="high" /></a>
-            <figcaption class="ai-disclosure">AI-generated editorial concept; not a completed Verity project.</figcaption>
-          </figure>
+          <a href={featured.path} aria-label={`Read ${featured.title}`}><img src={featured.image} alt={featured.alt} width="1536" height="1024" fetchpriority="high" /></a>
           <div class="blog-featured-copy">
             <p class="blog-kicker">{featured.topic}</p>
             <h2><a href={featured.path}>{featured.title}</a></h2>
@@ -51,10 +48,7 @@ const date = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'long'
           </div>
         </article>
         {remaining.length > 0 && <div class="blog-older"><h2>More perspectives</h2>{remaining.map(post => <article class="blog-row">
-          <figure class="ai-image-disclosure ai-disclosure-trigger" tabindex="0">
-            <a href={post.path} aria-label={`Read ${post.title}`} tabindex="-1"><img src={post.image} alt={post.alt} width="600" height="400" loading="lazy" /></a>
-            <figcaption class="ai-disclosure">AI-generated editorial concept; not a completed Verity project.</figcaption>
-          </figure>
+          <a href={post.path} aria-label={`Read ${post.title}`}><img src={post.image} alt={post.alt} width="600" height="400" loading="lazy" /></a>
           <div><p class="blog-kicker">{post.topic} · {post.location}</p><h3><a href={post.path}>{post.title}</a></h3><p class="blog-date"><time datetime={post.date}>{date(post.date)}</time></p><p>{post.excerpt}</p><a class="blog-read" href={post.path}>Read the article <span aria-hidden="true">→</span></a></div>
         </article>)}</div>}
       </> : <div class="blog-empty"><h2>No articles match those filters.</h2><p>Try a different topic, location, or search term.</p><a class="blog-read" href={Astro.url.pathname + '#articles'}>View all articles <span aria-hidden="true">→</span></a></div>}

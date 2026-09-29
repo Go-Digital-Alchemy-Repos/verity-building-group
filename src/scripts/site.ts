@@ -475,7 +475,8 @@ doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
   const update = () =>
     form.classList.toggle(
       "is-expanded",
-      starter.some((i) => i.value.trim()),
+      form.hasAttribute("data-always-expanded") ||
+        starter.some((i) => i.value.trim()),
     );
   starter.forEach((i) => i.addEventListener("input", update));
   update();
