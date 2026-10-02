@@ -308,6 +308,19 @@ select:focus-visible {
 .contact-action {
   min-height: 60px;
 }
+.contact-action .interface-icon {
+  flex: 0 0 auto;
+  font-size: 1.62em;
+  left: auto;
+  position: static;
+  transform: none;
+  transition: none;
+}
+.contact-action:hover .interface-icon,
+.contact-action:focus-visible .interface-icon {
+  left: auto;
+  transform: none;
+}
 
 /* Homepage services: three balanced offerings with an in-flow action row. */
 .home .home-services {
