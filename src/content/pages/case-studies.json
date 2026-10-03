@@ -1,7 +1,7 @@
 {
   "path": "/case-studies/",
   "title": "Case Studies – Verity Building Group",
-  "bodyClass": "page",
+  "bodyClass": "page case-studies-page",
   "canonical": "https://veritybuildstg.wpenginepowered.com/case-studies/",
   "meta": [
     {

@@ -1,7 +1,7 @@
 {
   "path": "/contact/",
   "title": "Contact – Verity Building Group",
-  "bodyClass": "page",
+  "bodyClass": "page contact-page",
   "canonical": "https://veritybuildstg.wpenginepowered.com/contact/",
   "meta": [
     {
