@@ -1,4 +1,4 @@
-.portfolio-page { max-width:1440px; margin:auto; padding:64px 40px 88px; color:#203140; font-family:Lato,sans-serif; }
+.portfolio-page { width:calc(100% - 160px); max-width:1280px; margin:auto; padding:64px 0 88px; color:#203140; font-family:Lato,sans-serif; }
 .portfolio-heading { max-width:760px; margin-bottom:40px; }
 .portfolio-eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700; color:#76613b; }
 .portfolio-heading h1 { font:700 clamp(44px,5vw,68px)/1.06 'Cormorant Garamond',serif; margin:16px 0 24px; }
@@ -26,8 +26,10 @@
 .portfolio-stage img { width:calc(100% - 128px); height:100%; object-fit:contain; min-width:0; }
 .portfolio-viewer-caption { margin:0; text-align:center; flex:none; font-size:15px; line-height:1.5; }
 body.portfolio-viewer-open { overflow:hidden; }
-@media(max-width:900px) { .portfolio-grid{columns:2}.portfolio-page{padding:40px 24px 64px} }
-@media(max-width:550px) { .portfolio-grid{columns:1}.portfolio-toolbar{align-items:start; flex-direction:column; gap:16px}.portfolio-page{padding-inline:20px}.portfolio-viewer{padding:12px}.portfolio-viewer-toolbar{gap:8px;flex-wrap:wrap}.portfolio-viewer-toolbar p{width:100%;margin-bottom:4px}.portfolio-viewer-toolbar button{flex:1}.portfolio-stage{gap:4px}.portfolio-stage button{padding:8px;min-width:40px}.portfolio-stage img{width:calc(100% - 88px)} }
+@media(max-width:1024px) { .portfolio-page{width:calc(100% - 64px)} }
+@media(max-width:900px) { .portfolio-grid{columns:2}.portfolio-page{padding:40px 0 64px} }
+@media(max-width:767px) { .portfolio-page{width:calc(100% - 40px)} }
+@media(max-width:550px) { .portfolio-grid{columns:1}.portfolio-toolbar{align-items:start; flex-direction:column; gap:16px}.portfolio-viewer{padding:12px}.portfolio-viewer-toolbar{gap:8px;flex-wrap:wrap}.portfolio-viewer-toolbar p{width:100%;margin-bottom:4px}.portfolio-viewer-toolbar button{flex:1}.portfolio-stage{gap:4px}.portfolio-stage button{padding:8px;min-width:40px}.portfolio-stage img{width:calc(100% - 88px)} }
 @media(max-width:550px) {
   .portfolio-stage { position:relative; padding-bottom:64px; }
   .portfolio-stage img { width:100%; }
