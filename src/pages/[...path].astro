@@ -5,6 +5,7 @@ import BlogIndex from "../components/BlogIndex.astro";
 import ContactForm from "../components/ContactForm.astro";
 import ContactHandoffForm from "../components/ContactHandoffForm.astro";
 import ProjectCta from "../components/ProjectCta.astro";
+import HomeLanding from "../components/HomeLanding.astro";
 import { arrowIconMarkup, replaceArrowGlyphs } from "../lib/icons";
 import { buildSeo } from "../lib/seo";
 import portfolioPhotos from "../content/portfolio.json";
@@ -360,8 +361,11 @@ if (!page) Astro.response.status = 404;
   meta={seo?.meta}
   robots={seo?.robots}
   schema={seo?.schema}
+  minimal={path === "/"}
 >
-  {page && path === "/portfolio/" ? (
+  {page && path === "/" ? (
+    <HomeLanding />
+  ) : page && path === "/portfolio/" ? (
     <Portfolio />
   ) : page && blogProps ? (
     <BlogIndex {...blogProps} />
