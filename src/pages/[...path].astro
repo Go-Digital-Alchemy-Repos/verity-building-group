@@ -3,6 +3,7 @@ import Site from "../layouts/Site.astro";
 import Portfolio from "../components/Portfolio.astro";
 import BlogIndex from "../components/BlogIndex.astro";
 import ContactForm from "../components/ContactForm.astro";
+import HomeLanding from "../components/HomeLanding.astro";
 const pages = import.meta.glob("../content/pages/*.json", {
   eager: true,
   import: "default",
@@ -30,13 +31,23 @@ if (!page) Astro.response.status = 404;
   canonical={page?.canonical}
   meta={page?.meta}
   schema={page?.schema}
+  minimal={path === "/"}
 >
-  {page && path === "/portfolio/" ? <Portfolio /> : page && isBlog ? <BlogIndex /> : page ? (
+  {page && path === "/" ? (
+    <HomeLanding />
+  ) : page && path === "/portfolio/" ? (
+    <Portfolio />
+  ) : page && isBlog ? (
+    <BlogIndex />
+  ) : page ? (
     page.sections.map((html, index) => (
       <>
         <Fragment set:html={html} />
         {index < page.sections.length - 1 && (
-          <ContactForm id={`page-inquiry-${index}`} expanded={path === "/contact/"} />
+          <ContactForm
+            id={`page-inquiry-${index}`}
+            expanded={path === "/contact/"}
+          />
         )}
       </>
     ))

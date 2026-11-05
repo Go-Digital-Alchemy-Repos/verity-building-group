@@ -20,6 +20,7 @@ interface Props {
   meta?: Record<string, string>[];
   canonical?: string;
   schema?: unknown[];
+  minimal?: boolean;
 }
 const {
   title,
@@ -27,6 +28,7 @@ const {
   meta = [],
   canonical,
   schema = [],
+  minimal = false,
 } = Astro.props;
 const site = process.env.SITE_URL || Astro.url.origin;
 const canonicalPath = canonical
@@ -94,14 +96,14 @@ function localizeStructuredData(value: unknown): unknown {
       <a class="skip-link screen-reader-text" href="#primary">
         Skip to content
       </a>
-      <Header />
+      {!minimal && <Header />}
       <slot />
-      <Footer />
+      {!minimal && <Footer />}
     </div>
-    <ProjectModal />
-    <CaseStudyLightbox />
-    <script>
+    {!minimal && <ProjectModal />}
+    {!minimal && <CaseStudyLightbox />}
+    {!minimal && <script>
       import "../scripts/site";
-    </script>
+    </script>}
   </body>
 </html>
