@@ -3,6 +3,12 @@ import Site from "../layouts/Site.astro";
 import Portfolio from "../components/Portfolio.astro";
 import BlogIndex from "../components/BlogIndex.astro";
 import ContactForm from "../components/ContactForm.astro";
+import ContactHandoffForm from "../components/ContactHandoffForm.astro";
+import ProjectCta from "../components/ProjectCta.astro";
+import HomeLanding from "../components/HomeLanding.astro";
+import { arrowIconMarkup, replaceArrowGlyphs } from "../lib/icons";
+import { buildSeo } from "../lib/seo";
+import portfolioPhotos from "../content/portfolio.json";
 const pages = import.meta.glob("../content/pages/*.json", {
   eager: true,
   import: "default",
@@ -19,27 +25,365 @@ const pages = import.meta.glob("../content/pages/*.json", {
   }
 >;
 const path = Astro.url.pathname;
-const isBlog = ["/insights/", "/category/field-guide/"].includes(path);
-const page = Object.values(pages).find((p) => p.path === path);
+const blogRoutes: Record<
+  string,
+  { initialTopic?: string; initialLocation?: string; heading?: string }
+> = {
+  "/insights/": {},
+  "/category/field-guide/": {},
+  "/category/custom-home-construction/": {
+    initialTopic: "Custom Home Construction",
+    heading: "Custom Home Construction\nInsights",
+  },
+  "/category/land-development/": {
+    initialTopic: "Land Development",
+    heading: "Land Development\nInsights",
+  },
+  "/category/legacy-projects/": {
+    initialTopic: "Legacy Projects",
+    heading: "Legacy Projects\nInsights",
+  },
+  "/category/uncategorized/": {
+    initialTopic: "Uncategorized",
+    heading: "Uncategorized\nInsights",
+  },
+  "/tag/charlotte/": {
+    initialLocation: "Charlotte",
+    heading: "Charlotte\nInsights",
+  },
+  "/tag/cornelius/": {
+    initialLocation: "Cornelius",
+    heading: "Cornelius\nInsights",
+  },
+  "/tag/davidson/": {
+    initialLocation: "Davidson",
+    heading: "Davidson\nInsights",
+  },
+  "/tag/huntersville/": {
+    initialLocation: "Huntersville",
+    heading: "Huntersville\nInsights",
+  },
+  "/tag/lake-norman/": {
+    initialLocation: "Lake Norman",
+    heading: "Lake Norman\nInsights",
+  },
+  "/tag/mooresville/": {
+    initialLocation: "Mooresville",
+    heading: "Mooresville\nInsights",
+  },
+};
+const blogProps = blogRoutes[path];
+const singleHeadingPaths = new Set([
+  "/contact/",
+  "/case-studies/",
+  "/custom-home-budget-planning-where-to-start-in-cornelius/",
+  "/what-thoughtful-homebuilding-means-for-charlotte-families/",
+  "/before-you-buy-a-lake-norman-homesite-a-builder-s-due-diligence-checklist/",
+]);
+const fieldGuideDetailPaths = new Set([
+  "/custom-home-budget-planning-where-to-start-in-cornelius/",
+  "/what-thoughtful-homebuilding-means-for-charlotte-families/",
+  "/before-you-buy-a-lake-norman-homesite-a-builder-s-due-diligence-checklist/",
+]);
+const primaryServiceDetailPaths = new Set([
+  "/legacy-projects/",
+  "/land-development-charlotte-nc/",
+  "/custom-home-builder-charlotte-nc/",
+]);
+const caseStudyDetailPaths = new Set([
+  "/case-studies/zwilling-custom-home/",
+  "/case-studies/brancer-custom-home/",
+  "/case-studies/hallway-improvement/",
+]);
+const relatedLinksByPath: Record<
+  string,
+  Array<{ href: string; label: string }>
+> = {
+  "/custom-home-budget-planning-where-to-start-in-cornelius/": [
+    {
+      href: "/custom-home-builder-charlotte-nc/",
+      label: "Custom home construction",
+    },
+    {
+      href: "/north-mecklenburg-iredell-builder/",
+      label: "North Mecklenburg & Iredell",
+    },
+    {
+      href: "/case-studies/brancer-custom-home/",
+      label: "Brancer custom home",
+    },
+  ],
+  "/what-thoughtful-homebuilding-means-for-charlotte-families/": [
+    {
+      href: "/custom-home-builder-charlotte-nc/",
+      label: "Custom home construction",
+    },
+    {
+      href: "/custom-home-builder-in-charlotte-nc/",
+      label: "Building in Charlotte",
+    },
+    { href: "/case-studies/", label: "Project case studies" },
+  ],
+  "/before-you-buy-a-lake-norman-homesite-a-builder-s-due-diligence-checklist/":
+    [
+      { href: "/land-development-charlotte-nc/", label: "Land development" },
+      {
+        href: "/lake-norman-custom-home-builder/",
+        label: "Building at Lake Norman",
+      },
+      {
+        href: "/case-studies/zwilling-custom-home/",
+        label: "Zwilling lakefront home",
+      },
+    ],
+  "/case-studies/zwilling-custom-home/": [
+    {
+      href: "/custom-home-builder-charlotte-nc/",
+      label: "Custom home construction",
+    },
+    { href: "/land-development-charlotte-nc/", label: "Land development" },
+    {
+      href: "/lake-norman-custom-home-builder/",
+      label: "Lake Norman service area",
+    },
+  ],
+  "/case-studies/brancer-custom-home/": [
+    {
+      href: "/custom-home-builder-charlotte-nc/",
+      label: "Custom home construction",
+    },
+    { href: "/portfolio/", label: "Explore the portfolio" },
+  ],
+  "/case-studies/hallway-improvement/": [
+    { href: "/services/", label: "Explore construction services" },
+    { href: "/case-studies/", label: "More project case studies" },
+  ],
+};
+const escapeAttribute = (value: string) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+const homePortfolioPhotos = portfolioPhotos.slice(0, 10);
+const homePortfolioSlides = homePortfolioPhotos
+  .map(
+    (photo) => `
+            <div class="swiper-slide">
+              <a class="home-portfolio-photo clickable-image clickable-image__media" href="${escapeAttribute(photo.src)}" aria-label="Enlarge: ${escapeAttribute(photo.alt)}">
+                <img alt="${escapeAttribute(photo.alt)}" decoding="async" height="${photo.height}" loading="lazy" src="${escapeAttribute(photo.src)}" width="${photo.width}" />
+              </a>
+            </div>`,
+  )
+  .join("");
+const homePortfolioCarousel = `
+<section class="work-section home-portfolio-section" id="portfolio" aria-labelledby="home-portfolio-title" data-home-portfolio>
+  <div class="container">
+    <div class="work-section__header">
+      <div class="section-heading section-heading--inline animatedParent animateOnce" data-sequence="180">
+        <h2 class="animated fadeInLeftShort" data-id="1" id="home-portfolio-title">Our Portfolio</h2>
+        <p class="animated fadeInLeftShort" data-id="2">A closer look at the homes, land, and details we build with purpose.</p>
+      </div>
+    </div>
+    <div class="work-gallery animatedParent animateOnce" data-sequence="180">
+      <div class="work-gallery__items work-gallery-init animated fadeIn" data-id="1">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            ${homePortfolioSlides}
+          </div>
+          <button class="swiper-button-prev" type="button" aria-label="Previous portfolio image"></button>
+          <button class="swiper-button-next" type="button" aria-label="Next portfolio image"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <dialog class="home-portfolio-viewer" aria-label="Portfolio photo viewer">
+    <div class="home-portfolio-viewer__toolbar">
+      <p data-home-photo-position></p>
+      <button type="button" data-home-slideshow aria-pressed="false">Play slideshow</button>
+      <button type="button" data-home-close-viewer aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="home-portfolio-viewer__stage">
+      <button type="button" data-home-previous aria-label="Previous photo"></button>
+      <img data-home-large-photo alt="" />
+      <button type="button" data-home-next aria-label="Next photo"></button>
+    </div>
+    <p class="home-portfolio-viewer__caption" data-home-photo-caption aria-live="polite"></p>
+  </dialog>
+</section>`;
+const relatedLinks = relatedLinksByPath[path] || [];
+const relatedLinksMarkup = relatedLinks.length
+  ? `<nav class="content-related-links" aria-label="Related Verity resources"><strong>Related:</strong>${relatedLinks
+      .map(
+        ({ href, label }) =>
+          `<a href="${escapeAttribute(href)}">${escapeAttribute(label)}</a>`,
+      )
+      .join("")}</nav>`
+  : "";
+const normalizePageHtml = (html: string) => {
+  let normalized = replaceArrowGlyphs(html);
+  if (path === "/") {
+    normalized = normalized.replace(
+      /<section class="home-hero" id="home" style='background-image:[^']*;'>/,
+      `<section class="home-hero" id="home"><img class="home-hero__media" src="/assets/a399ddb102-verity_hero-e1786715846853-1200.webp" srcset="/assets/a399ddb102-verity_hero-e1786715846853-720.webp 720w, /assets/a399ddb102-verity_hero-e1786715846853-1200.webp 1200w, /assets/a399ddb102-verity_hero-e1786715846853.webp 1795w" sizes="100vw" width="1795" height="1312" alt="" fetchpriority="high" decoding="async" />`,
+    );
+  }
+  normalized = normalized
+    .replace(
+      /class="service-card__image-link"/g,
+      'class="service-card__image-link clickable-image clickable-image__media"',
+    )
+    .replace(
+      /(<a\b[^>]*class="case-study-card"[^>]*>)(<img\b[^>]*>)/g,
+      '$1<span class="case-study-card__media clickable-image__media">$2</span>',
+    )
+    .replace(
+      /class="case-study-card"/g,
+      'class="case-study-card clickable-image"',
+    );
+  if (path === "/" || path === "/home-2/") {
+    normalized = normalized.replace(
+      /(<\/section>\s*)(<section class="contact-section")/,
+      `$1${homePortfolioCarousel}\n$2`,
+    );
+  }
+  if (path !== "/" && path !== "/home-2/") {
+    normalized = normalized
+      .replace(/<h1 class="([^"]*)"/g, '<h1 class="$1 page-title"')
+      .replace(/<h1(?![^>]*class=)/g, '<h1 class="page-title"');
+  }
+  normalized = normalized
+    .replace(
+      /class="content-block-search__label"/g,
+      'class="content-block-search__label form-label"',
+    )
+    .replace(
+      /class="content-block-search__input"/g,
+      'class="content-block-search__input form-control"',
+    )
+    .replace(
+      /class="content-block-search__button content-element-button"/g,
+      'class="content-block-search__button content-element-button vbg-btn"',
+    );
+  if (fieldGuideDetailPaths.has(path)) {
+    normalized = normalized
+      .replace(
+        /<span class="byline">\s*by\s*<span class="author vcard"><a class="url fn n" href="\/insights\/">veritybuilding<\/a><\/span><\/span>/,
+        '<span class="byline"> Reviewed by <span class="author vcard"><a class="url fn n" href="/about/">Verity Building Group</a></span></span>',
+      )
+      .replace(
+        /(<label class="content-block-search__label form-label"[^>]*>)Search(<\/label>)/,
+        "$1Explore Field Guide$2",
+      )
+      .replace(
+        /(<button[^>]*class="content-block-search__button content-element-button vbg-btn"[^>]*>)Search(<\/button>)/,
+        `$1Search ${arrowIconMarkup("right")}$2`,
+      )
+      .replace(
+        '<span class="nav-subtitle">Previous:</span>',
+        `<span class="nav-subtitle">${arrowIconMarkup("left")} Previous</span>`,
+      )
+      .replace(
+        '<span class="nav-subtitle">Next:</span>',
+        `<span class="nav-subtitle">Next ${arrowIconMarkup("right")}</span>`,
+      );
+    if (relatedLinksMarkup) {
+      normalized = normalized.replace(
+        /(<p class="vbg-cta">)/,
+        `${relatedLinksMarkup}$1`,
+      );
+    }
+  }
+  if (caseStudyDetailPaths.has(path) && relatedLinksMarkup) {
+    normalized = normalized.replace(
+      /(<p class="case-study-back">)/,
+      `${relatedLinksMarkup}$1`,
+    );
+  }
+  if (primaryServiceDetailPaths.has(path)) {
+    normalized = normalized.replace(
+      /class="services-link"/,
+      'class="vbg-btn vbg-btn--arrow"',
+    );
+  }
+  if (path === "/land-development-charlotte-nc/") {
+    normalized = normalized.replace(
+      'class="services-wrap legacy-focus land-settings"',
+      'class="services-wrap legacy-focus legacy-focus--aligned land-settings"',
+    );
+  }
+  if (!singleHeadingPaths.has(path)) return normalized;
+  normalized = normalized.replace(
+    /<h1 class="[^"]*entry-title[^"]*">[\s\S]*?<\/h1>/,
+    "",
+  );
+  return path === "/case-studies/"
+    ? normalized.replace(
+        /<h2 class="vbg-display-title">([\s\S]*?)<\/h2>/,
+        '<h1 class="vbg-display-title">$1</h1>',
+      )
+    : normalized;
+};
+const requestedPage = Object.values(pages).find((p) => p.path === path);
+const homepage = Object.values(pages).find((p) => p.path === "/");
+/* `/home-2/` is retained for compatibility, but it no longer maintains a
+   second visual implementation of the homepage. */
+const page =
+  path === "/home-2/" && requestedPage && homepage
+    ? {
+        ...requestedPage,
+        bodyClass: homepage.bodyClass,
+        sections: homepage.sections.map((section) =>
+          section.replace(
+            "From land acquisition and planning to custom residential construction and renovation, VBG brings",
+            "From land acquisition and planning to custom residential construction, VBG brings",
+          ),
+        ),
+      }
+    : requestedPage;
+const isFieldGuideDetail = fieldGuideDetailPaths.has(path);
+const siteUrl = process.env.SITE_URL || Astro.url.origin;
+const seo = page
+  ? buildSeo({
+      path,
+      site: siteUrl,
+      page,
+      portfolioImages: portfolioPhotos,
+    })
+  : null;
 if (!page) Astro.response.status = 404;
 ---
 
 <Site
-  title={page?.title || "Page not found | Verity Building Group"}
-  bodyClass={page?.bodyClass}
-  canonical={page?.canonical}
-  meta={page?.meta}
-  schema={page?.schema}
+  title={seo?.title || "Page not found | Verity Building Group"}
+  bodyClass={`${page?.bodyClass || "page"}${isFieldGuideDetail ? " field-guide-detail" : ""}`}
+  canonical={seo?.canonical}
+  meta={seo?.meta}
+  robots={seo?.robots}
+  schema={seo?.schema}
+  minimal={path === "/"}
 >
-  {page && path === "/portfolio/" ? <Portfolio /> : page && isBlog ? <BlogIndex /> : page ? (
-    page.sections.map((html, index) => (
-      <>
-        <Fragment set:html={html} />
-        {index < page.sections.length - 1 && (
-          <ContactForm id={`page-inquiry-${index}`} />
-        )}
-      </>
-    ))
+  {page && path === "/" ? (
+    <HomeLanding />
+  ) : page && path === "/portfolio/" ? (
+    <Portfolio />
+  ) : page && blogProps ? (
+    <BlogIndex {...blogProps} />
+  ) : page ? (
+    <>
+      {page.sections.map((html, index) => (
+        <>
+          <Fragment set:html={normalizePageHtml(html)} />
+          {index < page.sections.length - 1 &&
+            (path === "/" || path === "/home-2/" ? (
+              <ContactHandoffForm id={`page-inquiry-${index}`} />
+            ) : (
+              <ContactForm id={`page-inquiry-${index}`} />
+            ))}
+        </>
+      ))}
+      {isFieldGuideDetail && <ProjectCta id="field-guide-detail-cta-title" />}
+    </>
   ) : (
     <main id="primary" class="basic-content-row">
       <div class="container">

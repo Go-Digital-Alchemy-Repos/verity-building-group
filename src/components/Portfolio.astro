@@ -1,5 +1,7 @@
 ---
 import photos from '../content/portfolio.json';
+import ActionArrow from './ActionArrow.astro';
+import ProjectCta from './ProjectCta.astro';
 import '../styles/portfolio.css';
 ---
 <main id="primary" class="portfolio-page">
@@ -10,15 +12,16 @@ import '../styles/portfolio.css';
   </header>
   <div class="portfolio-toolbar">
     <div role="group" aria-label="Filter photos" class="portfolio-filters">
+      <button type="button" data-portfolio-filter="" aria-pressed="true">All</button>
       <button type="button" data-portfolio-filter="Interior" aria-pressed="false">Interior</button>
       <button type="button" data-portfolio-filter="Exterior" aria-pressed="false">Exterior</button>
     </div>
     <p id="portfolio-count" role="status">{photos.length} photos · Interior &amp; Exterior</p>
   </div>
   <div class="portfolio-grid">
-    {photos.map(photo => <a class="portfolio-photo" href={photo.src} data-space={photo.category} aria-label={`Enlarge: ${photo.alt}`}>
+    {photos.map(photo => <a class="portfolio-photo clickable-image clickable-image__media" href={photo.src} data-space={photo.category} aria-label={`Enlarge: ${photo.alt}`}>
       <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
-      <span class="portfolio-photo-caption">{photo.alt}<span aria-hidden="true">↗</span></span>
+      <span class="portfolio-photo-caption">{photo.alt}<ActionArrow /></span>
     </a>)}
   </div>
   <noscript><p>Photos open at full size. Enable JavaScript for filters and the slideshow.</p></noscript>
@@ -29,11 +32,12 @@ import '../styles/portfolio.css';
       <button type="button" data-close-viewer aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button>
     </div>
     <div class="portfolio-stage">
-      <button type="button" data-previous aria-label="Previous photo">←</button>
+      <button type="button" data-previous aria-label="Previous photo"><ActionArrow direction="left" /></button>
       <img data-large-photo alt="" />
-      <button type="button" data-next aria-label="Next photo">→</button>
+      <button type="button" data-next aria-label="Next photo"><ActionArrow /></button>
     </div>
     <p class="portfolio-viewer-caption" data-photo-caption aria-live="polite"></p>
   </dialog>
+  <ProjectCta id="portfolio-cta-title" />
 </main>
 <script>import '../scripts/portfolio';</script>

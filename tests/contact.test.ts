@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import {
   ContactRateLimiter,
   createFormToken,
@@ -18,6 +19,80 @@ const config = {
   webhookUrl: "https://delivery.example.test/contact",
   webhookToken: "test-only-token",
 };
+
+test("all contact form fields remain visible without progressive disclosure", async () => {
+  const [component, styles, script] = await Promise.all([
+    readFile("src/components/ContactForm.astro", "utf8"),
+    readFile("src/styles/site.css", "utf8"),
+    readFile("src/scripts/site.ts", "utf8"),
+  ]);
+
+  for (const name of [
+    "location",
+    "projectType",
+    "propertyStatus",
+    "budget",
+    "intendedUse",
+    "stage",
+    "timing",
+    "decisionMakers",
+    "files",
+    "preferredContact",
+    "bestTime",
+  ]) {
+    assert.match(component, new RegExp(`name=["'{]${name}`));
+  }
+  assert.doesNotMatch(styles, /inquiry-form:not\(\.is-expanded\)/);
+  assert.doesNotMatch(script, /is-expanded/);
+  assert.match(
+    component,
+    /<label for=\{field\("projectType"\)\}>Project Type<\/label>\s*<select[^>]+name="projectType">\s*<option value="">Select project type<\/option>/,
+  );
+  assert.match(styles, /\.inquiry-fields\s*\{[^}]*row-gap:\s*32px;/s);
+});
+
+test("homepage and modal use the four-field Contact handoff", async () => {
+  const [handoff, modal, page, script] = await Promise.all([
+    readFile("src/components/ContactHandoffForm.astro", "utf8"),
+    readFile("src/components/ProjectModal.astro", "utf8"),
+    readFile("src/pages/[...path].astro", "utf8"),
+    readFile("src/scripts/site.ts", "utf8"),
+  ]);
+
+  for (const name of ["firstName", "lastName", "email", "phone"]) {
+    assert.match(handoff, new RegExp(`name=["'{]${name}`));
+  }
+  for (const name of [
+    "location",
+    "projectType",
+    "propertyStatus",
+    "budget",
+    "message",
+    "files",
+  ]) {
+    assert.doesNotMatch(handoff, new RegExp(`name=["'{]${name}`));
+  }
+  assert.match(handoff, /data-contact-handoff/);
+  assert.match(handoff, />\s*Next\s*<ActionArrow \/>/);
+  assert.match(modal, /<ContactHandoffForm id="modal-inquiry" \/>/);
+  assert.match(
+    page,
+    /path === "\/" \|\| path === "\/home-2\/"[^]*?<ContactHandoffForm/,
+  );
+  assert.match(script, /sessionStorage\.setItem\(\s*contactHandoffStorageKey/);
+  assert.match(script, /window\.location\.assign\("\/contact\/"\)/);
+  assert.match(script, /main \[data-inquiry-form\]/);
+  assert.match(script, /input\.value = value/);
+  const styles = await readFile("src/styles/site.css", "utf8");
+  assert.match(
+    styles,
+    /\.contact-handoff-next\s*\{[^}]*gap:\s*24px;[^}]*justify-content:\s*center;/s,
+  );
+  assert.match(
+    styles,
+    /\.verity-project-modal__dialog\s*\{[^}]*border-radius:\s*8px;/s,
+  );
+});
 function request(
   values: Record<string, string> = {},
   origin = config.siteUrl,
@@ -57,13 +132,23 @@ test("validation requires a usable contact and rejects invalid choices and dupli
   const form = new FormData();
   assert.ok(validateFields(form).errors.email);
   form.set("phone", "+1 (704) 555-0123");
-  form.set("projectType", "New Home Construction");
+  form.set("projectType", "Legacy / Community Project");
+  form.set("propertyStatus", "Searching or evaluating");
+  form.set("budget", "$1–$2 million");
   assert.deepEqual(validateFields(form).errors, {});
   form.set("stage", "Invalid");
+  form.set("propertyStatus", "Invalid");
+  form.set("budget", "Invalid");
   form.append("phone", "5555555555");
   form.set("message", "x".repeat(10001));
   const { errors } = validateFields(form);
-  assert.ok(errors.stage && errors.phone && errors.message);
+  assert.ok(
+    errors.stage &&
+      errors.propertyStatus &&
+      errors.budget &&
+      errors.phone &&
+      errors.message,
+  );
 });
 
 test("rate limiter permits five attempts, isolates addresses, and expires", () => {

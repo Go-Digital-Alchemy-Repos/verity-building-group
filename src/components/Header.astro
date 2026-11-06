@@ -1,9 +1,48 @@
 ---
 import chrome from "../content/chrome.json";
-const header = chrome.header.replaceAll(
-  `href="${Astro.url.pathname}"`,
-  `aria-current="page" href="${Astro.url.pathname}"`,
-);
+
+const serviceLinks = [
+  "/land-development-charlotte-nc/",
+  "/custom-home-builder-charlotte-nc/",
+  "/legacy-projects/",
+];
+const reorderServices = (html: string) =>
+  html.replace(
+    /(<a href="\/services\/">Services<\/a>\s*<ul class="sub-menu">)([\s\S]*?)(<\/ul>)/,
+    (_match, opening: string, items: string, closing: string) => {
+      const menuItems = Array.from(items.matchAll(/<li\b[\s\S]*?<\/li>/g)).map(
+        ([item]) => item,
+      );
+      const ordered = serviceLinks
+        .map((href) => menuItems.find((item) => item.includes(`href="${href}"`)))
+        .filter((item): item is string => Boolean(item));
+      const remaining = menuItems.filter((item) => !ordered.includes(item));
+      return `${opening}\n${[...ordered, ...remaining].join("\n")}\n${closing}`;
+    },
+  );
+
+let submenuIndex = 0;
+const header = reorderServices(chrome.header)
+  .replaceAll(
+    `href="${Astro.url.pathname}"`,
+    `aria-current="page" href="${Astro.url.pathname}"`,
+  )
+  .replace(
+    /(<li\b[^>]*menu-item-has-children[^>]*>[\s\S]*?<a\b[^>]*>([\s\S]*?)<\/a>)(\s*<ul class="sub-menu")/g,
+    (_match, parentLink: string, label: string, submenu: string) => {
+      submenuIndex += 1;
+      const id = `primary-submenu-${submenuIndex}`;
+      const text = label.replace(/<[^>]+>/g, "").trim();
+      return `${parentLink}<button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="${id}"><span class="screen-reader-text">Toggle ${text} submenu</span><span class="submenu-toggle__icon" aria-hidden="true">+</span></button>${submenu} id="${id}"`;
+    },
+  )
+  .replace(/<ul class="sub-menu"[\s\S]*?<\/ul>/g, (submenu: string) =>
+    submenu.replace(
+      /(<a\b[^>]*>)([\s\S]*?)(<\/a>)/g,
+      '$1<span class="submenu-link__label">$2</span>$3',
+    ),
+  )
+  .replaceAll(">AREAS WE SERVE<", ">VBG SERVICE AREAS<");
 ---
 
 <Fragment set:html={header} />

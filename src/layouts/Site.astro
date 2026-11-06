@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ProjectModal from "../components/ProjectModal.astro";
+import Measurement from "../components/Measurement.astro";
 import "../styles/source.css";
 import "../styles/site.css";
 import "../styles/services.css";
@@ -18,14 +19,18 @@ interface Props {
   bodyClass?: string;
   meta?: Record<string, string>[];
   canonical?: string;
+  robots?: string;
   schema?: unknown[];
+  minimal?: boolean;
 }
 const {
   title,
   bodyClass = "page",
   meta = [],
   canonical,
+  robots = "index, follow",
   schema = [],
+  minimal = false,
 } = Astro.props;
 const site = process.env.SITE_URL || Astro.url.origin;
 const canonicalPath = canonical
@@ -68,11 +73,19 @@ function localizeStructuredData(value: unknown): unknown {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <Measurement />
+    {canonicalPath === "/" && (
+      <link
+        rel="preload"
+        as="image"
+        href="/assets/a399ddb102-verity_hero-e1786715846853-1200.webp"
+        imagesrcset="/assets/a399ddb102-verity_hero-e1786715846853-720.webp 720w, /assets/a399ddb102-verity_hero-e1786715846853-1200.webp 1200w, /assets/a399ddb102-verity_hero-e1786715846853.webp 1795w"
+        imagesizes="100vw"
+        fetchpriority="high"
+      />
+    )}
     <link rel="canonical" href={new URL(canonicalPath, site).href} />
-    <meta
-      name="robots"
-      content={staging ? "noindex, nofollow" : "index, follow"}
-    />
+    <meta name="robots" content={staging ? "noindex, nofollow" : robots} />
     {meta
       .filter((m) => m.name !== "robots")
       .map((m) => (
@@ -93,13 +106,13 @@ function localizeStructuredData(value: unknown): unknown {
       <a class="skip-link screen-reader-text" href="#primary">
         Skip to content
       </a>
-      <Header />
+      {!minimal && <Header />}
       <slot />
-      <Footer />
+      {!minimal && <Footer />}
     </div>
-    <ProjectModal />
-    <script>
+    {!minimal && <ProjectModal />}
+    {!minimal && <script>
       import "../scripts/site";
-    </script>
+    </script>}
   </body>
 </html>

@@ -10,7 +10,7 @@ const field = (name: string) => `${id}-${name}`;
 
 <div class="inquiry-wrapper">
   <form
-    class="inquiry-form"
+    class="inquiry-form shared-form body-regular"
     method="post"
     action="/api/contact/"
     enctype="multipart/form-data"
@@ -79,14 +79,34 @@ const field = (name: string) => `${id}-${name}`;
         <input id={field("location")} name="location" maxlength="500" />
       </div>
       <div class="more half">
-        <label class="screen-reader-text" for={field("projectType")}>
-          Project Type
-        </label>
+        <label for={field("projectType")}>Project Type</label>
         <select id={field("projectType")} name="projectType">
-          <option value="">Project Type</option>
+          <option value="">Select project type</option>
           <option>Land Development</option>
           <option>New Home Construction</option>
           <option>Renovation</option>
+          <option>Legacy / Community Project</option>
+        </select>
+      </div>
+      <div class="more half">
+        <label for={field("propertyStatus")}>Property Status</label>
+        <select id={field("propertyStatus")} name="propertyStatus">
+          <option value="">Select property status</option>
+          <option>I own the property</option>
+          <option>Under contract</option>
+          <option>Searching or evaluating</option>
+          <option>Not applicable</option>
+        </select>
+      </div>
+      <div class="more half">
+        <label for={field("budget")}>Anticipated Construction Investment</label>
+        <select id={field("budget")} name="budget">
+          <option value="">Select a range</option>
+          <option>Not sure yet</option>
+          <option>Under $500,000</option>
+          <option>$500,000–$1 million</option>
+          <option>$1–$2 million</option>
+          <option>$2 million+</option>
         </select>
       </div>
       <div class="more">
@@ -128,6 +148,16 @@ const field = (name: string) => `${id}-${name}`;
         ></textarea>
       </div>
       <div class="more">
+        <label for={field("decisionMakers")}>
+          Who Will Be Involved in Project Decisions?
+        </label>
+        <input
+          id={field("decisionMakers")}
+          name="decisionMakers"
+          maxlength="1000"
+        />
+      </div>
+      <div class="starter">
         <label class="screen-reader-text" for={field("message")}>
           Tell us about your project
         </label>
@@ -183,7 +213,7 @@ const field = (name: string) => `${id}-${name}`;
         <label for={field("bestTime")}>Best Time to Reach You</label>
         <input id={field("bestTime")} name="bestTime" maxlength="300" />
       </div>
-      <div class="more">
+      <div class="starter">
         <button type="submit" class="vbg-btn">
           SEND MESSAGE
         </button>
@@ -204,18 +234,25 @@ const field = (name: string) => `${id}-${name}`;
       <div class="vbg-process">
         <article>
           <span>01</span>
-          <h4>We review the basics</h4>
-          <p>We review the location, scope, timing, and information you shared.</p>
+          <h4>VBG reviews the basics</h4>
+          <p>VBG reviews the location, scope, timing, and information you shared.</p>
         </article>
         <article>
           <span>02</span>
-          <h4>We schedule a conversation</h4>
-          <p>If the opportunity appears aligned, we will reach out to discuss goals, constraints, and priorities.</p>
+          <h4>VBG schedules a conversation</h4>
+          <p>
+            If the opportunity appears aligned, VBG will reach out to discuss
+            goals, constraints, and priorities.
+          </p>
         </article>
         <article>
           <span>03</span>
-          <h4>We define a next step</h4>
-          <p>That may be a site review, document review, consultant introduction, or preconstruction conversation.</p>
+          <h4>VBG defines a next step</h4>
+          <p>
+            That may be a site review, document review, consultant introduction,
+            preconstruction discussion, or a recommendation to gather more
+            information.
+          </p>
         </article>
       </div>
     </div>

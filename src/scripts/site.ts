@@ -1,48 +1,375 @@
-export {};
+import { arrowIconMarkup } from "../lib/icons";
+import { onCLS, onINP, onLCP, type Metric } from "web-vitals";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const trackEvent = (name: string, parameters: Record<string, unknown> = {}) =>
+  window.gtag?.("event", name, parameters);
+
+const reportWebVital = (metric: Metric) => {
+  trackEvent(metric.name, {
+    value: Math.round(metric.name === "CLS" ? metric.delta * 1000 : metric.delta),
+    metric_id: metric.id,
+    metric_value: metric.value,
+    metric_delta: metric.delta,
+    metric_rating: metric.rating,
+    non_interaction: true,
+  });
+};
+
+if (window.gtag) {
+  onCLS(reportWebVital);
+  onINP(reportWebVital);
+  onLCP(reportWebVital);
+}
+
 const doc = document;
 doc.documentElement.classList.add("js-enabled");
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (!reduced) {
-  doc.documentElement.classList.add("js-motion");
-  const observer = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = entry.target as HTMLElement;
-          const sequenceDelay = element.dataset.id
-            ? (Number(element.dataset.id) - 1) * 400
-            : 0;
-          const extraDelay = element.classList.contains("delay-250")
+const ENTRY_SEQUENCE_MS = 180;
+
+const addEntryItem = (
+  element: Element,
+  direction: "fadeInLeftShort" | "fadeInRightShort" | "fadeInUpShort",
+  sequenceIndex?: number,
+) => {
+  if (element.closest("[hidden], dialog, form, .site-header, #site-navigation"))
+    return;
+  element.classList.add("animated", direction);
+  if (sequenceIndex) element.setAttribute("data-id", String(sequenceIndex));
+};
+
+const addEntrySequence = (
+  container: Element,
+  items: Element[],
+  direction:
+    "fadeInLeftShort" | "fadeInRightShort" | "fadeInUpShort" = "fadeInUpShort",
+) => {
+  container.classList.add("animatedParent", "animateOnce");
+  container.setAttribute("data-sequence", String(ENTRY_SEQUENCE_MS));
+  items.forEach((item, index) => addEntryItem(item, direction, index + 1));
+};
+
+const prepareEntryAnimations = () => {
+  doc.querySelectorAll(".service-grid").forEach((grid) => {
+    addEntrySequence(
+      grid,
+      Array.from(grid.querySelectorAll(":scope > .service-card")),
+    );
+  });
+
+  if (doc.body.classList.contains("home")) return;
+
+  const sequences: Array<[string, string]> = [
+    [".services-process", ":scope > li"],
+    [".legacy-steps", ":scope > li"],
+    [".about-team", ":scope > .vbg-team-card"],
+    [".about-area-grid", ":scope > .about-area-card"],
+    [".case-study-cards", ":scope > .case-study-card"],
+    [".vbg-process", ":scope > article"],
+  ];
+  sequences.forEach(([containerSelector, itemSelector]) => {
+    doc
+      .querySelectorAll(containerSelector)
+      .forEach((container) =>
+        addEntrySequence(
+          container,
+          Array.from(container.querySelectorAll(itemSelector)),
+        ),
+      );
+  });
+
+  const splitGroups: Array<[string, string, string]> = [
+    [
+      ".services-intro__grid",
+      ":scope > *:first-child",
+      ":scope > *:last-child",
+    ],
+    [".services-offering", ":scope > *:first-child", ":scope > *:last-child"],
+    [
+      ".services-section-heading",
+      ":scope > *:first-child",
+      ":scope > *:last-child",
+    ],
+    [".legacy-hero__grid", ":scope > *:first-child", ":scope > *:last-child"],
+    [".legacy-focus", ":scope > *:first-child", ":scope > *:last-child"],
+    [
+      ".featured-case-study__card",
+      ":scope > *:first-child",
+      ":scope > *:last-child",
+    ],
+    [".services-questions", ":scope > *:first-child", ":scope > *:last-child"],
+    [
+      ".services-closing__grid",
+      ":scope > *:first-child",
+      ":scope > *:last-child",
+    ],
+    [".blog-featured", ":scope > *:first-child", ":scope > *:last-child"],
+  ];
+  splitGroups.forEach(([groupSelector, leftSelector, rightSelector]) => {
+    doc.querySelectorAll(groupSelector).forEach((group) => {
+      group.classList.add("animatedParent", "animateOnce");
+      group.setAttribute("data-sequence", String(ENTRY_SEQUENCE_MS));
+      group
+        .querySelectorAll(leftSelector)
+        .forEach((item) => addEntryItem(item, "fadeInLeftShort", 1));
+      group
+        .querySelectorAll(rightSelector)
+        .forEach((item) => addEntryItem(item, "fadeInRightShort", 2));
+    });
+  });
+
+  const individualSelectors = [
+    ".services-intro > .services-wrap > .services-eyebrow",
+    ".services-jump",
+    ".legacy-approach__heading",
+    ".featured-case-study__intro",
+    ".legacy-note",
+    ".about-inline-intro > *",
+    ".about-team-description",
+    ".about-areas__heading",
+    ".about-areas__intro",
+    ".area-breadcrumb",
+    ".area-content > *",
+    ".case-studies-hero > .eyebrow",
+    ".case-studies-hero > .vbg-display-title",
+    ".case-studies-hero > .lead",
+    ".case-study-detail-hero > *",
+    ".vbg-gallery-item",
+    ".vbg-case-study > *",
+    ".case-study-back",
+    ".entry-header > *",
+    ".entry-content > *",
+    ".entry-footer",
+    ".post-navigation",
+    ".widget-area",
+    ".blog-heading > *",
+    ".blog-sidebar",
+    ".blog-results-heading",
+    ".blog-older > h2",
+    ".blog-row",
+    ".blog-empty",
+    ".portfolio-heading > *",
+    ".portfolio-toolbar",
+    ".portfolio-photo",
+  ];
+  individualSelectors.forEach((selector) => {
+    doc.querySelectorAll(selector).forEach((element) => {
+      if (
+        element.classList.contains("animated") ||
+        element.querySelector(".animated") ||
+        element.closest(".animated:not(.animatedParent)")
+      )
+        return;
+      addEntryItem(element, "fadeInUpShort");
+    });
+  });
+
+  doc.querySelectorAll(".case-study-cta").forEach((cta) => {
+    cta.classList.add("animatedParent", "animateOnce");
+    cta.setAttribute("data-sequence", String(ENTRY_SEQUENCE_MS));
+    cta
+      .querySelectorAll(":scope > div")
+      .forEach((element) => addEntryItem(element, "fadeInLeftShort", 1));
+    cta
+      .querySelectorAll(":scope > a")
+      .forEach((element) => addEntryItem(element, "fadeInRightShort", 2));
+  });
+};
+
+if (
+  !reduced &&
+  "IntersectionObserver" in window &&
+  !doc.documentElement.hasAttribute("data-entry-motion-initialized")
+) {
+  doc.documentElement.setAttribute("data-entry-motion-initialized", "true");
+  prepareEntryAnimations();
+  let observer: IntersectionObserver | null = null;
+  try {
+    observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target as HTMLElement;
+            const sequenceDelay = element.dataset.id
+              ? (Number(element.dataset.id) - 1) * ENTRY_SEQUENCE_MS
+              : 0;
+            const extraDelay = element.classList.contains("delay-250")
               ? 250
               : element.classList.contains("delay-500")
                 ? 500
                 : 0;
-          element.style.transitionDelay = `${sequenceDelay + extraDelay}ms`;
-          element.classList.add("is-visible");
-          observer.unobserve(element);
-        }
-      }),
-    { threshold: 0.08 },
-  );
-  doc.querySelectorAll(".animated,.entry-content > *").forEach((element) => {
-    if (!element.classList.contains("animated"))
-      element.classList.add("reveal-item");
-    observer.observe(element);
-  });
+            const revealDelay = sequenceDelay + extraDelay;
+            element.style.transitionDelay = element.classList.contains(
+              "contact-action",
+            )
+              ? `${revealDelay}ms, ${revealDelay}ms, 0ms, 0ms`
+              : `${revealDelay}ms`;
+            element.classList.add("is-entering");
+            element.classList.add("is-visible");
+            const finishEntry = (event: TransitionEvent) => {
+              if (event.target !== element || event.propertyName !== "opacity")
+                return;
+              element.classList.remove("is-entering");
+              element.style.removeProperty("transition-delay");
+              element.removeEventListener("transitionend", finishEntry);
+            };
+            element.addEventListener("transitionend", finishEntry);
+            observer?.unobserve(element);
+          }
+        }),
+      { threshold: 0.04, rootMargin: "0px 0px 12% 0px" },
+    );
+    doc.documentElement.classList.add("js-motion");
+    doc
+      .querySelectorAll(".animated")
+      .forEach((element) => observer?.observe(element));
+    window.addEventListener(
+      "pagehide",
+      () => {
+        observer?.disconnect();
+        observer = null;
+      },
+      { once: true },
+    );
+  } catch {
+    observer?.disconnect();
+    doc.documentElement.classList.remove("js-motion");
+  }
 }
 const navigationElement = doc.querySelector("#site-navigation");
 const toggle = navigationElement?.querySelector("button");
 toggle?.addEventListener("click", () => {
   const open = navigationElement!.classList.toggle("is-open");
   toggle.setAttribute("aria-expanded", String(open));
+  if (!open) {
+    navigationElement!
+      .querySelectorAll(".menu-item-has-children")
+      .forEach((item) => item.classList.remove("is-submenu-open"));
+    navigationElement!
+      .querySelectorAll<HTMLButtonElement>(".submenu-toggle")
+      .forEach((submenuToggle) => {
+        submenuToggle.setAttribute("aria-expanded", "false");
+        const icon = submenuToggle.querySelector(".submenu-toggle__icon");
+        if (icon) icon.textContent = "+";
+      });
+  }
+});
+const submenuToggles = Array.from(
+  navigationElement?.querySelectorAll<HTMLButtonElement>(".submenu-toggle") ??
+    [],
+);
+submenuToggles.forEach((submenuToggle) => {
+  submenuToggle.addEventListener("click", () => {
+    const parent = submenuToggle.closest(".menu-item-has-children");
+    const willOpen = !parent?.classList.contains("is-submenu-open");
+    submenuToggles.forEach((otherToggle) => {
+      if (otherToggle === submenuToggle) return;
+      otherToggle
+        .closest(".menu-item-has-children")
+        ?.classList.remove("is-submenu-open");
+      otherToggle.setAttribute("aria-expanded", "false");
+      const icon = otherToggle.querySelector(".submenu-toggle__icon");
+      if (icon) icon.textContent = "+";
+    });
+    parent?.classList.toggle("is-submenu-open", willOpen);
+    submenuToggle.setAttribute("aria-expanded", String(willOpen));
+    const icon = submenuToggle.querySelector(".submenu-toggle__icon");
+    if (icon) icon.textContent = willOpen ? "−" : "+";
+  });
 });
 doc.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && navigationElement?.classList.contains("is-open")) {
+    submenuToggles.forEach((submenuToggle) => {
+      submenuToggle
+        .closest(".menu-item-has-children")
+        ?.classList.remove("is-submenu-open");
+      submenuToggle.setAttribute("aria-expanded", "false");
+      const icon = submenuToggle.querySelector(".submenu-toggle__icon");
+      if (icon) icon.textContent = "+";
+    });
     navigationElement.classList.remove("is-open");
     toggle?.setAttribute("aria-expanded", "false");
     toggle?.focus();
   }
 });
+
+doc
+  .querySelectorAll<HTMLElement>(".services-faq, .vbg-faq")
+  .forEach((accordion, accordionIndex) => {
+    let openItem: HTMLElement | null = null;
+    const detailsItems = Array.from(
+      accordion.querySelectorAll<HTMLDetailsElement>(":scope > details"),
+    );
+
+    detailsItems.forEach((details, itemIndex) => {
+      const summary = details.querySelector<HTMLElement>(":scope > summary");
+      if (!summary) return;
+
+      const item = doc.createElement("div");
+      item.className = `accordion-item ${details.className}`.trim();
+
+      const trigger = doc.createElement("button");
+      const panel = doc.createElement("div");
+      const panelInner = doc.createElement("div");
+      const idBase = `accordion-${accordionIndex + 1}-${itemIndex + 1}`;
+
+      trigger.type = "button";
+      trigger.className = "accordion-trigger";
+      trigger.id = `${idBase}-trigger`;
+      trigger.innerHTML = summary.innerHTML;
+      trigger.setAttribute("aria-controls", `${idBase}-panel`);
+
+      panel.className = "accordion-panel";
+      panel.id = `${idBase}-panel`;
+      panel.setAttribute("role", "region");
+      panel.setAttribute("aria-labelledby", trigger.id);
+      panelInner.className = "accordion-panel__inner";
+
+      Array.from(details.childNodes).forEach((child) => {
+        if (child !== summary) panelInner.append(child);
+      });
+      panel.append(panelInner);
+      item.append(trigger, panel);
+
+      const initiallyOpen = details.open && openItem === null;
+      item.classList.toggle("is-open", initiallyOpen);
+      trigger.setAttribute("aria-expanded", String(initiallyOpen));
+      panel.setAttribute("aria-hidden", String(!initiallyOpen));
+      panel.inert = !initiallyOpen;
+      if (initiallyOpen) openItem = item;
+
+      const setOpen = (shouldOpen: boolean) => {
+        item.classList.toggle("is-open", shouldOpen);
+        trigger.setAttribute("aria-expanded", String(shouldOpen));
+        panel.setAttribute("aria-hidden", String(!shouldOpen));
+        panel.inert = !shouldOpen;
+      };
+
+      trigger.addEventListener("click", () => {
+        const shouldOpen = !item.classList.contains("is-open");
+        if (shouldOpen && openItem && openItem !== item) {
+          const openTrigger =
+            openItem.querySelector<HTMLButtonElement>(".accordion-trigger");
+          const openPanel =
+            openItem.querySelector<HTMLElement>(".accordion-panel");
+          openItem.classList.remove("is-open");
+          openTrigger?.setAttribute("aria-expanded", "false");
+          openPanel?.setAttribute("aria-hidden", "true");
+          if (openPanel) openPanel.inert = true;
+        }
+        setOpen(shouldOpen);
+        openItem = shouldOpen ? item : null;
+      });
+
+      details.replaceWith(item);
+    });
+  });
+
 const modal = doc.querySelector<HTMLElement>("#verity-project-modal")!;
 const dialog = modal.querySelector<HTMLElement>("[role=dialog]")!;
 let lastFocus: HTMLElement | null = null;
@@ -57,12 +384,8 @@ doc.addEventListener("click", (event) => {
   if (
     link &&
     (link.classList.contains("js-verity-project-modal") ||
-      link.textContent
-        ?.trim()
-        .replace(/\s+/g, " ")
-        .replace(/→/g, "")
-        .trim()
-        .toLowerCase() === "start your project")
+      link.textContent?.trim().replace(/\s+/g, " ").trim().toLowerCase() ===
+        "start your project")
   ) {
     event.preventDefault();
     lastFocus = link;
@@ -169,10 +492,14 @@ doc.querySelectorAll<HTMLElement>(".work-gallery").forEach((gallery) => {
           ? "Next images"
           : "Previous images",
       );
+      button.innerHTML = arrowIconMarkup(
+        button.classList.contains("swiper-button-next") ? "right" : "left",
+      );
       const advance = () => {
         if (!track) return;
         const slide = track.querySelector<HTMLElement>(".swiper-slide");
-        const distance = (slide?.getBoundingClientRect().width || 0) +
+        const distance =
+          (slide?.getBoundingClientRect().width || 0) +
           (Number.parseFloat(getComputedStyle(track).columnGap) || 0);
         track.scrollBy({
           left:
@@ -190,17 +517,167 @@ doc.querySelectorAll<HTMLElement>(".work-gallery").forEach((gallery) => {
       });
     });
 });
-doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
-  const starter = Array.from(
-    form.querySelectorAll<HTMLInputElement>(".starter input"),
+doc.querySelectorAll<HTMLElement>("[data-home-portfolio]").forEach((root) => {
+  const photos = Array.from(
+    root.querySelectorAll<HTMLAnchorElement>(".home-portfolio-photo"),
   );
-  const update = () =>
-    form.classList.toggle(
-      "is-expanded",
-      starter.some((i) => i.value.trim()),
-    );
-  starter.forEach((i) => i.addEventListener("input", update));
-  update();
+  const viewer = root.querySelector<HTMLDialogElement>(
+    ".home-portfolio-viewer",
+  );
+  if (!photos.length || !viewer) return;
+
+  const large = viewer.querySelector<HTMLImageElement>(
+    "[data-home-large-photo]",
+  )!;
+  const caption = viewer.querySelector<HTMLElement>(
+    "[data-home-photo-caption]",
+  )!;
+  const position = viewer.querySelector<HTMLElement>(
+    "[data-home-photo-position]",
+  )!;
+  const play = viewer.querySelector<HTMLButtonElement>(
+    "[data-home-slideshow]",
+  )!;
+  const previous = viewer.querySelector<HTMLButtonElement>(
+    "[data-home-previous]",
+  )!;
+  const next = viewer.querySelector<HTMLButtonElement>("[data-home-next]")!;
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | undefined;
+  let opener: HTMLAnchorElement | undefined;
+
+  previous.innerHTML = arrowIconMarkup("left");
+  next.innerHTML = arrowIconMarkup("right");
+
+  const pause = () => {
+    clearInterval(timer);
+    timer = undefined;
+    play.textContent = "Play slideshow";
+    play.setAttribute("aria-pressed", "false");
+    caption.setAttribute("aria-live", "polite");
+  };
+  const show = (index: number) => {
+    current = (index + photos.length) % photos.length;
+    const photo = photos[current].querySelector("img")!;
+    large.src = photo.currentSrc || photo.src;
+    large.alt = photo.alt;
+    caption.textContent = photo.alt;
+    position.textContent = `${current + 1} / ${photos.length}`;
+  };
+
+  photos.forEach((photo, index) => {
+    photo.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+        return;
+      event.preventDefault();
+      opener = photo;
+      show(index);
+      viewer.showModal();
+      doc.body.classList.add("home-portfolio-viewer-open");
+      viewer
+        .querySelector<HTMLButtonElement>("[data-home-close-viewer]")!
+        .focus();
+    });
+  });
+  viewer
+    .querySelector("[data-home-close-viewer]")!
+    .addEventListener("click", () => viewer.close());
+  viewer.addEventListener("close", () => {
+    pause();
+    doc.body.classList.remove("home-portfolio-viewer-open");
+    opener?.focus();
+  });
+  previous.addEventListener("click", () => {
+    pause();
+    show(current - 1);
+  });
+  next.addEventListener("click", () => {
+    pause();
+    show(current + 1);
+  });
+  viewer.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      pause();
+      show(current + (event.key === "ArrowRight" ? 1 : -1));
+    }
+  });
+  play.addEventListener("click", () => {
+    if (timer) {
+      pause();
+      return;
+    }
+    play.textContent = "Pause slideshow";
+    play.setAttribute("aria-pressed", "true");
+    caption.setAttribute("aria-live", "off");
+    timer = setInterval(() => show(current + 1), 5000);
+  });
+});
+const contactHandoffStorageKey = "verity-contact-handoff";
+const contactHandoffFieldNames = [
+  "firstName",
+  "lastName",
+  "email",
+  "phone",
+] as const;
+
+doc
+  .querySelectorAll<HTMLFormElement>("[data-contact-handoff]")
+  .forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const values = Object.fromEntries(
+        contactHandoffFieldNames.map((name) => {
+          const field = form.elements.namedItem(name);
+          return [name, field instanceof HTMLInputElement ? field.value : ""];
+        }),
+      );
+      try {
+        sessionStorage.setItem(
+          contactHandoffStorageKey,
+          JSON.stringify({ savedAt: Date.now(), values }),
+        );
+      } catch {
+        // Continue to Contact even when private browsing blocks storage.
+      }
+      window.location.assign("/contact/");
+    });
+  });
+
+if (window.location.pathname === "/contact/") {
+  try {
+    const saved = sessionStorage.getItem(contactHandoffStorageKey);
+    if (saved) {
+      const handoff = JSON.parse(saved) as {
+        savedAt?: number;
+        values?: Partial<
+          Record<(typeof contactHandoffFieldNames)[number], string>
+        >;
+      };
+      const isFresh =
+        typeof handoff.savedAt === "number" &&
+        Date.now() - handoff.savedAt < 30 * 60 * 1000;
+      const contactForm = doc.querySelector<HTMLFormElement>(
+        "main [data-inquiry-form]",
+      );
+      if (isFresh && contactForm && handoff.values) {
+        contactHandoffFieldNames.forEach((name) => {
+          const input = contactForm.elements.namedItem(name);
+          const value = handoff.values?.[name];
+          if (input instanceof HTMLInputElement && typeof value === "string") {
+            input.value = value;
+          }
+        });
+      } else if (!isFresh) {
+        sessionStorage.removeItem(contactHandoffStorageKey);
+      }
+    }
+  } catch {
+    // Ignore unavailable or malformed same-origin session data.
+  }
+}
+
+doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
   form
     .querySelector<HTMLInputElement>("[type=file]")
     ?.addEventListener("change", (event) => {
@@ -243,17 +720,26 @@ doc.querySelectorAll<HTMLFormElement>("[data-inquiry-form]").forEach((form) => {
         }
       }
       if (response.ok && result.ok) {
+        trackEvent("generate_lead", {
+          form_name: form.getAttribute("aria-label") || "project_inquiry",
+          page_path: window.location.pathname,
+        });
+        try {
+          sessionStorage.removeItem(contactHandoffStorageKey);
+        } catch {
+          // Storage cleanup must not interrupt a successful form submission.
+        }
         form.reset();
         const template = form.parentElement?.querySelector<HTMLTemplateElement>(
           "[data-inquiry-confirmation]",
         );
-        const confirmation = template?.content.firstElementChild?.cloneNode(true);
+        const confirmation =
+          template?.content.firstElementChild?.cloneNode(true);
         if (confirmation instanceof HTMLElement) {
           form.replaceWith(confirmation);
           confirmation.focus();
           return;
         }
-        update();
       }
       status.focus();
     } catch {

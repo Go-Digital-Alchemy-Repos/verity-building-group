@@ -1,6 +1,9 @@
 .about-page :is(#our-approach, #our-team, #areas-we-serve) {
   scroll-margin-top: 150px;
 }
+.about-page .services-intro .services-jump {
+  border-bottom: 0;
+}
 .about-copy p + p {
   margin-top: 20px;
 }
@@ -14,6 +17,35 @@
 .about-page #vbg-team-heading {
   margin-top: 20px;
 }
+.about-team-description {
+  text-align: left;
+}
+.about-inline-intro > p:last-child {
+  position: relative;
+  padding-left: 32px;
+}
+.about-inline-intro > p:last-child::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--color-gold);
+  content: "";
+}
+.about-page
+  :is(
+    #our-team .about-inline-intro > div > h2,
+    .about-areas__heading.about-inline-intro > div > h2
+  )::after {
+  display: none;
+  content: none;
+}
+@media (min-width: 641px) {
+  .about-page #our-team .legacy-focus__intro {
+    align-items: center;
+  }
+}
 .about-team {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,22 +54,49 @@
   margin-inline: auto;
 }
 .about-team figure {
+  position: relative;
   margin: 0;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--color-ink);
+  border-radius: 8px;
 }
-.about-team svg {
+.about-team :is(img, svg) {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+.about-team .vbg-team-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 16px 18px;
+  color: var(--text-on-dark);
+  background: var(--gradient-overlay-caption);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  opacity: 1;
+  transform: none;
 }
 .about-areas {
   background: var(--color-cream);
   padding-block: var(--services-space);
 }
 .about-page .about-areas__intro {
-  max-width: 900px;
-  margin-bottom: 40px;
+  max-width: none;
+  margin: 0;
   color: var(--services-muted);
-  font-size: 17px;
+  font-size: var(--font-size-body-regular);
+  line-height: var(--line-height-body);
+}
+.about-areas__heading {
+  margin-bottom: 40px;
 }
 .about-area-grid {
   display: grid;
@@ -48,14 +107,15 @@
   display: flex;
   flex-direction: column;
   padding: 32px;
-  background: #faf8f4;
+  background: var(--color-surface-alt);
   border: 1px solid var(--services-line);
+  border-radius: 8px;
   color: var(--color-ink);
   text-decoration: none;
 }
 .about-area-card h3 {
   font-size: 32px;
-  margin-block: 24px 20px;
+  margin-block: 0 20px;
 }
 .about-area-card p {
   font-size: 16px;
@@ -75,12 +135,20 @@
   line-height: 1.5;
 }
 .about-page .about-area-card:hover {
-  background: #fff;
-  border-color: var(--color-ink);
+  background: var(--background-light);
+  border-color: var(--color-gold);
 }
-.about-area-card:hover .about-area-card__action {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.about-area-card:is(:hover, :focus-visible) .about-area-card__action {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+.about-area-card__action > span {
+  position: relative;
+  left: 0;
+  transition: left 0.3s ease;
+}
+.about-area-card:is(:hover, :focus-visible) .about-area-card__action > span {
+  left: 5px;
 }
 .about-page .about-area-card:focus-visible {
   outline: 3px solid var(--color-ink);

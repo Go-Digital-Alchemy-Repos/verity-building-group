@@ -1,0 +1,11 @@
+---
+import { arrowIconMarkup, type ArrowDirection } from "../lib/icons";
+
+interface Props {
+  direction?: ArrowDirection;
+}
+
+const { direction = "right" } = Astro.props;
+---
+
+<Fragment set:html={arrowIconMarkup(direction)} />
